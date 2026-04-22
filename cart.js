@@ -14,3 +14,30 @@ class CartStore {
     this.items = this.loadFromStorage();
     this.listeners = [];
   }
+
+  /*
+   * Load from Storage 
+   * Read cart data from localStorage
+   */
+  loadFromStorage() {
+    try {
+      const stored = localStorage.getItem('cart-storage');
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  /*
+   * Save to Storage 
+   * localStorage
+   * Save cart data to localStorage
+   */
+  saveToStorage() {
+    try {
+      localStorage.setItem('cart-storage', JSON.stringify(this.items));
+      this.notifyListeners();
+    } catch (e) {
+      console.warn('Unable to save cart to local storage');
+    }
+  }
