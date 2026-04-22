@@ -23,7 +23,49 @@
             </svg>
             Continue Shopping
         </a>
+        <h1 class="cart-title">Shopping Cart</h1>
         
+        <div class="cart-layout">
+            <!-- Cart Items -->
+             <div id="cart-items" class="cart-items">
+                <!-- Cart items will be rendered by JavaScript -->
+            </div>
+
+            <!--Order Summary-->
+            <div class="cart-summary">
+                <div class="cart-summary-card">
+                    <h2 class="cart-summary-title">Order Summary</h2>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="cart-summary-row">
+                            <span id="cart-item-count">Subtotal (0 items)</span>
+                            <span id="cart-subtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="cart-summary-row">
+                            <span>Shipping fees</span>
+                            <span class="cart-summary-free">Free</span>
+                        </div>
+                        
+                        <div class="cart-summary-row total">
+                            <span>Total</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button id="checkout-btn" class="btn btn-primary btn-block" onclick="window.location.href='checkout.html'">
+                        Proceed to Checkout
+                    </button>
+                    
+                    <div class="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span>Secure Checkout with Encryption</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
