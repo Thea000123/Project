@@ -41,3 +41,13 @@ class CartStore {
       console.warn('Unable to save cart to local storage');
     }
   }
+
+  /*
+   * Subscribe 
+   * Register state change listener
+   */
+  subscribe(listener) {
+    this.listeners.push(listener);
+    return () => {
+      this.listeners = this.listeners.filter(l => l !== listener);
+    };}
