@@ -330,4 +330,76 @@
       transition: font-weight .1s;
     }
     .pg-num.active { color: white; font-weight: 700; }
+    /* 
+     * ============================================================
+     * EXPLORE BY MEDIUM 
+     * Used Rectangle_2.png as background
+     * ============================================================
+     */
+    .explore {
+      position: relative;
+      /* Use uploaded underwater image as background */
+      background: url('./images/Rectangle 2.png') center / cover no-repeat;
+      color: var(--white);
+      padding: 90px 32px;
+      overflow: hidden;
+    }
+
+    /* Dark overlay for readability */
+    .explore::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,40,65,0.55) 0%, rgba(10,40,80,0.25) 100%);
+    }
+
+    .explore-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    /* Featured badge */
+    .featured-badge {
+      display: inline-block;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 24px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 28px;
+    }
+
+    .explore-title {
+      font-family: var(--sans);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .explore-desc {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-style: italic;
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      opacity: .9;
+    }
+
+    /* Browse collection / Browse button */
+    .btn-browse {
+      background: #3a3a3a;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 40px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background .2s;
+    }
+    .btn-browse:hover { background: #1a1a1a; }
 
