@@ -455,190 +455,72 @@
       line-height: 1.4;
     }
     /* 
-     /* ================================================================
-   ABOUT FOOT SECTION
-   ================================================================
-   Warm off-white background matching the screenshot exactly.
-   Two-column grid: text (left ~55%) and stats (right ~45%).
-================================================================ */
+     * ============================================================
+     * ABOUT 
+     * ============================================================
+     */
+    .about-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--sand);
+    }
 
-/* Import the serif display font used for the title + numbers */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
 
-/* ---- Section wrapper ---------------------------------------- */
-.about-section {
-  background-color: #f2efe9;   /* warm cream — matches screenshot exactly */
-  padding: 80px 0;
-}
+    .about-title {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
 
-/* ---- Inner container: centred, max-width, side padding ------- */
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 60px;
-  display: grid;
-  /* Left column takes ~55%, right column ~45% */
-  grid-template-columns: 1fr 0.75fr;
-  gap: 80px;
-  align-items: start;
-}
+    .about-body p {
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--ink-light);
+      text-align: justify;
+      margin-bottom: 18px;
+    }
+    
+    /* Stats area — 2×2 grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 24px;
+      align-items: start;
+    }
 
-/* ================================================================
-   LEFT COLUMN — Text
-================================================================ */
+    .stat-block { }
 
-/* Section title — large serif, lightweight */
-.about-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 2rem;
-  font-weight: 400;         /* light weight as in screenshot */
-  color: #1a1a1a;
-  margin-bottom: 36px;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-}
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--ink);
+    }
 
-/* Body paragraphs */
-.about-text p {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: #3a3a3a;
-  margin-bottom: 20px;
-}
+    .stat-key {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 8px 0 6px;
+      color: var(--ink);
+    }
 
-.about-text p:last-child {
-  margin-bottom: 0;
-}
+    .stat-desc {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.5;
+    }
 
-/* ================================================================
-   RIGHT COLUMN — Statistics
-================================================================ */
-.about-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 52px;              /* vertical space between the two stat blocks */
-  padding-top: 48px;      /* visually align with text body, below the title */
-}
-
-/* ---- Individual stat block ----------------------------------- */
-.stat-block {
-  display: grid;
-  /* Number occupies a fixed-width column; label fills the rest */
-  grid-template-columns: 140px 1fr;
-  align-items: start;
-  gap: 0;
-}
-
-/* ---- Giant number ------------------------------------------- */
-/*
-   KEY TECHNIQUE:
-   The number uses Cormorant Garamond at a very large size with
-   font-weight 300 to reproduce the thin elegant numerals visible
-   in the screenshot (e.g. "150+" and "12").
-   The JS count-up animation targets elements with [data-target].
-*/
-.stat-number {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(3.5rem, 6vw, 5rem);  /* fluid: shrinks on small screens */
-  font-weight: 300;
-  line-height: 1;
-  color: #1a1a1a;
-  letter-spacing: -0.02em;
-  /* Align the baseline of the number with the top of the label text */
-  padding-top: 0.05em;
-
-  /* Animate opacity in when the counter triggers */
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* Visible state (added by JS IntersectionObserver) */
-.stat-number.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---- Stat label + description ------------------------------- */
-.stat-info {
-  padding-top: 0.25rem;   /* fine-tune vertical alignment with the number */
-}
-
-/* "WORKS" / "YEARS" uppercase label */
-.stat-heading {
-  display: block;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  margin-bottom: 8px;
-}
-
-/* Description text below the heading */
-.stat-desc {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 300;
-  line-height: 1.7;
-  color: #6b7280;
-  max-width: 260px;
-}
-
-/* ================================================================
-   TOP DIVIDER LINE
-   Matches the thin horizontal rule at the top of the section
-   in the original design.
-================================================================ */
-.about-section::before {
-  content: '';
-  display: block;
-  width: calc(100% - 120px);   /* matches container padding */
-  max-width: 1200px;
-  height: 1px;
-  background: #dddad3;
-  margin: 0 auto 80px;
-}
-
-/* ================================================================
-   RESPONSIVE
-================================================================ */
-
-/* Tablet: stack columns */
-@media (max-width: 900px) {
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 0 32px;
-  }
-
-  .about-stats {
-    padding-top: 0;
-    gap: 40px;
-  }
-}
-
-/* Mobile: tighten spacing */
-@media (max-width: 600px) {
-  .about-section {
-    padding: 56px 0;
-  }
-
-  .about-container {
-    padding: 0 20px;
-  }
-
-  .stat-block {
-    grid-template-columns: 110px 1fr;
-  }
-
-  .about-title {
-    font-size: 1.6rem;
-  }
-}
+    /* First stat on right column aligns right */
+    .stat-right { text-align: right; }
     /* 
      * ============================================================
      * FOOTER
@@ -1128,63 +1010,6 @@
   <script src="js/cart.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/shared.js"></script>
-
-  <!-- ============================================================
-     ABOUT FOOT + STATISTICS SECTION
-     Two-column layout:
-       Left  → title + two paragraphs of body copy
-       Right → two stat blocks (big number + label + description)
-============================================================ -->
-<section class="about-section">
-  <div class="about-container">
-
-    <!-- LEFT COLUMN: About text -->
-    <div class="about-text">
-      <h2 class="about-title">About FOOT</h2>
-      <p>
-        Australian artist Foot Young, based at Hamilton Island on the Great Barrier Reef,
-        has sculpted mostly in marble originals, over 700 different works, ranging from a
-        selection of jewellery sized pieces to large outdoor works of monumental proportions.
-        Most of these are available as marble sculptures, or bronze sculptures, but there are
-        also several different mediums and colours available.
-      </p>
-      <p>
-        His aim has always been to provide the greatest possible range of themes, mediums,
-        and prices, yet without fail to abide by the principle that Art should be beautiful
-        and pleasing, durable yet affordable.
-      </p>
-    </div>
-
-    <!-- RIGHT COLUMN: Statistics -->
-    <div class="about-stats">
-
-      <!-- Stat 1 -->
-      <div class="stat-block">
-        <!-- data-target drives the JS count-up animation -->
-        <span class="stat-number" data-target="150" data-suffix="+">0+</span>
-        <div class="stat-info">
-          <strong class="stat-heading">WORKS</strong>
-          <p class="stat-desc">
-            Curated photographic and sculptural pieces exploring light, form and Australian landscape
-          </p>
-        </div>
-      </div>
-
-      <!-- Stat 2 -->
-      <div class="stat-block">
-        <span class="stat-number" data-target="12" data-suffix="">0</span>
-        <div class="stat-info">
-          <strong class="stat-heading">YEARS</strong>
-          <p class="stat-desc">
-            Documenting texture, shadow and material through a refined visual language
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  
-</section>
 </body>
 </html>
 
