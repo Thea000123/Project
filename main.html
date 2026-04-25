@@ -69,7 +69,7 @@
      */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* 平滑滚动 / Smooth scrolling */
+    /* Smooth scrolling */
     html { scroll-behavior: smooth; }
 
     body {
@@ -80,15 +80,49 @@
       overflow-x: hidden;
     }
 
-    /* 基础元素样式 / Base element styles */
+    /* Base element styles */
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     img { max-width: 100%; display: block; }
     button { font-family: var(--sans); cursor: pointer; border: none; background: none; }
 
-    /* 容器样式 / Container styles */
+    /* Container styles */
     .container {
       max-width: 1160px;
       margin: 0 auto;
       padding: 0 32px;
     }
+    
+    /* 
+     * ============================================================
+     * NAVBAR
+     * Top：Search, cart and login on the righ
+     * Main line: left logo + centered titles
+     * ============================================================
+     */
+    
+    /* Top icon row */
+    .nav-top {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 32px;
+      border-bottom: 1px solid #f0ece6;
+    }
+
+    /* Navigation icon buttons */
+    .nav-icon-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--ink-light);
+      transition: color .15s, background .15s;
+    }
+    .nav-icon-btn:hover { color: var(--ink); background: var(--off-white); }
+    .nav-icon-btn svg { flex-shrink: 0; }
+    .nav-icon-btn .login-text { font-weight: 500; }
+
