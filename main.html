@@ -521,3 +521,79 @@
 
     /* First stat on right column aligns right */
     .stat-right { text-align: right; }
+    /* 
+     * ============================================================
+     * FOOTER
+     * ============================================================
+     */
+    footer {
+      background: #3f3f3f;
+      color: var(--white);
+      padding: 56px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    /* Logo / Footer Logo */
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      color: #bbb;
+      line-height: 1.75;
+      max-width: 380px;
+      margin-bottom: 24px;
+    }
+
+    /* Social icons */
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-social a {
+      color: #bbb;
+      transition: color .15s;
+    }
+    .footer-social a:hover { color: var(--white); }
+
+    /* Footer nav columns */
+    .footer-nav {
+      display: flex;
+      gap: 48px;
+      justify-content: flex-end;
+    }
+    .footer-nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .footer-nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: #ccc;
+      transition: color .15s;
+    }
+    .footer-nav a:hover { color: var(--white); }
+
+    .footer-copy {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
