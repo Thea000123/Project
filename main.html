@@ -188,3 +188,54 @@
       -webkit-mask-image: radial-gradient(ellipse 52% 50% at 50% 50%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0) 72%);
       mask-image:         radial-gradient(ellipse 52% 50% at 50% 50%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0) 72%);
     }
+    /* 
+     * ============================================================
+     * CATEGORIES
+     * ============================================================
+     */
+    .categories {
+      background: linear-gradient(to bottom, #7dbcd8, #8bbdd4 60%, #8bbdd4);
+      padding: 40px 0 32px;
+    }
+
+    /* View All / Section header: left title + right View All */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      color: var(--ink);
+    }
+    .view-all {
+      font-size: 13px;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity .15s;
+    }
+    .view-all:hover { opacity: .65; }
+
+    /* Tag pills */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .tag {
+      background: var(--white);
+      color: var(--ink);
+      padding: 9px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      white-space: nowrap;
+    }
+    .tag:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.10); }
