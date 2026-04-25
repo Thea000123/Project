@@ -61,3 +61,34 @@
       --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
       --shadow-hover: 0 12px 40px rgba(0,0,0,0.14);
     }
+    /* 
+     * ============================================================
+     * Reset & Base Styles
+     * Remove default styles for cross-browser consistency
+     * ============================================================
+     */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* 平滑滚动 / Smooth scrolling */
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* 基础元素样式 / Base element styles */
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: var(--sans); cursor: pointer; border: none; background: none; }
+
+    /* 容器样式 / Container styles */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
