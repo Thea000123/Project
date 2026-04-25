@@ -625,3 +625,19 @@
       .hero-graphic  { height: 420px; }
       .hero-island   { width: 90vw; }
     }
+    
+    /* 
+     * ============================================================
+     * Page Load Fade-in Animation
+     * ============================================================
+     */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-intro    { animation: fadeUp .7s ease both; }
+    .hero-bg-text  { animation: fadeUp .9s .1s ease both; }
+    .hero-island   { animation: fadeUp 1s .2s ease both; }
+  </style>
+</head>
+<body>
