@@ -597,3 +597,31 @@
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
+     /* 
+     * ============================================================
+     * Responsive Design
+     * Layout adjustments for different screen sizes
+     * ============================================================
+     */
+    @media (max-width: 900px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .medium-grid  { grid-template-columns: repeat(3, 1fr); }
+      .about-grid   { grid-template-columns: 1fr; }
+      .footer-grid  { grid-template-columns: 1fr; }
+      .footer-nav   { justify-content: flex-start; }
+    }
+
+    @media (max-width: 768px) {
+      .medium-grid { grid-template-columns: repeat(3, 1fr); }
+      .medium-img-wrap { width: 110px; height: 110px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links     { display: none; }
+      .product-grid  { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .medium-grid   { grid-template-columns: repeat(2, 1fr); }
+      .medium-img-wrap { width: 90px; height: 90px; }
+      .stats-grid    { grid-template-columns: 1fr; }
+      .hero-graphic  { height: 420px; }
+      .hero-island   { width: 90vw; }
+    }
