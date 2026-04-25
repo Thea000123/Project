@@ -454,3 +454,70 @@
       color: var(--ink-light);
       line-height: 1.4;
     }
+    /* 
+     * ============================================================
+     * ABOUT 
+     * ============================================================
+     */
+    .about-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--sand);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-title {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .about-body p {
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--ink-light);
+      text-align: justify;
+      margin-bottom: 18px;
+    }
+    
+    /* Stats area — 2×2 grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 24px;
+      align-items: start;
+    }
+
+    .stat-block { }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .stat-key {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 8px 0 6px;
+      color: var(--ink);
+    }
+
+    .stat-desc {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.5;
+    }
+
+    /* First stat on right column aligns right */
+    .stat-right { text-align: right; }
