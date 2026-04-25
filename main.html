@@ -954,4 +954,55 @@
      ============================================================
 -->
 <div id="shared-footer"></div>
+<!-- ============================================================
+     JavaScript — Pagination Logic
+     ============================================================
+-->
+<script>
+     /**
+   * ===========================================
+   * Pagination Controller
+   * Manages display and switching of three product grid pages
+   * ===========================================
+   */
+  (function () {
+    const TOTAL_PAGES = 3;
+    let currentPage = 1;
+
+    /**
+     * showPage 
+     * Show the specified page and hide all others
+     * @param {number} n — page number (1–3)
+     */
+    function showPage(n) {
+      // Clamp to valid range
+      n = Math.max(1, Math.min(TOTAL_PAGES, n));
+      currentPage = n;
+
+      // Toggle product grid visibility
+      for (let i = 1; i <= TOTAL_PAGES; i++) {
+        const grid = document.getElementById('pg-' + i);
+        if (grid) grid.style.display = i === n ? 'grid' : 'none';
+      }
+
+      // Update active state on page numbers
+      document.querySelectorAll('.pg-num').forEach(el => {
+        const p = parseInt(el.dataset.page, 10);
+        el.classList.toggle('active', p === n);
+      });
+    }
+
+    // Bind page number clicks
+    document.querySelectorAll('.pg-num').forEach(el => {
+      el.addEventListener('click', () => showPage(parseInt(el.dataset.page, 10)));
+    });
+
+    // Bind prev/next buttons
+    document.getElementById('pg-prev').addEventListener('click', () => showPage(currentPage - 1));
+    document.getElementById('pg-next').addEventListener('click', () => showPage(currentPage + 1));
+
+    // Initialize with page 1
+    showPage(1);
+  })();
+</script>
 
