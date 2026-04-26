@@ -907,3 +907,16 @@
           Toast.show('Account details saved!', 'success');
         });
       }
+      
+      /* ── Auto-fill saved account details on load ── */
+      try {
+        const saved = JSON.parse(localStorage.getItem('saved-account') || 'null');
+        if (saved) {
+          ['firstName','lastName','address','phone','email'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el && saved[id]) el.value = saved[id];
+          });
+          const country = document.getElementById('country');
+          if (country && saved.country) country.value = saved.country;
+        }
+      } catch(e) {}
