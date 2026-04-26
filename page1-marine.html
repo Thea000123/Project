@@ -153,5 +153,29 @@
             { id: 115, title: 'FISH BARRAMUNDI',             price: 725,  image: 'images/image 29.png' },
             { id: 116, title: 'MANTA RAY MINI',              price: 210,  image: 'images/image 30.png' },
         ];
+        
+        const PER_PAGE = 8;
+        let currentPage = 1;
+        const totalPages = Math.ceil(MARINE_PRODUCTS.length / PER_PAGE);
+
+        function formatPrice(p) {
+            return '$' + p.toLocaleString('en-US', { minimumFractionDigits: 2 });
+        }
+
+        function renderGrid(page) {
+            const grid = document.getElementById('product-grid');
+            const start = (page - 1) * PER_PAGE;
+            const items = MARINE_PRODUCTS.slice(start, start + PER_PAGE);
+
+            grid.innerHTML = items.map(p => `
+                <div class="product-card" data-id="${p.id}" data-title="${p.title}" data-price="${p.price}" data-image="${p.image}">
+                    <div class="product-image"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
+                    <button class="cart-btn" aria-label="Add to cart"><i class="fas fa-shopping-cart"></i></button>
+                    <div class="product-info">
+                        <div class="product-title">${p.title}</div>
+                        <div class="product-price">${formatPrice(p.price)}</div>
+                    </div>
+                </div>
+            `).join('');
 
 
