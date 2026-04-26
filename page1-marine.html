@@ -9,4 +9,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    
+
+    <style>
+        :root {
+            --primary-bg: #8c9dc3;
+            --filter-active: #8b9be8;
+            --cart-btn-color: #89c7d6;
+            --text-main: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-main); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .hero {
+            position: relative; width: 100%; min-height: 700px; height: auto;
+            background: url('images/image 2.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column;
+            justify-content: space-between; padding: 30px 0 50px 0;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        .back-btn { position: absolute; top: 30px; left: 50px; color: #fff; font-size: 24px; z-index: 10; }
+        .hero h1 {
+            position: relative; z-index: 10; color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 54px; font-weight: 500; letter-spacing: 1px;
+            text-align: center; margin-top: auto;
+        }
+
+        .main-content { background-color: var(--primary-bg); padding-bottom: 50px; }
