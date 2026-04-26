@@ -102,4 +102,21 @@ class CartStore {
       this.saveToStorage();
     }
   }
+  clearCart() {
+    this.items = [];
+    this.saveToStorage();
+  }
+
+  getItems() {
+    return [...this.items];
+  }
+
+  getTotalItems() {
+    return this.items.reduce((total, item) => total + item.quantity, 0);
+  }
+
+  getTotalPrice() {
+    return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  }
+}
 }
