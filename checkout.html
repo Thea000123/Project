@@ -833,4 +833,35 @@
   <script src="js/utils.js"></script>
   <script src="js/shared.js"></script>
   <script src="js/validation.js"></script>
-    
+  <script>
+    /* ── Render order summary from cart ── */
+    function updateCheckoutSummary() {
+      const items = cart.getItems();
+      const container = document.getElementById('checkout-items');
+      const totalEl   = document.getElementById('checkout-total');
+
+      const displayItems = items.length > 0 ? items : [
+        { title: 'TURTLE Coloured Cast Marble',       subtitle: 'Size - Small', quantity: 1, price: 585 },
+        { title: 'FISH CORAL TROUT Red Cast Marble',  subtitle: 'Size - Fixed', quantity: 1, price: 825 }
+      ];
+      const subtotal = items.length > 0 ? cart.getTotalPrice() : 1410;
+
+      if (container) {
+        container.innerHTML = displayItems.map(item => `
+          <div class="co-order-item">
+            <div class="co-order-item-name">${item.title}</div>
+            <div class="co-order-item-sub">
+              <span>${item.subtitle || ''} &times;${item.quantity || 1}</span>
+              <span class="co-order-item-price">$${(item.price * (item.quantity || 1)).toLocaleString('en-AU', { minimumFractionDigits: 0 })}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+      if (totalEl) {
+        totalEl.textContent = '$' + subtotal.toLocaleString('en-AU', { minimumFractionDigits: 0 });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      CartUtils.updateCartBadge();
+      updateCheckoutSummary();
