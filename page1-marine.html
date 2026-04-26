@@ -197,5 +197,13 @@
                         price: parseFloat(card.dataset.price),
                         image: card.dataset.image
                     };
+                    // CartUtils is always available since cart.js loads first
+                    CartUtils.addToCart(product);
+                    Toast.show(product.title + ' added to cart', 'success', {
+                        action: { label: 'View Cart', href: 'cart.html' }
+                    });
+                });
+            });
+        }
 
 
