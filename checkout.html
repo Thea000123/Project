@@ -891,3 +891,19 @@
       /* ── Expiry formatting ── */
       const expiryInput = document.getElementById('expiry');
       if (expiryInput) expiryInput.addEventListener('input', e => Validation.formatExpiry(e.target));
+      /* ── Save Account Details button ── */
+      const saveBtn = document.querySelector('.co-save-btn');
+      if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          const saved = {
+            firstName: document.getElementById('firstName')?.value || '',
+            lastName:  document.getElementById('lastName')?.value  || '',
+            address:   document.getElementById('address')?.value   || '',
+            phone:     document.getElementById('phone')?.value     || '',
+            email:     document.getElementById('email')?.value     || '',
+            country:   document.getElementById('country')?.value   || ''
+          };
+          try { localStorage.setItem('saved-account', JSON.stringify(saved)); } catch(e) {}
+          Toast.show('Account details saved!', 'success');
+        });
+      }
