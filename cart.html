@@ -151,22 +151,90 @@
   <script src="js/utils.js"></script>
   <script src="js/shared.js"></script>
 
-    <!--Search Modal-->
-    <div id="search-modal" class="search-modal">
-        <div class="search-box">
-            <div class="search-input-wrapper">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input type="text" class="search-input" placeholder="Search Products..." aria-label="Search">
-                <button class="search-close" onclick="Search.close()">Cancel</button>
-            </div>
-            <div id="search-results" class="search-results">
-                <div class="search-prompt">
-                    <p>Enter keywords to search for products</p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <!--
+    =======================================
+    Inline Script
+    Cart page-specific logic
+    =======================================
+  -->
+  <script>
+    /**
+     * ===========================================
+     * All Products Data
+     * Used for search modal functionality
+     * ===========================================
+     */
+    const allProducts = [
+      { id: 1, title: "TURTLE MINI COLOURED", price: 215.0, image: "images/image 17.png" },
+      { id: 2, title: "TURTLE MARBLE", price: 585.0, image: "images/image 18.png" },
+      { id: 3, title: "TURTLE 14 CARAT", price: 3850.0, image: "images/image 19.png" },
+      { id: 4, title: "TURTLE RELIEF", price: 215.0, image: "images/image 20.png" },
+      { id: 5, title: "TURTLE ALLOY", price: 585.0, image: "images/image 27.png" },
+      { id: 6, title: "TURTLE MINI AQUA", price: 215.0, image: "images/image 28.png" },
+      { id: 7, title: "TURTLE COLOURED", price: 415.0, image: "images/image 29.png" },
+      { id: 8, title: "TURTLE GOLD BRONZE", price: 445.0, image: "images/image 30.png" },
+      { id: 9, title: "TURTLE JADE CAST", price: 415.0, image: "images/image 31.png" }
+    ];
+
+    /**
+     * ===========================================
+     * Page Initialization
+     *
+     * DOMContentLoaded event fires when DOM is fully loaded
+     * 
+     * Executes initialization tasks:
+     * 1. Render cart UI
+     * 2. Subscribe to cart data changes
+     * 3. Set checkout button state
+     * ===========================================
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      // 
+      // Initial render: cart item list, price subtotal, and quantity badge
+      //
+      CartUtils.updateCartUI();
+      
+      /**
+       * ===========================================
+       * Cart Data Change Subscription
+       * 
+       * Uses pub-sub pattern: automatically updates UI when cart data changes
+       *
+       * cart.subscribe() receives a callback function that is called when cart state changes
+       * ===========================================
+       */
+      cart.subscribe(() => {
+        // Update cart UI (product list, prices, badge)
+        CartUtils.updateCartUI();
+        
+        /**
+         * ===========================================
+         * Dynamic Checkout Button State Control
+         * 
+         * Sets button disabled/enabled state based on cart emptiness
+         * Adjusts button style (opacity, cursor) based on cart emptiness
+         * ===========================================
+         */
+        const checkoutBtn = document.getElementById('checkout-btn');
+        if (checkoutBtn) {
+          const hasItems = cart.getItems().length > 0;
+          
+          // Set button disabled state
+          checkoutBtn.disabled = !hasItems;
+          
+          // Set opacity effect (semi-transparent when disabled)
+          checkoutBtn.style.opacity = hasItems ? '1' : '0.5';
+          
+          // Set cursor style
+          checkoutBtn.style.cursor = hasItems ? 'pointer' : 'not-allowed';
+        }
+      });
+      
+      // 
+      // Trigger subscription callback once to ensure correct initial button state
+      //
+      CartUtils.updateCartUI();
+    });
+  </script>
 </body>
+</html>
