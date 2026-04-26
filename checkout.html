@@ -729,4 +729,87 @@
           </div>
         </div>
       </div>
+      <!-- ==================================================
+           Card Payment Information
+           Left: card number form inside a white card box
+           Right: payment method radio buttons
+           ==================================================
+      -->
+      <div class="co-card-section">
+        <h3 class="co-card-section-title">Card</h3>
+
+        <div class="co-card-layout">
+          <!-- Left: card info inputs -->
+          <div class="co-card-box">
+            <!-- Card Number -->
+            <div>
+              <div class="co-card-field-label">Card Number</div>
+              <input type="text" id="cardNumber" name="cardNumber" class="co-card-input"
+                     placeholder="1234 5678 9012 3456" maxlength="19" data-validate="required|cardNumber" autocomplete="cc-number">
+            </div>
+
+            <!-- Expiration Date + Security Code two-col -->
+            <div class="co-card-row">
+              <div>
+                <div class="co-card-field-label">Expiration Date</div>
+                <!-- placeholder MM/YY format -->
+                <input type="text" id="expiry" name="expiry" class="co-card-input"
+                       placeholder="MM / YY" maxlength="7" data-validate="required|expiry" autocomplete="cc-exp">
+              </div>
+              <div>
+                <div class="co-card-field-label">Security Code</div>
+                <input type="text" id="cvv" name="cvv" class="co-card-input"
+                       placeholder="123" maxlength="4" data-validate="required|cvv" autocomplete="cc-csc">
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: payment method radio options -->
+          <div class="co-payment-methods">
+            <div class="co-payment-label" style="font-size:0.75rem;color:#6b7280;font-weight:500;margin-bottom:4px;">Payment method<span style="color:#ef4444;margin-left:2px;">*</span></div>
+            <!-- Direct bank transfer -->
+            <label class="co-payment-option">
+              <input type="radio" name="paymentMethod" value="bank_transfer">
+              <span>Direct bank transfer</span>
+            </label>
+            <!-- PayPal -->
+            <label class="co-payment-option">
+              <input type="radio" name="paymentMethod" value="paypal">
+              <span>PayPal</span>
+            </label>
+            <!-- Afterpay -->
+            <label class="co-payment-option">
+              <input type="radio" name="paymentMethod" value="afterpay">
+              <span>Afterpay</span>
+            </label>
+            <!-- Credit Card -->
+            <label class="co-payment-option">
+              <input type="radio" name="paymentMethod" value="credit_card" id="radio-credit-card">
+              <span>Credit / Debit card</span>
+            </label>
+            <!-- Hidden field to carry validation -->
+            <input type="hidden" id="paymentMethodHidden" name="paymentMethodHidden" data-validate="required">
+            <span id="payment-error" style="display:none;font-size:0.72rem;color:#ef4444;margin-top:4px;">Please select a payment method</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy notice text -->
+      <p class="co-privacy-text">
+        Your personal data will be used only to process your order, and to support your experience throughout this website, and for absolutely no other reason, unless you request to hear about new products.
+      </p>
+      <p class="co-postbox-text">
+        Note that if you have a post box please include that as well as residential address.
+      </p>
+
+      <!-- PLACE ORDER submit button -->
+      <button type="submit" class="co-place-order-btn">PLACE ORDER</button>
+
+      <!-- Bottom notice -->
+      <p class="co-notice-text">
+        Note that if you do not get the next page titled ORDER RECEIVED, then you have not successfully completed this checkout even if you have clicked Place Order, complete all needed inputs above. Thank you for your order. If you need a tracking number please send an email.
+      </p>
+
+    </form>
+  </main>
     
