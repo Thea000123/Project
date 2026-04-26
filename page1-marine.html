@@ -222,4 +222,16 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Init on load
+        window.addEventListener('load', () => {
+            renderGrid(currentPage);
+            updatePager(currentPage);
+
+            document.getElementById('pg-prev').addEventListener('click', () => goToPage(currentPage - 1));
+            document.getElementById('pg-next').addEventListener('click', () => goToPage(currentPage + 1));
+            document.querySelectorAll('.page-num').forEach(el => {
+                el.addEventListener('click', () => goToPage(parseInt(el.dataset.page)));
+            });
+        });
+
 
