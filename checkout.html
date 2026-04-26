@@ -629,4 +629,77 @@
           </button>
         </div>
       </div>
+      <!-- ==================================================
+           Billing Details
+           Two-column grid: left column (name fields) + right column (address/contact)
+           ==================================================
+      -->
+      <div class="co-section">
+        <h2 class="co-section-title">Billing details</h2>
+
+        <div class="co-form-grid">
+          <!-- Left col row 1: First name -->
+          <div class="co-form-group">
+            <label class="co-label">First name<span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" class="co-input"
+                   placeholder="" required data-validate="required">
+          </div>
+
+          <!-- Right col row 1: Country dropdown -->
+          <div class="co-form-group">
+            <label class="co-label">Country</label>
+            <select id="country" name="country" class="co-select" data-validate="required">
+              <option value="AU" selected>Australia</option>
+              <option value="NZ">New Zealand</option>
+              <option value="US">United States</option>
+              <option value="GB">United Kingdom</option>
+              <option value="CN">China</option>
+              <option value="SG">Singapore</option>
+            </select>
+          </div>
+
+          <!-- Right col row 2: Detailed address + Import button -->
+          <div class="co-form-group">
+            <label class="co-label">Detailed address<span class="req">*</span></label>
+            <div class="co-input-with-btn">
+              <input type="text" id="address" name="address" class="co-input"
+                     placeholder="" required data-validate="required">
+              <!-- Import button: import address from account -->
+              <button type="button" class="co-import-btn" aria-label="导入地址">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Import
+              </button>
+            </div>
+          </div>
+
+          <!-- Left col row 3: Last name -->
+          <div class="co-form-group">
+            <label class="co-label">Last name<span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" class="co-input"
+                   placeholder="" required data-validate="required">
+          </div>
+
+          <!-- Right col row 3: Contact detail -->
+          <div class="co-form-group">
+            <label class="co-label">Contact Detail<span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" class="co-input"
+                   placeholder="" required data-validate="required|phone">
+          </div>
+
+          <!-- Right col row 4: Email (right col only) -->
+          <!-- Left col row 4 empty -->
+          <div></div>
+          <div class="co-form-group">
+            <label class="co-label">Email<span class="req">*</span></label>
+            <input type="email" id="email" name="email" class="co-input"
+                   placeholder="" required data-validate="required|email">
+          </div>
+        </div>
+
+        <!-- Save Account Details button -->
+        <button type="button" class="co-save-btn">Save Account Details</button>
+      </div>
     
