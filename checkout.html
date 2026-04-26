@@ -888,3 +888,6 @@
       /* ── Card number formatting ── */
       const cardInput = document.getElementById('cardNumber');
       if (cardInput) cardInput.addEventListener('input', e => Validation.formatCardNumber(e.target));
+      /* ── Expiry formatting ── */
+      const expiryInput = document.getElementById('expiry');
+      if (expiryInput) expiryInput.addEventListener('input', e => Validation.formatExpiry(e.target));
