@@ -206,4 +206,12 @@
             });
         }
 
+        function updatePager(page) {
+            document.querySelectorAll('.page-num').forEach(el => {
+                el.classList.toggle('active', parseInt(el.dataset.page) === page);
+            });
+            document.getElementById('pg-prev').style.opacity = page === 1 ? '0.35' : '1';
+            document.getElementById('pg-next').style.opacity = page === totalPages ? '0.35' : '1';
+        }
+
 
