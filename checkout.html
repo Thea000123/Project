@@ -885,3 +885,6 @@
       function isPaymentSelected() {
         return !!document.querySelector('input[name="paymentMethod"]:checked');
       }
+      /* ── Card number formatting ── */
+      const cardInput = document.getElementById('cardNumber');
+      if (cardInput) cardInput.addEventListener('input', e => Validation.formatCardNumber(e.target));
