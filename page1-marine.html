@@ -214,4 +214,12 @@
             document.getElementById('pg-next').style.opacity = page === totalPages ? '0.35' : '1';
         }
 
+        function goToPage(page) {
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderGrid(currentPage);
+            updatePager(currentPage);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
 
