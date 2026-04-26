@@ -336,3 +336,37 @@
       color: #2563eb;
       margin-bottom: 1.25rem;
     }
+    /* 
+     * ============================================================
+     * Two-Column Product Display
+     * ============================================================
+     */
+    .co-order-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .co-order-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .co-order-item-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111;
+    }
+    .co-order-item-sub {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .co-order-item-price {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111;
+    }
+    
