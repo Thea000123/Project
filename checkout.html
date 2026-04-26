@@ -702,4 +702,31 @@
         <!-- Save Account Details button -->
         <button type="button" class="co-save-btn">Save Account Details</button>
       </div>
+      <!-- ==================================================
+           Order Summary
+           Two-column product list + delivery fee + total
+           ==================================================
+      -->
+      <div class="co-order-section">
+        <h2 class="co-order-title">Order</h2>
+
+        <!-- Two-col product display (populated by JS) -->
+        <div class="co-order-items" id="checkout-items">
+          <!-- JS JS inserts demo items here -->
+        </div>
+
+        <!-- Delivery fee + Total two-column row -->
+        <div class="co-order-footer">
+          <!-- Left: Delivery fee -->
+          <div class="co-order-footer-row">
+            <span class="co-order-footer-label">Delivery fee</span>
+            <span class="co-order-footer-value">$0</span>
+          </div>
+          <!-- Right: Total -->
+          <div class="co-order-footer-row">
+            <span class="co-order-total-label">Total</span>
+            <span class="co-order-total-value" id="checkout-total">$0</span>
+          </div>
+        </div>
+      </div>
     
