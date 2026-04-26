@@ -119,4 +119,25 @@ class CartStore {
     return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
   }
 }
+const cart = new CartStore();
+
+const CartUtils = {
+  formatPrice(price) {
+    return `$${price.toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  },
+
+  updateCartBadge() {
+    const totalItems = cart.getTotalItems();
+    const badges = document.querySelectorAll('.cart-badge');
+    
+    badges.forEach(badge => {
+      if (totalItems > 0) {
+        badge.textContent = totalItems > 99 ? '99+' : totalItems;
+        badge.style.display = 'flex';
+      } else {
+        badge.style.display = 'none';
+      }
+    });
+  },
+
 }
