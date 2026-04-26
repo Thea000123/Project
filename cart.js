@@ -86,3 +86,4 @@ class CartStore {
     this.items = this.items.filter(item => item.id !== id);
     this.saveToStorage();
   }
+}
