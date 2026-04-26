@@ -59,7 +59,22 @@ class CartStore {
   notifyListeners() {
     this.listeners.forEach(listener => listener(this.items));
   }
-
+ /*
+   * Add Item
+   * Add item to cart, quantity +1
+   */
+  addItem(item) {
+    const existingItem = this.items.find(i => i.id === item.id);
     
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      this.items.push({
+        ...item,
+        quantity: 1
+      });
+    }
     
-  
+    this.saveToStorage();
+    return true;
+  }
