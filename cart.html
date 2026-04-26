@@ -136,6 +136,20 @@
 
     <!--Footer-->
     <div id="shared-footer"></div>
+    <!-- 
+    ============================================================
+    Script Loading Order:
+    1. cart.js      — Cart data management and UI utilities
+    2. utils.js     — Site-wide utilities (Toast, theme, search)
+    3. shared.js    — Shared components injector
+    4. validation.js      — Cart page-specific logic
+    ============================================================
+  -->
+
+  <!-- Scripts -->
+  <script src="js/cart.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/shared.js"></script>
 
     <!--Search Modal-->
     <div id="search-modal" class="search-modal">
