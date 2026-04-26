@@ -920,3 +920,40 @@
           if (country && saved.country) country.value = saved.country;
         }
       } catch(e) {}
+       /* ── Form submission ── */
+      Validation.initForm('checkout-form', {
+        onSubmit: () => {
+          // Extra check: payment method must be selected
+          if (!isPaymentSelected()) {
+            const errEl = document.getElementById('payment-error');
+            if (errEl) errEl.style.display = 'block';
+            Toast.show('Please select a payment method', 'error');
+            return;
+          }
+          // Collect form data and save to sessionStorage for success page
+          const orderData = {
+            orderNumber: 'ORD-' + Date.now().toString().slice(-8),
+            email:       document.getElementById('email')?.value     || '',
+            firstName:   document.getElementById('firstName')?.value || '',
+            lastName:    document.getElementById('lastName')?.value  || '',
+            address:     document.getElementById('address')?.value   || '',
+            phone:       document.getElementById('phone')?.value     || '',
+            country:     document.getElementById('country')?.value   || '',
+            paymentMethod: document.querySelector('input[name="paymentMethod"]:checked')?.value || '',
+            items:       cart.getItems(),
+            total:       cart.getTotalPrice(),
+            date:        new Date().toLocaleDateString('en-AU')
+          };
+          try { sessionStorage.setItem('order-data', JSON.stringify(orderData)); } catch(e) {}
+          // Submit
+          const btn = document.querySelector('.co-place-order-btn');
+          if (btn) { btn.disabled = true; btn.textContent = 'Processing...'; }
+          Toast.show('Order submitted! Redirecting...', 'success');
+          cart.clearCart();
+          setTimeout(() => { window.location.href = 'success.html'; }, 1500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
