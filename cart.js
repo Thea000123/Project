@@ -78,3 +78,11 @@ class CartStore {
     this.saveToStorage();
     return true;
   }
+  /*
+   * Remove Item
+   * Remove item from cart
+   */
+  removeItem(id) {
+    this.items = this.items.filter(item => item.id !== id);
+    this.saveToStorage();
+  }
