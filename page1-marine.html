@@ -186,4 +186,16 @@
                 });
             });
 
+            // Wire cart buttons — use setTimeout to ensure Toast/CartUtils are ready
+            grid.querySelectorAll('.cart-btn').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    const card = btn.closest('.product-card');
+                    const product = {
+                        id: parseInt(card.dataset.id),
+                        title: card.dataset.title,
+                        price: parseFloat(card.dataset.price),
+                        image: card.dataset.image
+                    };
+
 
