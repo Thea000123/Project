@@ -1053,5 +1053,43 @@
   <script src="js/cart.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/shared.js"></script>
+
+  <!-- About Section — stat counter animation -->
+  <script>
+  (function () {
+    'use strict';
+    function animateCounter(el) {
+      const target   = parseInt(el.dataset.target, 10);
+      const suffix   = el.dataset.suffix || '';
+      const duration = 1800;
+      const fps      = 60;
+      const step     = target / (duration / (1000 / fps));
+      let current = 0;
+      function tick() {
+        current += step;
+        if (current >= target) { el.textContent = target + suffix; return; }
+        el.textContent = Math.floor(current) + suffix;
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    function initAboutSection() {
+      const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+      if (!statNumbers.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            el.classList.add('visible');
+            animateCounter(el);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.4 });
+      statNumbers.forEach((el) => observer.observe(el));
+    }
+    document.addEventListener('DOMContentLoaded', initAboutSection);
+  })();
+  </script>
 </body>
 </html>
