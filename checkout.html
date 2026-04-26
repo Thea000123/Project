@@ -865,3 +865,19 @@
     document.addEventListener('DOMContentLoaded', () => {
       CartUtils.updateCartBadge();
       updateCheckoutSummary();
+      /* ── Sync payment radio → hidden field so validation works ── */
+      document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          const hidden = document.getElementById('paymentMethodHidden');
+          if (hidden) hidden.value = radio.value;
+          // Hide card fields when non-card method selected
+          const cardSection = document.querySelector('.co-card-box');
+          if (cardSection) {
+            const showCard = ['credit_card', 'bank_transfer'].includes(radio.value);
+            cardSection.style.opacity = showCard ? '1' : '0.4';
+            cardSection.style.pointerEvents = showCard ? '' : 'none';
+          }
+          const errEl = document.getElementById('payment-error');
+          if (errEl) errEl.style.display = 'none';
+        });
+      });
