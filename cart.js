@@ -86,4 +86,20 @@ class CartStore {
     this.items = this.items.filter(item => item.id !== id);
     this.saveToStorage();
   }
+  /*
+   * Update Quantity
+   * Update quantity, remove if <=0
+   */
+  updateQuantity(id, quantity) {
+    if (quantity <= 0) {
+      this.removeItem(id);
+      return;
+    }
+
+    const item = this.items.find(i => i.id === id);
+    if (item) {
+      item.quantity = quantity;
+      this.saveToStorage();
+    }
+  }
 }
