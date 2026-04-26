@@ -881,3 +881,7 @@
           if (errEl) errEl.style.display = 'none';
         });
       });
+      /* ── Custom payment method check before submit ── */
+      function isPaymentSelected() {
+        return !!document.querySelector('input[name="paymentMethod"]:checked');
+      }
