@@ -153,7 +153,7 @@
             { id: 115, title: 'FISH BARRAMUNDI',             price: 725,  image: 'images/image 29.png' },
             { id: 116, title: 'MANTA RAY MINI',              price: 210,  image: 'images/image 30.png' },
         ];
-        
+
         const PER_PAGE = 8;
         let currentPage = 1;
         const totalPages = Math.ceil(MARINE_PRODUCTS.length / PER_PAGE);
@@ -177,5 +177,13 @@
                     </div>
                 </div>
             `).join('');
+
+            // Wire card clicks
+            grid.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', e => {
+                    if (e.target.closest('.cart-btn')) return;
+                    window.location.href = 'product-3.html';
+                });
+            });
 
 
