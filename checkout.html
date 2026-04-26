@@ -212,3 +212,63 @@
       text-align: center;
       margin-bottom: 1.5rem;
     }
+    /* 
+     * ============================================================
+     * Two-Column Form Grid
+     * ============================================================
+     */
+    .co-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.5rem;
+    }
+    
+    /* Form group styles */
+    .co-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    
+    /* Form label styles */
+    .co-label {
+      font-size: 0.78rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .co-label .req { color: #ef4444; margin-left: 2px; }
+    
+    /* Form input styles */
+    .co-input {
+      border: none;
+      border-radius: 0.4rem;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.9rem;
+      background: #d4eeff;
+      color: #111;
+      outline: none;
+      transition: box-shadow 0.15s;
+      width: 100%;
+    }
+    .co-input:focus {
+      box-shadow: 0 0 0 2px #38bdf8;
+      background: #e0f2fe;
+    }
+    
+    /* Select box styles */
+    .co-select {
+      border: none;
+      border-radius: 0.4rem;
+      padding: 0.6rem 2rem 0.6rem 0.85rem;
+      font-size: 0.9rem;
+      background: #fff;
+      color: #111;
+      outline: none;
+      border: 1px solid #d1d5db;
+      width: 100%;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+    }
+    .co-select:focus { box-shadow: 0 0 0 2px #38bdf8; }
