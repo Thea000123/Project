@@ -94,3 +94,34 @@
         .page-num.disabled { opacity: 0.35; pointer-events: none; }
     </style>
 </head>
+<body>
+
+    <div id="shared-header"></div>
+
+    <div class="hero">
+        <a href="main.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+        <h1>Marine Life</h1>
+    </div>
+
+    <div class="main-content">
+        <div class="filters">
+            <button class="filter-btn active">All</button>
+            <a href="page2-turtle.html" class="filter-btn">Turtles</a>
+            <button class="filter-btn">Dolphins</button>
+            <button class="filter-btn">Reef</button>
+            <button class="filter-btn">Whales</button>
+            <button class="filter-btn">Fish</button>
+            <button class="filter-btn">Seahorse</button>
+            <button class="filter-btn">Sealions</button>
+        </div>
+
+        <div class="grid-container">
+            <div class="product-grid" id="product-grid"></div>
+            <div class="pagination">
+                <span class="pg-arrow" id="pg-prev"><i class="fas fa-caret-left"></i></span>
+                <span class="page-num active" data-page="1">1</span>
+                <span class="page-num" data-page="2">2</span>
+                <span class="pg-arrow" id="pg-next"><i class="fas fa-caret-right"></i></span>
+            </div>
+        </div>
+    </div>
