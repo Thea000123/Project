@@ -85,3 +85,12 @@
         .product-info { padding: 30px 20px 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .product-title { font-size: 18px; font-weight: 600; text-transform: uppercase; line-height: 1.4; margin-bottom: 15px; letter-spacing: 0.5px; }
         .product-price { font-size: 21px; font-weight: 500; color: #444; }
+        /* Pagination */
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 14px; font-weight: 500; padding: 10px 0; }
+        .pagination .pg-arrow { cursor: pointer; font-size: 14px; color: #fff; padding: 4px 8px; }
+        .page-num { cursor: pointer; color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+        .page-num:hover { color: #fff; background: rgba(255,255,255,0.2); }
+        .page-num.active { color: #fff; font-weight: 700; background: rgba(255,255,255,0.25); }
+        .page-num.disabled { opacity: 0.35; pointer-events: none; }
+    </style>
+</head>
