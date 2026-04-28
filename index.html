@@ -49,6 +49,25 @@
     @keyframes cardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
     .prod-card{animation:cardIn .4s ease both}
 
+    /* ── Sidebar filter styles ── */
+    .filter-main-title{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#1e293b;margin:16px 0 8px}
+    .filter-group{margin-bottom:4px}
+    .filter-header{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.07);font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#1e293b;cursor:pointer;user-select:none;transition:color .15s}
+    .filter-header:hover{color:#0369a1}
+    .filter-header svg{transition:transform .2s;flex-shrink:0}
+    .filter-group.active .filter-header svg{transform:rotate(180deg)}
+    .filter-content{display:none;padding:8px 0 4px}
+    .filter-group.active .filter-content{display:block}
+    .filter-option{display:flex;align-items:center;gap:6px;padding:4px 0;font-size:12px;color:#475569;cursor:pointer}
+    .filter-option input{width:13px;height:13px;accent-color:#0ea5e9;flex-shrink:0}
+    .filter-divider{height:1px;background:rgba(0,0,0,.06);margin:8px 0}
+    .filter-actions{display:flex;gap:8px;margin-top:14px}
+    .filter-btn{flex:1;padding:7px 0;border-radius:6px;border:none;font-size:11px;font-weight:600;cursor:pointer;transition:background .15s}
+    .reset-btn{background:rgba(255,255,255,.5);color:#475569}
+    .reset-btn:hover{background:rgba(255,255,255,.8)}
+    .apply-btn{background:#0ea5e9;color:#fff}
+    .apply-btn:hover{background:#0284c7}
+
 
 </head>
 </html>
