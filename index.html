@@ -258,3 +258,17 @@
 
       // Remove old page number spans
       bar.querySelectorAll('.pg-num').forEach(el => el.remove());
+
+      // Insert new ones between prev and next
+      for (let i = 1; i <= totalPages; i++) {
+        const span = document.createElement('span');
+        span.className = 'pg-num' + (i === curPage ? ' active' : '');
+        span.dataset.page = i;
+        span.textContent = i;
+        span.addEventListener('click', () => { curPage = i; renderGrid(); refreshPager(); });
+        bar.insertBefore(span, nextBtn);
+      }
+
+      if (prevBtn) prevBtn.disabled = curPage === 1;
+      if (nextBtn) nextBtn.disabled = curPage === totalPages;
+    }
