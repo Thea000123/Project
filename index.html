@@ -251,3 +251,7 @@
       const totalPages = Math.ceil(shown.length / PER_PAGE);
       const bar = document.querySelector('.pagination-bar');
       if (!bar) return;
+
+      // Rebuild page number buttons dynamically
+      const prevBtn = document.getElementById('pg-prev');
+      const nextBtn = document.getElementById('pg-next');
