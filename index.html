@@ -272,3 +272,44 @@
       if (prevBtn) prevBtn.disabled = curPage === 1;
       if (nextBtn) nextBtn.disabled = curPage === totalPages;
     }
+
+    // ── Update meta text ──
+    function updateMeta(query) {
+      const titleEl = document.getElementById('search-result-title');
+      const countEl = document.getElementById('search-result-count');
+      if (titleEl) titleEl.innerHTML = query ? `Result for &lsquo;${query}&rsquo;` : 'All Products';
+      if (countEl) countEl.textContent = `${shown.length} relevant result${shown.length !== 1 ? 's' : ''} found`;
+    }
+
+    // ── Search history helpers ──
+    function loadHistory() {
+      try { return JSON.parse(localStorage.getItem('search-history') || '[]'); } catch(e) { return []; }
+    }
+    function saveHistory(q) {
+      if (!q) return;
+      let h = loadHistory().filter(x => x !== q);
+      h.unshift(q);
+      h = h.slice(0, 8);
+      try { localStorage.setItem('search-history', JSON.stringify(h)); } catch(e) {}
+    }
+    function renderHistory() {
+      const list = document.querySelector('.history-list');
+      if (!list) return;
+      const h = loadHistory();
+      const items = h.map(q => `<li class="history-item" data-q="${q}">${q}</li>`).join('');
+      list.innerHTML = items + '<li class="clear-history">Clear History</li>';
+
+      list.querySelectorAll('.history-item').forEach(li => {
+        li.addEventListener('click', () => {
+          const inp = document.getElementById('inline-search-input');
+          if (inp) { inp.value = li.dataset.q; inp.dispatchEvent(new Event('input')); }
+        });
+      });
+      const clearBtn = list.querySelector('.clear-history');
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          try { localStorage.removeItem('search-history'); } catch(e) {}
+          renderHistory();
+        });
+      }
+    }
