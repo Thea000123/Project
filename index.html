@@ -313,3 +313,9 @@
         });
       }
     }
+
+    // ── Filter logic ──
+    function applyFilters() {
+      const checkedPrices = [...document.querySelectorAll('input[name="price"]:checked')].map(el => el.value);
+      const checkedMaterials = [...document.querySelectorAll('input[name="material"]:checked')].map(el => el.value);
+      const query = document.getElementById('inline-search-input')?.value.trim().toLowerCase() || '';
