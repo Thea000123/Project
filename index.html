@@ -255,3 +255,6 @@
       // Rebuild page number buttons dynamically
       const prevBtn = document.getElementById('pg-prev');
       const nextBtn = document.getElementById('pg-next');
+
+      // Remove old page number spans
+      bar.querySelectorAll('.pg-num').forEach(el => el.remove());
