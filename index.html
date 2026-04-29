@@ -214,3 +214,7 @@
       { id:1, title:'TURTLE MINI COLOURED (B)',price:215.0,  image:'images/image 17.png',  material:'Cast Marble' },
       { id:4, title:'TURTLE RELIEF (B)',       price:215.0,  image:'images/image 20.png',  material:'Alloy' }
     ].map((p, i) => ({...p, uid: i + 1}));
+
+    const PER_PAGE = 6;
+    let curPage = 1;
+    let shown = [...ALL_PRODUCTS];
