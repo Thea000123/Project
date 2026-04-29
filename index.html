@@ -245,3 +245,9 @@
           </button>
         </article>`).join('');
     }
+
+    // ── Dynamic pagination ──
+    function refreshPager() {
+      const totalPages = Math.ceil(shown.length / PER_PAGE);
+      const bar = document.querySelector('.pagination-bar');
+      if (!bar) return;
