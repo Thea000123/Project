@@ -334,3 +334,37 @@
           });
           if (!inPrice) return false;
         }
+        // Material filter
+        if (checkedMaterials.length && !checkedMaterials.includes(p.material)) return false;
+        return true;
+      });
+
+      curPage = 1;
+      renderGrid();
+      refreshPager();
+      updateMeta(query);
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      // ── Initial render ──
+      shown = [...ALL_PRODUCTS];
+      renderGrid();
+      refreshPager();
+      updateMeta('');
+      renderHistory();
+
+      // ── Inline search ──
+      const inp = document.getElementById('inline-search-input');
+      if (inp) {
+        let t;
+        inp.addEventListener('input', e => {
+          clearTimeout(t);
+          t = setTimeout(() => {
+            applyFilters();
+            if (e.target.value.trim()) {
+              saveHistory(e.target.value.trim());
+              renderHistory();
+            }
+          }, 200);
+        });
+      }
