@@ -284,3 +284,17 @@ a:hover {
 .navbar-logo:hover {
   transform: scale(1.02);
 }
+
+.navbar-logo svg {
+  width: 28px;
+  height: 32px;
+}
+
+.navbar-brand {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--stone-800);
+}
