@@ -157,3 +157,21 @@ a {
 a:hover {
   color: var(--sky-800);
 }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.container-sm {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.container-lg {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
