@@ -220,3 +220,32 @@ a:hover {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.95);
 }
+
+/* Three-column navbar layout */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+}
+
+.navbar .header-left,
+.navbar .header-center,
+.navbar .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .header-left {
+  flex-shrink: 0;
+}
+
+.navbar .header-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar .header-right {
+  flex-shrink: 0;
+  gap: 1rem;
+}
