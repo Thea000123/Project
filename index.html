@@ -387,3 +387,16 @@
       // ── Apply filter button ──
       const applyBtn = document.querySelector('.apply-btn');
       if (applyBtn) applyBtn.addEventListener('click', applyFilters);
+
+      // ── Reset filter button ──
+      const resetBtn = document.querySelector('.reset-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => cb.checked = false);
+          applyFilters();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
