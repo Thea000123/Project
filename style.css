@@ -96,3 +96,13 @@
   --transition-base: 200ms;
   --transition-slow: 300ms;
 }
+
+/*
+ * CSS Reset
+ * Remove default styles for cross-browser consistency
+ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
