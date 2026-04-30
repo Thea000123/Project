@@ -383,3 +383,7 @@
           this.parentElement.classList.toggle('active');
         });
       });
+
+      // ── Apply filter button ──
+      const applyBtn = document.querySelector('.apply-btn');
+      if (applyBtn) applyBtn.addEventListener('click', applyFilters);
