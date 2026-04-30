@@ -319,3 +319,18 @@
       const checkedPrices = [...document.querySelectorAll('input[name="price"]:checked')].map(el => el.value);
       const checkedMaterials = [...document.querySelectorAll('input[name="material"]:checked')].map(el => el.value);
       const query = document.getElementById('inline-search-input')?.value.trim().toLowerCase() || '';
+
+      shown = ALL_PRODUCTS.filter(p => {
+        // Text search
+        if (query && !p.title.toLowerCase().includes(query)) return false;
+        // Price filter
+        if (checkedPrices.length) {
+          const inPrice = checkedPrices.some(range => {
+            if (range === '100-200') return p.price >= 100 && p.price <= 200;
+            if (range === '200-600') return p.price > 200 && p.price <= 600;
+            if (range === '600-1000') return p.price > 600 && p.price <= 1000;
+            if (range === '1000+') return p.price > 1000;
+            return false;
+          });
+          if (!inPrice) return false;
+        }
