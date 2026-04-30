@@ -209,3 +209,14 @@ a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--stone-200);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
