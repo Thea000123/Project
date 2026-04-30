@@ -272,3 +272,15 @@ a:hover {
   padding: var(--spacing-md) 0;
   gap: var(--spacing-lg);
 }
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: transform var(--transition-base);
+}
+
+.navbar-logo:hover {
+  transform: scale(1.02);
+}
