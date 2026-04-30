@@ -368,3 +368,11 @@
           }, 200);
         });
       }
+
+      // ── Prev / Next buttons ──
+      document.getElementById('pg-prev')?.addEventListener('click', () => {
+        if (curPage > 1) { curPage--; renderGrid(); refreshPager(); }
+      });
+      document.getElementById('pg-next')?.addEventListener('click', () => {
+        if (curPage < Math.ceil(shown.length / PER_PAGE)) { curPage++; renderGrid(); refreshPager(); }
+      });
