@@ -298,3 +298,15 @@ a:hover {
   letter-spacing: 0.1em;
   color: var(--stone-800);
 }
+
+.navbar-menu {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: flex;
+  }
+}
