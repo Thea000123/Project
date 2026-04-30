@@ -376,3 +376,10 @@
       document.getElementById('pg-next')?.addEventListener('click', () => {
         if (curPage < Math.ceil(shown.length / PER_PAGE)) { curPage++; renderGrid(); refreshPager(); }
       });
+
+      // ── Filter accordion collapse ──
+      document.querySelectorAll('.filter-header').forEach(header => {
+        header.addEventListener('click', function() {
+          this.parentElement.classList.toggle('active');
+        });
+      });
