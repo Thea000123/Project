@@ -1100,3 +1100,9 @@ a:hover {
     gap: var(--spacing-2xl);
   }
 }
+
+.product-gallery {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
