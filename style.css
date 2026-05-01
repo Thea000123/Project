@@ -613,3 +613,17 @@ a:hover {
   opacity: 0;
   transform: translateY(10px);
 }
+
+.card:hover .card-add-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-add-btn:hover {
+  background: var(--sky-500);
+}
+
+.card-add-btn:active {
+  background: var(--sky-600);
+  transform: scale(0.95);
+}
