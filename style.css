@@ -1873,3 +1873,24 @@ a:hover {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.related-item {
+  animation: fadeInUp 0.4s ease;
+  min-width: 0;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .related-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--spacing-md);
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .related-item {
+    flex-shrink: 0;
+    min-width: 14rem;
+    scroll-snap-align: start;
+  }
+}
