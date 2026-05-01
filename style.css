@@ -1008,3 +1008,14 @@ a:hover {
   animation: slideInRight 0.4s ease;
   border-left: 4px solid var(--sky-400);
 }
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
