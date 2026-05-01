@@ -1305,3 +1305,53 @@ a:hover {
 .product-accordion {
   margin-bottom: var(--spacing-lg);
 }
+
+.accordion-item {
+  border-bottom: 1px solid var(--stone-200);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--spacing-md) 0;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--stone-700);
+  cursor: pointer;
+  transition: color var(--transition-base);
+}
+
+.accordion-header:hover {
+  color: var(--stone-900);
+}
+
+.accordion-icon {
+  transition: transform var(--transition-base);
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow) ease-out;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+
+.accordion-body {
+  padding-bottom: var(--spacing-md);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--stone-600);
+}
