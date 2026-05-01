@@ -763,3 +763,14 @@ a:hover {
   color: #fff;
   transform: translateY(-3px);
 }
+
+.ft-copy-mid {
+  font-size: 12px;
+  color: #888;
+}
+
+.ft-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+  align-self: stretch;
+}
