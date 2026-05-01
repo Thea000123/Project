@@ -1508,3 +1508,40 @@ a:hover {
     transform: translateY(0);
   }
 }
+
+.cart-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cart-item-image {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--stone-50);
+  flex-shrink: 0;
+}
+
+.cart-item-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.25rem;
+  transition: transform var(--transition-base);
+}
+
+.cart-item:hover .cart-item-image img {
+  transform: scale(1.05);
+}
+
+.cart-item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
