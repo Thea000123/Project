@@ -1618,3 +1618,14 @@ a:hover {
   color: var(--red-500);
   background: #fef2f2;
 }
+
+.cart-summary {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .cart-summary {
+    width: 340px;
+    flex-shrink: 0;
+  }
+}
