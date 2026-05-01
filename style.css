@@ -1019,3 +1019,38 @@ a:hover {
     opacity: 1;
   }
 }
+
+.toast-success {
+  border-left-color: var(--green-500);
+}
+
+.toast-error {
+  border-left-color: var(--red-500);
+}
+
+.toast-info {
+  border-left-color: var(--sky-500);
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-message {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.toast-close:hover {
+  color: var(--gray-600);
+}
