@@ -531,3 +531,27 @@ a:hover {
 .card:hover {
   box-shadow: var(--shadow-md);
 }
+
+.card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--sky-400);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  transition: transform var(--transition-slow);
+}
