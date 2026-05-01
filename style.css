@@ -1441,3 +1441,19 @@ a:hover {
   max-width: 1024px;
   margin: 0 auto;
 }
+
+.cart-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  text-decoration: none;
+  margin-bottom: var(--spacing-xl);
+  transition: all var(--transition-base);
+}
+
+.cart-back:hover {
+  color: var(--gray-700);
+  transform: translateX(-4px);
+}
