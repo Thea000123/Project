@@ -984,3 +984,27 @@ a:hover {
   color: var(--gray-600);
   transform: scale(1.1);
 }
+
+.toast-container {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toast {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 320px;
+  max-width: 400px;
+  animation: slideInRight 0.4s ease;
+  border-left: 4px solid var(--sky-400);
+}
