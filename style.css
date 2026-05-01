@@ -582,3 +582,34 @@ a:hover {
   transition: color var(--transition-base);
   line-height: 1.4;
 }
+
+.card:hover .card-title {
+  color: var(--sky-600);
+}
+
+.card-price {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--stone-800);
+}
+
+.card-add-btn {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: var(--sky-400);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  opacity: 0;
+  transform: translateY(10px);
+}
