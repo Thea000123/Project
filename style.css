@@ -1727,3 +1727,9 @@ a:hover {
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
 }
+
+@media (min-width: 640px) {
+  .checkout-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
