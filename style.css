@@ -555,3 +555,14 @@ a:hover {
   padding: 1rem;
   transition: transform var(--transition-slow);
 }
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 0.75rem 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
