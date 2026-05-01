@@ -969,3 +969,18 @@ a:hover {
   color: var(--gray-600);
   background: var(--gray-100);
 }
+
+.search-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: var(--gray-400);
+  transition: color 0.15s, transform 0.15s;
+  text-decoration: none;
+}
+
+.search-action-btn:hover {
+  color: var(--gray-600);
+  transform: scale(1.1);
+}
