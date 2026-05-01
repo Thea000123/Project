@@ -1649,3 +1649,11 @@ a:hover {
   padding-bottom: var(--spacing-md);
   border-bottom: 2px solid var(--gray-100);
 }
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin-bottom: 0.75rem;
+}
