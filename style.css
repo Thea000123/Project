@@ -836,3 +836,19 @@ a:hover {
   display: flex;
   opacity: 1;
 }
+
+.search-box {
+  width: 100%;
+  max-width: 48rem;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  margin: 0 var(--spacing-md);
+  transform: translateY(-20px);
+  transition: transform var(--transition-slow);
+}
+
+.search-modal.active .search-box {
+  transform: translateY(0);
+}
