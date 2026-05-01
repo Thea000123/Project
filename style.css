@@ -929,3 +929,20 @@ a:hover {
   object-fit: contain;
   padding: 0.25rem;
 }
+
+.search-result-info {
+  flex: 1;
+}
+
+.search-result-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.25rem;
+}
+
+.search-result-price {
+  font-size: 0.875rem;
+  color: var(--sky-600);
+  font-weight: 600;
+}
