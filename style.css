@@ -310,3 +310,50 @@ a:hover {
     display: flex;
   }
 }
+
+.navbar-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--stone-700);
+  text-decoration: none;
+  transition: color var(--transition-base);
+  white-space: nowrap;
+  position: relative;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--sky-400);
+  transition: width var(--transition-base);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+.navbar-link:hover {
+  color: var(--stone-900);
+}
+
+.navbar-btn {
+  color: var(--stone-600);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  transition: all var(--transition-fast);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-btn:hover {
+  color: var(--stone-900);
+  transform: scale(1.05);
+}
