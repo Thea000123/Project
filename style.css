@@ -1737,3 +1737,22 @@ a:hover {
 .checkout-grid-full {
   grid-column: 1 / -1;
 }
+
+.success-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+}
+
+.success-container {
+  max-width: 500px;
+  text-align: center;
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-xl);
+  animation: scaleIn 0.5s ease;
+}
