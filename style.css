@@ -1244,3 +1244,28 @@ a:hover {
     height: 4rem;
   }
 }
+
+.product-gallery-thumb.active,
+.product-gallery-thumb:hover {
+  border-color: var(--sky-400);
+  box-shadow: var(--shadow-md);
+}
+
+.product-gallery-thumb.active {
+  opacity: 1;
+}
+
+.product-gallery-thumb:hover {
+  opacity: 0.85;
+}
+
+.product-gallery-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  background: var(--stone-50);
+}
