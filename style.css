@@ -1721,3 +1721,9 @@ a:hover {
   color: var(--gray-900);
   margin-bottom: var(--spacing-lg);
 }
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
