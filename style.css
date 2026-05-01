@@ -692,3 +692,25 @@ a:hover {
   accent-color: var(--sky-500);
   cursor: pointer;
 }
+
+.ft {
+  background: #222;
+  padding: 0;
+  margin-top: auto;
+}
+
+.ft-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 0 24px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0 32px;
+  align-items: start;
+}
+
+.ft-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
