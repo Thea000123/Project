@@ -375,3 +375,9 @@ a:hover {
   padding: 0 4px;
   animation: popIn 0.3s ease;
 }
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
