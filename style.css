@@ -419,3 +419,17 @@ a:hover {
     display: none !important;
   }
 }
+
+.navbar-mobile-menu.active {
+  display: flex;
+  max-height: 500px;
+}
+
+.navbar-mobile-menu .navbar-link {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--stone-100);
+}
+
+.navbar-mobile-menu .navbar-link:last-child {
+  border-bottom: none;
+}
