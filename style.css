@@ -1237,3 +1237,10 @@ a:hover {
   flex-shrink: 0;
   padding: 0;
 }
+
+@media (max-width: 768px) {
+  .product-gallery-thumb {
+    width: 4rem;
+    height: 4rem;
+  }
+}
