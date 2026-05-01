@@ -801,3 +801,16 @@ a:hover {
 .ft-nav a:hover {
   color: #fff;
 }
+
+@media (max-width: 900px) {
+  .ft-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .ft-divider {
+    display: none;
+  }
+  .ft-nav {
+    justify-content: flex-start;
+  }
+}
