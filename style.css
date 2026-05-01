@@ -1565,3 +1565,25 @@ a:hover {
   object-fit: contain;
   padding: 0.25rem;
 }
+
+.cart-item-title {
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-decoration: none;
+}
+
+.cart-item-title:hover {
+  color: var(--sky-600);
+}
+
+.cart-item-subtitle {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+}
