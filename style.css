@@ -1106,3 +1106,15 @@ a:hover {
   display: flex;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .product-gallery {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 769px) {
+  .product-gallery {
+    flex-direction: row;
+  }
+}
