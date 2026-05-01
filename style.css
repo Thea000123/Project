@@ -892,3 +892,20 @@ a:hover {
   background: var(--gray-300);
   border-radius: var(--radius-full);
 }
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-result-item:hover {
+  background: var(--sky-50);
+  transform: translateX(4px);
+}
