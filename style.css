@@ -477,3 +477,15 @@ a:hover {
 .btn-primary:active {
   background: var(--sky-400);
 }
+.btn-secondary {
+  background: var(--teal-500);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--teal-600);
+}
+
+.btn-secondary:active {
+  background: var(--teal-700);
+}
