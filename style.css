@@ -500,3 +500,17 @@ a:hover {
   border-color: var(--sky-400);
   color: var(--sky-600);
 }
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-block {
+  width: 100%;
+}
