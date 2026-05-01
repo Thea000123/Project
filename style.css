@@ -1657,3 +1657,12 @@ a:hover {
   color: var(--gray-600);
   margin-bottom: 0.75rem;
 }
+
+.cart-summary-row.total {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--gray-200);
+  margin-top: var(--spacing-md);
+}
