@@ -1223,3 +1223,17 @@ a:hover {
     width: 100%;
   }
 }
+
+.product-gallery-thumb {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid var(--stone-200);
+  transition: all var(--transition-base);
+  background: var(--stone-50);
+  flex-shrink: 0;
+  padding: 0;
+}
