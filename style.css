@@ -1430,3 +1430,14 @@ a:hover {
   justify-content: center;
   gap: 0.5rem;
 }
+
+.cart-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.cart-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
