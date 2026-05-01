@@ -1867,3 +1867,9 @@ a:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
 }
+
+@media (min-width: 768px) {
+  .related-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
