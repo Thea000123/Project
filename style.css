@@ -1629,3 +1629,13 @@ a:hover {
     flex-shrink: 0;
   }
 }
+
+.cart-summary-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 100px;
+  border: 1px solid var(--gray-100);
+}
