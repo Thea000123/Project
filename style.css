@@ -1168,3 +1168,42 @@ a:hover {
   z-index: 10;
   opacity: 0;
 }
+
+.product-gallery-main:hover .gallery-nav-btn {
+  opacity: 1;
+}
+
+.gallery-nav-btn:hover {
+  background: var(--sky-50);
+  color: var(--sky-600);
+  border-color: var(--sky-300);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.gallery-prev {
+  left: 1rem;
+}
+
+.gallery-next {
+  right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .gallery-nav-btn {
+    opacity: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .gallery-prev {
+    left: 0.5rem;
+  }
+  
+  .gallery-next {
+    right: 0.5rem;
+  }
+}
