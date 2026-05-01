@@ -1400,3 +1400,33 @@ a:hover {
 .quantity-btn:active {
   transform: scale(0.95);
 }
+
+.quantity-value {
+  min-width: 2.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--stone-800);
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .product-actions {
+    flex-direction: row;
+  }
+}
+
+.product-delivery {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--stone-400);
+  margin-top: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
