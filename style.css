@@ -1457,3 +1457,23 @@ a:hover {
   color: var(--gray-700);
   transform: translateX(-4px);
 }
+
+.cart-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-xl);
+}
+
+.cart-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 1024px) {
+  .cart-layout {
+    flex-direction: row;
+  }
+}
