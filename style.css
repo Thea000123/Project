@@ -946,3 +946,26 @@ a:hover {
   color: var(--sky-600);
   font-weight: 600;
 }
+
+.search-empty,
+.search-prompt {
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--gray-400);
+}
+
+.search-close {
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.search-close:hover {
+  color: var(--gray-600);
+  background: var(--gray-100);
+}
