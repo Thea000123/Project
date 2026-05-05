@@ -664,3 +664,8 @@
       // Update thumbnail active state
       thumbs.forEach((t, i) => t.classList.toggle('active', i === currentImgIdx));
     }
+
+    // Thumbnail Click Event Binding
+    document.querySelectorAll('.pd-thumb').forEach((btn, i) => {
+      btn.addEventListener('click', () => switchGalleryImage(i));
+    });
