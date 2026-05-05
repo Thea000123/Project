@@ -51,3 +51,11 @@
       margin: 0 auto 1.5rem;
       animation: bounceIn .6s ease both;
     }
+
+    /* Bounce-in animation */
+    @keyframes bounceIn {
+      0% { transform: scale(0); opacity: 0; }
+      55% { transform: scale(1.15); opacity: 1; }
+      75% { transform: scale(.95); }
+      100% { transform: scale(1); }
+    }
