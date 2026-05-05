@@ -135,3 +135,30 @@
       filter: drop-shadow(0 12px 20px rgba(0,0,0,.15));
     }
     #pd-main-img.fade { opacity: 0; }
+
+    /* 
+     * ============================================================
+     * Gallery Navigation Buttons
+     * ============================================================
+     */
+    .pd-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,.85);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #334155;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      transition: background .15s, transform .15s;
+      z-index: 2;
+    }
+    .pd-nav-btn:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+    .pd-nav-prev { left: 10px; }
+    .pd-nav-next { right: 10px; }
