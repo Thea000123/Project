@@ -47,3 +47,19 @@
     }
     .pd-breadcrumb a:hover { color: #0369a1; }
     .pd-breadcrumb span { color: #94a3b8; margin: 0 2px; }
+
+    /* 
+     * ============================================================
+     * Main Layout: Two Columns
+     * Left: Image Gallery / Right: Product Information
+     * ============================================================
+     */
+    .pd-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .pd-layout { grid-template-columns: 1fr; gap: 32px; }
+    }
