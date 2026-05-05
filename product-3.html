@@ -689,3 +689,8 @@
       const v = parseInt(qtyInput.value) || 1;
       if (v > 1) qtyInput.value = v - 1;
     });
+
+    // Plus button click
+    document.getElementById('qty-plus').addEventListener('click', () => {
+      qtyInput.value = (parseInt(qtyInput.value) || 1) + 1;
+    });
