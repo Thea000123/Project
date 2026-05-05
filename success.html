@@ -95,3 +95,17 @@
       color: var(--gray-700);
       animation: fadeInUp .5s ease .1s both;
     }
+
+    /* Fade-in-up animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Bold text in order metadata */
+    .order-meta strong {
+      font-weight: 700;
+      color: var(--gray-900);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
