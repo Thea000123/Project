@@ -669,3 +669,7 @@
     document.querySelectorAll('.pd-thumb').forEach((btn, i) => {
       btn.addEventListener('click', () => switchGalleryImage(i));
     });
+
+    // Gallery Navigation Button Event Binding
+    document.getElementById('gallery-prev').addEventListener('click', () => switchGalleryImage(currentImgIdx - 1));
+    document.getElementById('gallery-next').addEventListener('click', () => switchGalleryImage(currentImgIdx + 1));
