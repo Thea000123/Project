@@ -20,3 +20,30 @@
       margin: 0 auto;
       padding: 1.5rem 1.5rem 4rem;
     }
+
+     /* 
+     * ============================================================
+     * Breadcrumb Navigation
+     * Shows current page location, allows user to return to parent
+     * ============================================================
+     */
+    .pd-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 1.75rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .pd-breadcrumb a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #1e293b;
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .pd-breadcrumb a:hover { color: #0369a1; }
+    .pd-breadcrumb span { color: #94a3b8; margin: 0 2px; }
