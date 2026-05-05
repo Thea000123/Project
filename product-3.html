@@ -694,3 +694,18 @@
     document.getElementById('qty-plus').addEventListener('click', () => {
       qtyInput.value = (parseInt(qtyInput.value) || 1) + 1;
     });
+
+    // Add to Cart Functionality
+    document.getElementById('btn-add-cart').addEventListener('click', () => {
+      const qty = parseInt(qtyInput.value) || 1;
+      // Add product to cart based on selected quantity
+      for (let i = 0; i < qty; i++) {
+        CartUtils.addToCart(CURRENT_PRODUCT);
+      }
+      // Show success notification
+      if (typeof Toast !== 'undefined') {
+        Toast.show(`Added ${qty} × ${CURRENT_PRODUCT.title} to cart`, 'success', {
+          action: { label: 'View Cart', href: 'cart.html' }
+        });
+      }
+    });
