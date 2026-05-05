@@ -626,3 +626,41 @@
       'images/image 35.png'
     ];
     let currentImgIdx = 0;
+
+    /**
+     * ===========================================
+     * switchGalleryImage — Switch Gallery Image
+     * 
+     * Features:
+     * 1. Update main image display
+     * 2. Update thumbnail active state
+     * 3. Support circular switching
+     * 
+     * @param {number} idx - Target image index
+     * @param {boolean} animate - Enable fade animation
+     * ===========================================
+     */
+    function switchGalleryImage(idx, animate = true) {
+      const img = document.getElementById('pd-main-img');
+      const thumbs = document.querySelectorAll('.pd-thumb');
+      
+      // Calculate circular index (go to first when reaching last, vice versa)
+      currentImgIdx = (idx + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+
+      if (animate) {
+        // Add fade out effect
+        img.classList.add('fade');
+        setTimeout(() => {
+          // Change image source
+          img.src = GALLERY_IMAGES[currentImgIdx];
+          // Remove fade out effect
+          img.classList.remove('fade');
+        }, 200);
+      } else {
+        // Change image directly (no animation)
+        img.src = GALLERY_IMAGES[currentImgIdx];
+      }
+
+      // Update thumbnail active state
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === currentImgIdx));
+    }
