@@ -221,3 +221,18 @@
             updatePager(currentPage);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Use window.load to ensure all scripts (including shared.js) have fully run
+        window.addEventListener('load', () => {
+            renderGrid(currentPage);
+            updatePager(currentPage);
+
+            document.getElementById('pg-prev').addEventListener('click', () => goToPage(currentPage - 1));
+            document.getElementById('pg-next').addEventListener('click', () => goToPage(currentPage + 1));
+            document.querySelectorAll('.page-num').forEach(el => {
+                el.addEventListener('click', () => goToPage(parseInt(el.dataset.page)));
+            });
+        });
+    </script>
+</body>
+</html>
