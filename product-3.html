@@ -190,3 +190,42 @@
 
     /* Divider */
     .pd-divider { border: none; border-top: 1px solid #e2e8f0; margin-bottom: 1.25rem; }
+
+    /* 
+     * ============================================================
+     * Accordion Component
+     * Collapsible information panels
+     * ============================================================
+     */
+    .pd-accordion { margin-bottom: 1.5rem; }
+    .pd-acc-item { border-bottom: 1px solid #e2e8f0; }
+    .pd-acc-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .875rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: .9375rem;
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      text-align: left;
+    }
+    .pd-acc-btn svg { transition: transform .2s; flex-shrink: 0; }
+    .pd-acc-item.open .pd-acc-btn svg { transform: rotate(180deg); }
+    .pd-acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+    }
+    .pd-acc-item.open .pd-acc-body { max-height: 200px; }
+    .pd-acc-text {
+      font-family: 'Inter', sans-serif;
+      font-size: .875rem;
+      color: #475569;
+      line-height: 1.7;
+      padding-bottom: 1rem;
+    }
