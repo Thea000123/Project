@@ -494,3 +494,33 @@
   <script src="js/cart.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/shared.js"></script>
+
+  <!--
+    ============================================================
+    Page-specific Inline Script
+    ============================================================
+  -->
+  <script>
+    /**
+     * ===========================================
+     * Page Initialization
+     * DOMContentLoaded event fires when DOM is fully loaded
+     * 
+     
+     * Tasks:
+     * 1. Read cart data from localStorage
+     * 2. Render order item list
+     * 3. Calculate and display order total
+     * 4. Clear cart
+     * ===========================================
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      // 
+      // ===========================================
+      // Read cart data from localStorage
+      // ===========================================
+      let cartItems = [];
+      try {
+        const raw = localStorage.getItem('cart-storage');
+        if (raw) cartItems = JSON.parse(raw);
+      } catch(e) {}
