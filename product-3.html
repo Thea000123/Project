@@ -683,3 +683,9 @@
 
     // Quantity Selector Event Binding
     const qtyInput = document.getElementById('qty-input');
+
+    // Minus button click
+    document.getElementById('qty-minus').addEventListener('click', () => {
+      const v = parseInt(qtyInput.value) || 1;
+      if (v > 1) qtyInput.value = v - 1;
+    });
