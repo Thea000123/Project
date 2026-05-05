@@ -41,3 +41,16 @@
         }
 
         .main-content { background-color: var(--primary-bg); padding-bottom: 50px; }
+
+        .filters {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 10px; padding: 30px 0; max-width: 800px; margin: 0 auto;
+        }
+        .filter-btn {
+            padding: 8px 20px; border-radius: 22px; background: #fff; border: none;
+            font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600;
+            color: #333; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center; text-decoration: none;
+        }
+        .filter-btn.active { background: var(--filter-active); color: #333; }
+
