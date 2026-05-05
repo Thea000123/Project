@@ -73,3 +73,40 @@
       display: flex;
       gap: 14px;
     }
+
+    /* 
+     * ============================================================
+     * Left Thumbnail Strip
+     * ============================================================
+     */
+    .pd-thumbs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pd-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      border: 2px solid transparent;
+      background: #f1f5f9;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .18s, box-shadow .18s;
+    }
+    .pd-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .pd-thumb.active {
+      border-color: #7dd3fc;
+      box-shadow: 0 0 0 3px rgba(125,211,252,.25);
+    }
+    .pd-thumb:hover:not(.active) {
+      border-color: #cbd5e1;
+    }
