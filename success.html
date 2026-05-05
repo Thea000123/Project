@@ -524,3 +524,7 @@
         const raw = localStorage.getItem('cart-storage');
         if (raw) cartItems = JSON.parse(raw);
       } catch(e) {}
+
+      // Get order lines container and total element
+      const linesContainer = document.getElementById('order-lines');
+      const totalEl = document.getElementById('order-total');
