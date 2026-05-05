@@ -528,3 +528,11 @@
       // Get order lines container and total element
       const linesContainer = document.getElementById('order-lines');
       const totalEl = document.getElementById('order-total');
+
+      // If cart is empty, show default demo products
+        if (!cartItems || cartItems.length === 0) {
+        cartItems = [
+          { title: "TURTLE MARBLE", price: 585.0, image: "images/image 18.png", quantity: 1, size: "Small" },
+          { title: "TURTLE ALLOY", price: 585.0, image: "images/image 27.png", quantity: 1, size: "Fixed" }
+        ];
+      }
