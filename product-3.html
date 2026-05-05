@@ -110,3 +110,28 @@
     .pd-thumb:hover:not(.active) {
       border-color: #cbd5e1;
     }
+
+    /* 
+     * ============================================================
+     * Main Image Container
+     * ============================================================
+     */
+    .pd-main-wrap {
+      flex: 1;
+      position: relative;
+      background: #f8fafc;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #pd-main-img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+      transition: opacity .25s ease;
+      filter: drop-shadow(0 12px 20px rgba(0,0,0,.15));
+    }
+    #pd-main-img.fade { opacity: 0; }
