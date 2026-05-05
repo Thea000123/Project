@@ -338,3 +338,25 @@
       align-items: center;
       gap: 6px;
     }
+
+    /* 
+     * ============================================================
+     * Related Products Recommendation
+     * ============================================================
+     */
+    .pd-related { margin-top: 4rem; }
+    .pd-related-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .pd-related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 760px) { .pd-related-grid { grid-template-columns: repeat(2,1fr); } }
