@@ -389,3 +389,25 @@
         <p>Confirmation sent to <a href="mailto:customer@mail.com" id="customer-email">customer@mail.com</a></p>
         <p class="meta-help">Need help? Call 0493-419-827 or email foot@mail.com</p>
       </div>
+
+      <!--
+        ============================================================
+        Order Card
+        Contains order item list
+        ============================================================
+      -->
+      <div class="order-card">
+        <!-- Order card header -->
+        <div class="order-card-header">Your Order</div>
+        
+        <!-- Order line items (dynamically rendered by JS) -->
+        <div id="order-lines">
+          <!-- JS renders order items here -->
+        </div>
+        
+        <!-- Order total row -->
+        <div class="order-total-row">
+          <span class="order-total-label">Total</span>
+          <span class="order-total-value" id="order-total">$0.00</span>
+        </div>
+      </div>
