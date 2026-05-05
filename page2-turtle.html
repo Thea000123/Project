@@ -186,3 +186,22 @@
                     window.location.href = 'product-3.html';
                 });
             });
+
+            // Wire cart buttons
+            grid.querySelectorAll('.cart-btn').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    const card = btn.closest('.product-card');
+                    const product = {
+                        id: parseInt(card.dataset.id),
+                        title: card.dataset.title,
+                        price: parseFloat(card.dataset.price),
+                        image: card.dataset.image
+                    };
+                    CartUtils.addToCart(product);
+                    Toast.show(product.title + ' added to cart', 'success', {
+                        action: { label: 'View Cart', href: 'cart.html' }
+                    });
+                });
+            });
+        }
