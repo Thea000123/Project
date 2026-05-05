@@ -724,3 +724,17 @@
       // Navigate to checkout page
       window.location.href = 'checkout.html';
     });
+
+    // Accordion Interaction
+    // Click header to expand/collapse content
+    // ===========================================
+    document.querySelectorAll('.pd-acc-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        // Close all other accordions
+        document.querySelectorAll('.pd-acc-item').forEach(i => i.classList.remove('open'));
+        // Toggle current accordion state
+        if (!isOpen) item.classList.add('open');
+      });
+    });
