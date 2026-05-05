@@ -178,3 +178,11 @@
                     </div>
                 </div>
             `).join('');
+
+            // Wire card clicks
+            grid.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', e => {
+                    if (e.target.closest('.cart-btn')) return;
+                    window.location.href = 'product-3.html';
+                });
+            });
