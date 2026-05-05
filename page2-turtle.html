@@ -154,3 +154,11 @@
             { id: 215, title: 'TURTLE COLOURED',       price: 415,  image: 'images/image 29.png' },
             { id: 216, title: 'TURTLE JADE CAST',      price: 415,  image: 'images/image 30.png' },
         ];
+
+        const PER_PAGE = 8;
+        let currentPage = 1;
+        const totalPages = Math.ceil(TURTLE_PRODUCTS.length / PER_PAGE);
+
+        function formatPrice(p) {
+            return '$' + p.toLocaleString('en-US', { minimumFractionDigits: 2 });
+        }
