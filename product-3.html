@@ -709,3 +709,18 @@
         });
       }
     });
+
+    // Purchase Now Functionality
+    // Navigate to checkout page
+    // ===========================================
+    document.getElementById('btn-buy').addEventListener('click', () => {
+      const qty = parseInt(qtyInput.value) || 1;
+      // Clear existing cart and add current product
+      try {
+        localStorage.removeItem('cart-storage');
+        const item = { ...CURRENT_PRODUCT, quantity: qty };
+        localStorage.setItem('cart-storage', JSON.stringify([item]));
+      } catch(e) {}
+      // Navigate to checkout page
+      window.location.href = 'checkout.html';
+    });
