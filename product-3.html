@@ -727,8 +727,7 @@
 
     // Accordion Interaction
     // Click header to expand/collapse content
-    // ===========================================
-    document.querySelectorAll('.pd-acc-btn').forEach(btn => {
+     document.querySelectorAll('.pd-acc-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
         const isOpen = item.classList.contains('open');
@@ -738,3 +737,11 @@
         if (!isOpen) item.classList.add('open');
       });
     });
+
+    // Related Products Data
+    const RELATED = [
+      { id:1, title:"TURTLE MINI COLOURED", price:215.0, image:"images/image 17.png" },
+      { id:2, title:"TURTLE MARBLE", price:585.0, image:"images/image 18.png" },
+      { id:4, title:"TURTLE RELIEF", price:215.0, image:"images/image 20.png" },
+      { id:5, title:"TURTLE ALLOY", price:585.0, image:"images/image 27.png" },
+    ];
