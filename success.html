@@ -271,3 +271,36 @@
     .logistics-step:last-child {
       padding-bottom: 0;
     }
+
+    .step-icon-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 36px;
+    }
+
+    .step-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gray-900);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .step-icon.step-done {
+      background: #1a1a1a;
+    }
+
+    .step-connector {
+      width: 2px;
+      flex: 1;
+      background: var(--gray-200);
+      min-height: 28px;
+      margin-top: 4px;
+    }
