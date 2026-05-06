@@ -216,4 +216,45 @@ const CartUtils = {
     }
   },
 
+  removeItem(id) {
+    const item = cart.getItems().find(i => i.id === id);
+    if (item) {
+      const cartItem = document.querySelector(`.cart-item[data-id="${id}"]`);
+      if (cartItem) {
+        cartItem.style.animation = 'fadeOutRight 0.3s ease forwards';
+        setTimeout(() => {
+          cart.removeItem(id);
+          this.updateCartUI();
+          Toast.show(`Removed from cart ${item.title}`, 'success');
+        }, 300);
+      } else {
+        cart.removeItem(id);
+        this.updateCartUI();
+        Toast.show(`Removed from cart ${item.title}`, 'success');
+      }
+    }
+  },
+
+  updateCartUI() {
+    this.updateCartBadge();
+    this.renderCartItems('cart-items');
+    
+    const subtotalElement = document.getElementById('cart-subtotal');
+    const totalElement = document.getElementById('cart-total');
+    const itemCountElement = document.getElementById('cart-item-count');
+    
+    const totalPrice = cart.getTotalPrice();
+    const totalItems = cart.getTotalItems();
+    
+    if (subtotalElement) {
+      subtotalElement.textContent = this.formatPrice(totalPrice);
+    }
+    if (totalElement) {
+      totalElement.textContent = this.formatPrice(totalPrice);
+    }
+    if (itemCountElement) {
+      itemCountElement.textContent = `小计 (${totalItems} 件商品)`;
+    }
+  },
+
 }
