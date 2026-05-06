@@ -208,5 +208,12 @@ const CartUtils = {
     }
   },
 
+  decreaseQuantity(id) {
+    const item = cart.getItems().find(i => i.id === id);
+    if (item) {
+      cart.updateQuantity(id, item.quantity - 1);
+      this.updateCartUI();
+    }
+  },
 
 }
