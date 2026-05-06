@@ -253,8 +253,14 @@ const CartUtils = {
       totalElement.textContent = this.formatPrice(totalPrice);
     }
     if (itemCountElement) {
-      itemCountElement.textContent = `小计 (${totalItems} 件商品)`;
+      itemCountElement.textContent = `Total (${totalItems} item)`;
     }
+  },
+
+  addToCart(productData) {
+    cart.addItem(productData);
+    this.updateCartBadge();
+    
   },
 
 }
