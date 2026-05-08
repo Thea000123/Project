@@ -32,3 +32,13 @@ const Validation = {
       if (!value) return true;
       return value.length <= length;
     },
+
+    min: (value, min) => {
+      if (!value) return true;
+      return parseFloat(value) >= min;
+    },
+    
+    max: (value, max) => {
+      if (!value) return true;
+      return parseFloat(value) <= max;
+    },
