@@ -159,3 +159,24 @@ const Search = {
       this.isOpen = true;
     }
   },
+
+  close() {
+    const modal = document.getElementById('search-modal');
+    if (modal) {
+      modal.classList.remove('active');
+      const input = modal.querySelector('.search-input');
+      if (input) {
+        input.value = '';
+        const results = document.getElementById('search-results');
+        if (results) {
+          results.innerHTML = `
+            <div class="search-prompt">
+              <p>Type to search products</p>
+            </div>
+          `;
+        }
+      }
+      document.body.style.overflow = '';
+      this.isOpen = false;
+    }
+  },
