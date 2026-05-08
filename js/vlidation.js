@@ -53,3 +53,8 @@ const Validation = {
       const cleaned = value.replace(/\s/g, '');
       return /^\d{13,19}$/.test(cleaned);
     },
+
+    cvv: (value) => {
+      if (!value) return true;
+      return /^\d{3,4}$/.test(value);
+    },
