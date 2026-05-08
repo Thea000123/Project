@@ -25,3 +25,14 @@ const Toast = {
       document.body.appendChild(this.container);
     }
   },
+  /*
+   * Show Toast /
+   * message:  / Message content
+   * type: success|error|info
+   * options: {duration, action} /
+   */
+  show(message, type = 'info', options = {}) {
+    this.init();
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
