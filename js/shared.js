@@ -149,3 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (headerPlaceholder) {
     headerPlaceholder.outerHTML = SHARED_HEADER;
   }
+  // Inject footer if placeholder exists  
+  const footerPlaceholder = document.getElementById('shared-footer');
+  if (footerPlaceholder) {
+    footerPlaceholder.outerHTML = SHARED_FOOTER;
+  }
