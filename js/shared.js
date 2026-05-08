@@ -141,3 +141,11 @@ const SHARED_SEARCH_MODAL = `
   </div>
 </div>
 `;
+
+// Inject shared components on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Inject header if placeholder exists
+  const headerPlaceholder = document.getElementById('shared-header');
+  if (headerPlaceholder) {
+    headerPlaceholder.outerHTML = SHARED_HEADER;
+  }
