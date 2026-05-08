@@ -154,3 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (footerPlaceholder) {
     footerPlaceholder.outerHTML = SHARED_FOOTER;
   }
+  // Inject search modal if not already present
+  if (!document.getElementById('search-modal')) {
+    document.body.insertAdjacentHTML('beforeend', SHARED_SEARCH_MODAL);
+  }
