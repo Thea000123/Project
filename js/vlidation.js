@@ -16,3 +16,9 @@ const Validation = {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(value);
     },
+
+    phone: (value) => {
+      if (!value) return true;
+      const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+      return phoneRegex.test(value);
+    },
