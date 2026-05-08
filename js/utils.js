@@ -238,3 +238,16 @@ const Accordion = {
       }
     });
   },
+
+  toggle(accordion) {
+    const isActive = accordion.classList.contains('active');
+    
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      item.classList.remove('active');
+    });
+
+    if (!isActive) {
+      accordion.classList.add('active');
+    }
+  }
+};
