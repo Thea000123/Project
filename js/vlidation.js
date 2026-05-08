@@ -27,3 +27,8 @@ const Validation = {
       if (!value) return true;
       return value.length >= length;
     },
+
+    maxLength: (value, length) => {
+      if (!value) return true;
+      return value.length <= length;
+    },
