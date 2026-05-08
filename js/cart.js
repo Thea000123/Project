@@ -275,3 +275,5 @@ const CartUtils = {
 cart.subscribe(() => {
   CartUtils.updateCartBadge();
 });
+window.CartUtils = CartUtils;
+window.cart = cart;
