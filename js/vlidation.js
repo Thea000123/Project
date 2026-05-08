@@ -176,3 +176,11 @@ const Validation = {
 
     const oldError = field.parentNode.querySelector('.form-error');
     if (oldError) oldError.remove();
+
+    // Also check wrapper parent
+    const wrapper = field.closest('.co-input-with-btn');
+    if (wrapper) {
+      const wrapperError = wrapper.parentNode.querySelector('.form-error');
+      if (wrapperError) wrapperError.remove();
+    }
+  },
