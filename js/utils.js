@@ -308,3 +308,23 @@ const QuantitySelector = {
     });
   }
 };
+
+const ImageGallery = {
+  init() {
+    const gallery = document.querySelector('.product-gallery');
+    if (!gallery) return;
+
+    const mainImage = gallery.querySelector('.product-gallery-main img');
+    const thumbs = gallery.querySelectorAll('.product-gallery-thumb');
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        if (mainImage) {
+          mainImage.src = thumb.dataset.full || thumb.src;
+          mainImage.alt = thumb.alt || 'Product image';
+        }
+        
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
