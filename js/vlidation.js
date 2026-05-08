@@ -10,3 +10,9 @@ const Validation = {
       }
       return value !== null && value !== undefined;
     },
+
+    email: (value) => {
+      if (!value) return true;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(value);
+    },
