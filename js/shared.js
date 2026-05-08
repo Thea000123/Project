@@ -117,3 +117,12 @@ const SHARED_FOOTER = `
   </div>
 </footer>
 `;
+
+const SHARED_SEARCH_MODAL = `
+<div id="search-modal" class="search-modal">
+  <div class="search-box">
+    <div class="search-input-wrapper">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
