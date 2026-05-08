@@ -47,3 +47,9 @@ const Validation = {
       if (!value) return true;
       return new RegExp(regex).test(value);
     },
+
+    cardNumber: (value) => {
+      if (!value) return true;
+      const cleaned = value.replace(/\s/g, '');
+      return /^\d{13,19}$/.test(cleaned);
+    },
