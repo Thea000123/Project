@@ -206,3 +206,22 @@ const Validation = {
 
     return isValid;
   },
+
+  // Initialise form validation
+  initForm(formId, options = {}) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    // Real-time validation
+    const fields = form.querySelectorAll('input, select, textarea');
+    
+    fields.forEach(field => {
+      // Validate on blur (when field loses focus)
+      field.addEventListener('blur', () => {
+        const errors = this.validateField(field);
+        if (errors.length > 0) {
+          this.showFieldError(field, errors);
+        } else {
+          this.clearFieldError(field);
+        }
+      });
