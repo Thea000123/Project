@@ -426,3 +426,13 @@ const LazyLoad = {
     }
   }
 };
+
+const PageTransition = {
+  init() {
+    document.body.style.opacity = '0';
+    requestAnimationFrame(() => {
+      document.body.style.transition = 'opacity 0.3s ease';
+      document.body.style.opacity = '1';
+    });
+  }
+};
