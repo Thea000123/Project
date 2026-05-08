@@ -58,3 +58,10 @@ const Validation = {
       if (!value) return true;
       return /^\d{3,4}$/.test(value);
     },
+
+    expiry: (value) => {
+      if (!value) return true;
+      const expiryRegex = /^(0[1-9]|1[0-2])\s?\/\s?\d{2}$/;
+      return expiryRegex.test(value);
+    }
+  },
