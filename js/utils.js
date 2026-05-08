@@ -86,3 +86,17 @@ const Toast = {
     }, 300);
   }
 };
+
+/*
+ * Search
+ * Features: Product search modal
+ */
+const Search = {
+  isOpen: false,
+  products: [],
+
+  init(products) {
+    this.products = products;
+    this.bindEvents();
+    this.initSearchInput();
+  },
