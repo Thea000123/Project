@@ -162,3 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof Toast !== 'undefined' && Toast.init) {
     Toast.init();
   }
+  // Init Search (header already in DOM at this point)
+  if (typeof Search !== 'undefined' && Search.init) {
+    Search.init(PRODUCTS);
+  }
