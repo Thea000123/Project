@@ -264,3 +264,6 @@ const Validation = {
     return value;
   }
 };
+
+// Export for global use
+window.Validation = Validation;
