@@ -213,3 +213,14 @@ const Search = {
       `;
       return;
     }
+    container.innerHTML = results.map(product => `
+      <a href="product-${product.id}.html" class="search-result-item" onclick="Search.close()">
+        <img src="${product.image}" alt="${product.title}" class="search-result-image" loading="lazy">
+        <div class="search-result-info">
+          <p class="search-result-title">${product.title}</p>
+          <p class="search-result-price">$${product.price.toFixed(2)}</p>
+        </div>
+      </a>
+    `).join('');
+  }
+};
