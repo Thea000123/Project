@@ -359,3 +359,10 @@ const ImageGallery = {
       z-index: 10000;
       cursor: pointer;
     `;
+
+    const content = lightbox.querySelector('.lightbox-content');
+    content.style.cssText = `
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    `;
