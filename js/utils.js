@@ -335,3 +335,13 @@ const ImageGallery = {
       });
     }
   },
+
+  openLightbox(src) {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+      <div class="lightbox-content">
+        <img src="${src}" alt="Enlarged product image">
+        <button class="lightbox-close">&times;</button>
+      </div>
+    `;
