@@ -63,3 +63,11 @@ const Toast = {
     });
 
     this.container.appendChild(toast);
+
+    /* Auto remove after duration */
+    setTimeout(() => {
+      this.remove(toast);
+    }, options.duration || 4000);
+
+    return toast;
+  },
