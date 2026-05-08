@@ -366,3 +366,11 @@ const ImageGallery = {
       max-width: 90%;
       max-height: 90%;
     `;
+
+    const img = lightbox.querySelector('img');
+    img.style.cssText = `
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    `;
