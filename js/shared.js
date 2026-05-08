@@ -29,3 +29,14 @@ const SHARED_HEADER = `
       <span class="navbar-brand">FOOT</span>
     </a>
   </div>
+  <div class="header-center">
+    <nav class="navbar-menu" aria-label="Main Navigation">
+      <a href="main.html" class="navbar-link">Home</a>
+      <a href="faq.html" class="navbar-link">FAQ</a>
+      <a href="pricing.html" class="navbar-link">Pricing</a>
+      <a href="recommended.html" class="navbar-link">Recommended</a>
+      <a href="links.html" class="navbar-link">Links</a>
+      <a href="license.html" class="navbar-link">License</a>
+      <a href="contact.html" class="navbar-link">Contact</a>
+    </nav>
+  </div>
