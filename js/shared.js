@@ -100,3 +100,20 @@ const SHARED_FOOTER = `
         <span class="ft-copy-mid">2017 &copy; Foot's Artworks</span>
       </div>
     </div>
+    <div class="ft-divider"></div>
+    <div class="ft-nav">
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="recommended.html">Recommended</a></li>
+      </ul>
+      <ul>
+        <li><a href="license.html">License</a></li>
+        <li><a href="links.html">Links</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+`;
