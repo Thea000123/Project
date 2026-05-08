@@ -180,3 +180,15 @@ const Search = {
       this.isOpen = false;
     }
   },
+
+  search(query) {
+    if (!query.trim()) {
+      return [];
+    }
+
+    const lowerQuery = query.toLowerCase();
+    return this.products.filter(product => 
+      product.title.toLowerCase().includes(lowerQuery) ||
+      product.description?.toLowerCase().includes(lowerQuery)
+    );
+  },
