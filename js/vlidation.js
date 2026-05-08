@@ -231,3 +231,16 @@ const Validation = {
         this.clearFieldError(field);
       });
     });
+
+
+    // form submition
+    form.addEventListener('submit', (e) => {
+      if (!this.validateForm(formId)) {
+        e.preventDefault();
+        Toast.show('Please check that the form is filled in correctly', 'error');
+      } else if (options.onSubmit) {
+        e.preventDefault();
+        options.onSubmit(new FormData(form));
+      }
+    });
+  },
