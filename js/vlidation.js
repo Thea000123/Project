@@ -244,3 +244,12 @@ const Validation = {
       }
     });
   },
+
+  // Format card number (space-separated every 4 digits)
+  formatCardNumber(input) {
+    let value = input.value.replace(/\s/g, '').replace(/\D/g, '');
+    value = value.substring(0, 16);
+    const formatted = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+    input.value = formatted;
+    return formatted;
+  },
