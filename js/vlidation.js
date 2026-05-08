@@ -184,3 +184,25 @@ const Validation = {
       if (wrapperError) wrapperError.remove();
     }
   },
+
+  // Validate entire form
+  validateForm(formId) {
+    const form = document.getElementById(formId);
+    if (!form) return true;
+
+    let isValid = true;
+    const fields = form.querySelectorAll('input, select, textarea');
+
+    fields.forEach(field => {
+      const errors = this.validateField(field);
+      
+      if (errors.length > 0) {
+        isValid = false;
+        this.showFieldError(field, errors);
+      } else {
+        this.clearFieldError(field);
+      }
+    });
+
+    return isValid;
+  },
