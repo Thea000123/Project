@@ -328,3 +328,10 @@ const ImageGallery = {
         thumb.classList.add('active');
       });
     });
+
+    if (mainImage) {
+      mainImage.addEventListener('click', () => {
+        this.openLightbox(mainImage.src);
+      });
+    }
+  },
