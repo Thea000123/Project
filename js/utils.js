@@ -100,3 +100,9 @@ const Search = {
     this.bindEvents();
     this.initSearchInput();
   },
+
+  bindEvents() {
+    const searchBtn = document.getElementById('search-btn');
+    if (searchBtn) {
+      searchBtn.addEventListener('click', () => this.toggle());
+    }
