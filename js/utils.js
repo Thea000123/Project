@@ -449,3 +449,11 @@ document.addEventListener('DOMContentLoaded', () => {
     CartUtils.updateCartBadge();
   }
 });
+
+window.Toast = Toast;
+window.Search = Search;
+window.Accordion = Accordion;
+window.MobileMenu = MobileMenu;
+window.QuantitySelector = QuantitySelector;
+window.ImageGallery = ImageGallery;
+window.LazyLoad = LazyLoad;
