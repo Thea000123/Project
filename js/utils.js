@@ -13,3 +13,15 @@
  */
 const Toast = {
   container: null,
+  /*
+   * Initialize /
+   * DOM
+   * Create toast container DOM element
+   */
+  init() {
+    if (!this.container) {
+      this.container = document.createElement('div');
+      this.container.className = 'toast-container';
+      document.body.appendChild(this.container);
+    }
+  },
