@@ -436,3 +436,16 @@ const PageTransition = {
     });
   }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  MobileMenu.init();
+  Accordion.init();
+  QuantitySelector.init();
+  ImageGallery.init();
+  LazyLoad.init();
+  PageTransition.init();
+
+  if (window.CartUtils) {
+    CartUtils.updateCartBadge();
+  }
+});
