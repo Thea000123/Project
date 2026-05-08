@@ -57,3 +57,9 @@ const Toast = {
         </svg>
       </button>
     `;
+
+    toast.querySelector('.toast-close').addEventListener('click', () => {
+      this.remove(toast);
+    });
+
+    this.container.appendChild(toast);
