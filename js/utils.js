@@ -143,3 +143,7 @@ const Search = {
       });
     }
   },
+
+  toggle() {
+    this.isOpen ? this.close() : this.open();
+  },
