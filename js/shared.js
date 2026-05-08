@@ -166,3 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof Search !== 'undefined' && Search.init) {
     Search.init(PRODUCTS);
   }
+  // Update cart badge
+  if (typeof CartUtils !== 'undefined') {
+    CartUtils.updateCartBadge();
+  }
+});
+
+window.PRODUCTS = PRODUCTS;
