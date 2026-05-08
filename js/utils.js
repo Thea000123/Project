@@ -106,3 +106,14 @@ const Search = {
     if (searchBtn) {
       searchBtn.addEventListener('click', () => this.toggle());
     }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+      if (e.key === '/' && !this.isOpen && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        this.open();
+      }
+    });
+  },
