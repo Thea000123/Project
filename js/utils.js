@@ -117,3 +117,29 @@ const Search = {
       }
     });
   },
+
+  initSearchInput() {
+    const searchModal = document.getElementById('search-modal');
+    if (!searchModal) return;
+
+    const searchInput = searchModal.querySelector('.search-input');
+    const searchResults = document.getElementById('search-results');
+    
+    if (searchInput && searchResults) {
+      let debounceTimer;
+      
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          const results = this.search(e.target.value);
+          this.renderResults(results, e.target.value);
+        }, 200);
+      });
+
+      searchModal.addEventListener('click', (e) => {
+        if (e.target === searchModal) {
+          this.close();
+        }
+      });
+    }
+  },
