@@ -147,3 +147,15 @@ const Search = {
   toggle() {
     this.isOpen ? this.close() : this.open();
   },
+  open() {
+    const modal = document.getElementById('search-modal');
+    if (modal) {
+      modal.classList.add('active');
+      const input = modal.querySelector('.search-input');
+      if (input) {
+        setTimeout(() => input.focus(), 100);
+      }
+      document.body.style.overflow = 'hidden';
+      this.isOpen = true;
+    }
+  },
