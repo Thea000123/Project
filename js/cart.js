@@ -271,3 +271,7 @@ const CartUtils = {
     return cart.getTotalPrice();
   }
 };
+
+cart.subscribe(() => {
+  CartUtils.updateCartBadge();
+});
