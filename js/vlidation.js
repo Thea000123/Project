@@ -140,3 +140,8 @@ const Validation = {
 
     return errors;
   },
+
+  // Display field errors
+  showFieldError(field, errors) {
+    // Support both .form-group (generic) and checkout-specific selectors
+    const formGroup = field.closest('.form-group, .co-form-group, .co-card-box > div');
