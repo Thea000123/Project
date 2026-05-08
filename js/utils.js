@@ -297,3 +297,14 @@ const QuantitySelector = {
           }
         });
       }
+
+      if (plusBtn && input) {
+        plusBtn.addEventListener('click', () => {
+          const current = parseInt(input.value) || 1;
+          input.value = current + 1;
+          input.dispatchEvent(new Event('change'));
+        });
+      }
+    });
+  }
+};
