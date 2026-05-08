@@ -65,3 +65,19 @@ const Validation = {
       return expiryRegex.test(value);
     }
   },
+
+   // Error Messages
+  messages: {
+    required: 'This field cannot be empty',
+    email: 'Please enter a valid email address',
+    phone: 'Please enter a valid phone number',
+    minLength: (length) => `Must be at least ${length} characters`,
+    maxLength: (length) => `Cannot exceed ${length} characters`,
+    min: (min) => `Value cannot be less than ${min}`,
+    max: (max) => `Value cannot be greater than ${max}`,
+    pattern: 'Invalid format',
+    cardNumber: 'Please enter a valid card number',
+    cvv: 'CVV must be at least 3 digits',
+    expiry: 'Please enter a valid expiry date（MM/YY）'
+  },
+
