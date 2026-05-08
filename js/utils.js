@@ -374,3 +374,16 @@ const ImageGallery = {
       object-fit: contain;
       border-radius: 8px;
     `;
+
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    closeBtn.style.cssText = `
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    `;
