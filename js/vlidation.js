@@ -145,3 +145,9 @@ const Validation = {
   showFieldError(field, errors) {
     // Support both .form-group (generic) and checkout-specific selectors
     const formGroup = field.closest('.form-group, .co-form-group, .co-card-box > div');
+
+    // Always apply error class to the field itself
+    field.classList.remove('input-error');
+    field.classList.add('input-error');
+    field.style.boxShadow = '0 0 0 2px #ef4444';
+    field.style.background = '#fff1f1';
