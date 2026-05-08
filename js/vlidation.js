@@ -167,3 +167,12 @@ const Validation = {
       insertTarget.parentNode.insertBefore(errorElement, insertTarget.nextSibling);
     }
   },
+
+  // Clear field errors
+  clearFieldError(field) {
+    field.classList.remove('input-error');
+    field.style.boxShadow = '';
+    field.style.background = '';
+
+    const oldError = field.parentNode.querySelector('.form-error');
+    if (oldError) oldError.remove();
