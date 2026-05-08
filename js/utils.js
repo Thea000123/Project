@@ -387,3 +387,16 @@ const ImageGallery = {
       cursor: pointer;
       padding: 0.5rem;
     `;
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lightbox.remove();
+    });
+    
+    lightbox.addEventListener('click', () => {
+      lightbox.remove();
+    });
+    
+    document.body.appendChild(lightbox);
+  }
+};
