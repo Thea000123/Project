@@ -158,3 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!document.getElementById('search-modal')) {
     document.body.insertAdjacentHTML('beforeend', SHARED_SEARCH_MODAL);
   }
+  // Initialize Toast first
+  if (typeof Toast !== 'undefined' && Toast.init) {
+    Toast.init();
+  }
