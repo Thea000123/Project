@@ -65,3 +65,18 @@ const SHARED_HEADER = `
   </div>
 </header>
 `;
+
+const SHARED_FOOTER = `
+<footer class="ft">
+  <div class="ft-inner">
+    <div class="ft-left">
+      <a href="main.html" class="ft-logo">
+        <svg width="22" height="26" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="10" cy="26" rx="6" ry="5" fill="#c084fc" />
+          <ellipse cx="20" cy="20" rx="4.5" ry="6" fill="#4ade80" />
+          <circle cx="6" cy="17" r="3" fill="#fb923c" />
+          <circle cx="14" cy="13" r="2.5" fill="#60a5fa" />
+          <circle cx="22" cy="12" r="2" fill="#f472b6" />
+        </svg>
+        <span class="ft-logo-text">FOOT</span>
+      </a>
