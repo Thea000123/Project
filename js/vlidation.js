@@ -22,3 +22,8 @@ const Validation = {
       const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
       return phoneRegex.test(value);
     },
+
+    minLength: (value, length) => {
+      if (!value) return true;
+      return value.length >= length;
+    },
