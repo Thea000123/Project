@@ -253,7 +253,7 @@ const CartUtils = {
       totalElement.textContent = this.formatPrice(totalPrice);
     }
     if (itemCountElement) {
-      itemCountElement.textContent = `Total (${totalItems} item)`;
+      itemCountElement.textContent = `Subtotal (${totalItems} items)`;
     }
   },
 
@@ -263,4 +263,11 @@ const CartUtils = {
     
   },
 
-}
+  getItemCount() {
+    return cart.getTotalItems();
+  },
+
+  getTotalPrice() {
+    return cart.getTotalPrice();
+  }
+};
