@@ -71,3 +71,18 @@ const Toast = {
 
     return toast;
   },
+
+  /*
+   * Remove Toast /
+   * DOM
+   * Animate out and remove from DOM
+   */
+  remove(toast) {
+    toast.style.animation = 'slideOut 0.3s ease forwards';
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 300);
+  }
+};
