@@ -224,3 +224,17 @@ const Search = {
     `).join('');
   }
 };
+
+const Accordion = {
+  init() {
+    const accordions = document.querySelectorAll('.accordion-item');
+    
+    accordions.forEach(accordion => {
+      const header = accordion.querySelector('.accordion-header');
+      if (header) {
+        header.addEventListener('click', () => {
+          this.toggle(accordion);
+        });
+      }
+    });
+  },
