@@ -81,3 +81,50 @@ const Validation = {
     expiry: 'Please enter a valid expiry date（MM/YY）'
   },
 
+  // Validate a single field
+  validateField(field) {
+    const name = field.name || field.id;
+    const value = field.type === 'checkbox' ? field.checked : field.value;
+    const rules = field.dataset.validate ? field.dataset.validate.split('|') : [];
+    const errors = [];
+
+    for (const rule of rules) {
+      const [ruleName, ruleParam] = rule.split(':');
+      
+      let isValid = true;
+      
+      switch (ruleName) {
+        case 'required':
+          isValid = this.rules.required(value);
+          break;
+        case 'email':
+          isValid = this.rules.email(value);
+          break;
+        case 'phone':
+          isValid = this.rules.phone(value);
+          break;
+        case 'minLength':
+          isValid = this.rules.minLength(value, parseInt(ruleParam));
+          break;
+        case 'maxLength':
+          isValid = this.rules.maxLength(value, parseInt(ruleParam));
+          break;
+        case 'min':
+          isValid = this.rules.min(value, parseFloat(ruleParam));
+          break;
+        case 'max':
+          isValid = this.rules.max(value, parseFloat(ruleParam));
+          break;
+        case 'pattern':
+          isValid = this.rules.pattern(value, ruleParam);
+          break;
+        case 'cardNumber':
+          isValid = this.rules.cardNumber(value);
+          break;
+        case 'cvv':
+          isValid = this.rules.cvv(value);
+          break;
+        case 'expiry':
+          isValid = this.rules.expiry(value);
+          break;
+      }
