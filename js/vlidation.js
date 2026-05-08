@@ -42,3 +42,8 @@ const Validation = {
       if (!value) return true;
       return parseFloat(value) <= max;
     },
+
+    pattern: (value, regex) => {
+      if (!value) return true;
+      return new RegExp(regex).test(value);
+    },
