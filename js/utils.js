@@ -278,3 +278,22 @@ const MobileMenu = {
     }
   }
 };
+
+const QuantitySelector = {
+  init() {
+    const selectors = document.querySelectorAll('.quantity-selector');
+    
+    selectors.forEach(selector => {
+      const minusBtn = selector.querySelector('[data-action="minus"]');
+      const plusBtn = selector.querySelector('[data-action="plus"]');
+      const input = selector.querySelector('input[type="number"]');
+      
+      if (minusBtn && input) {
+        minusBtn.addEventListener('click', () => {
+          const current = parseInt(input.value) || 1;
+          if (current > 1) {
+            input.value = current - 1;
+            input.dispatchEvent(new Event('change'));
+          }
+        });
+      }
