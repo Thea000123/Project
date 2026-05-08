@@ -128,3 +128,15 @@ const Validation = {
           isValid = this.rules.expiry(value);
           break;
       }
+
+      if (!isValid) {
+        let message = this.messages[ruleName];
+        if (typeof message === 'function') {
+          message = message(ruleParam);
+        }
+        errors.push(message);
+      }
+    }
+
+    return errors;
+  },
