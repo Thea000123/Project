@@ -225,3 +225,9 @@ const Validation = {
           this.clearFieldError(field);
         }
       });
+
+       // Clear errors on input
+      field.addEventListener('input', () => {
+        this.clearFieldError(field);
+      });
+    });
