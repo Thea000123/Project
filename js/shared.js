@@ -40,3 +40,10 @@ const SHARED_HEADER = `
       <a href="contact.html" class="navbar-link">Contact</a>
     </nav>
   </div>
+  <div class="header-right">
+    <button id="search-btn" class="navbar-btn" aria-label="Search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
