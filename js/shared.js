@@ -133,3 +133,11 @@ const SHARED_SEARCH_MODAL = `
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
       </a>
+      <button class="search-close" onclick="Search.close()">Cancel</button>
+    </div>
+    <div id="search-results" class="search-results">
+      <div class="search-prompt"><p>Type to search products</p></div>
+    </div>
+  </div>
+</div>
+`;
