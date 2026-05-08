@@ -151,3 +151,19 @@ const Validation = {
     field.classList.add('input-error');
     field.style.boxShadow = '0 0 0 2px #ef4444';
     field.style.background = '#fff1f1';
+
+    // Remove old inline error if exists
+    const oldError = field.parentNode.querySelector('.form-error');
+    if (oldError) oldError.remove();
+
+    // Inject error message below the field
+    if (errors.length > 0) {
+      const errorElement = document.createElement('span');
+      errorElement.className = 'form-error';
+      errorElement.style.cssText = 'display:block;font-size:0.72rem;color:#ef4444;margin-top:3px;';
+      errorElement.textContent = errors[0];
+      // Insert after the field (or after its parent wrapper if inside .co-input-with-btn)
+      const insertTarget = field.closest('.co-input-with-btn') || field;
+      insertTarget.parentNode.insertBefore(errorElement, insertTarget.nextSibling);
+    }
+  },
