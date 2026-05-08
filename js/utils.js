@@ -192,3 +192,24 @@ const Search = {
       product.description?.toLowerCase().includes(lowerQuery)
     );
   },
+
+  renderResults(results, query) {
+    const container = document.getElementById('search-results');
+    if (!container) return;
+
+    if (results.length === 0 && query.trim()) {
+      container.innerHTML = `
+        <div class="search-empty">
+          <p>No results found for "${query}"</p>
+        </div>
+      `;
+      return;
+    }
+    if (!query.trim()) {
+      container.innerHTML = `
+        <div class="search-prompt">
+          <p>Type to search products</p>
+        </div>
+      `;
+      return;
+    }
