@@ -2080,3 +2080,11 @@ a:hover {
 .filter-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #64748b; cursor: pointer; user-select: none; transition: color .15s; }
 .filter-header:hover { color: #0369a1; }
 .filter-header svg { transition: transform 0.3s ease; }
+
+/* Rotate arrow when expanded */
+.filter-group.active .filter-header svg { transform: rotate(180deg); color: #0f172a; }
+.filter-group.active .filter-header { color: #0f172a; }
+
+/* dropdown context */
+.filter-content { display: none; padding-bottom: 8px; }
+.filter-group.active .filter-content { display: block; animation: fadeIn 0.3s ease; }
