@@ -2039,3 +2039,19 @@ a:hover {
     border: 1px solid var(--gray-200);
   }
 }
+
+/* Express Checkout */
+.express-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: white;
+  transition: all 0.2s;
+}
+.express-btn:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
