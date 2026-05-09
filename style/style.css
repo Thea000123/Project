@@ -2097,3 +2097,9 @@ a:hover {
 
 /* Divider line */
 .filter-divider { height: 1px; background-color: #0f172a; margin-top: 16px; margin-bottom: 8px; opacity: 0.8; }
+
+/* Search history */
+.history-list { list-style: none; padding: 0; margin: 0; font-family: 'Inter', sans-serif; font-size: 13px; color: #475569; }
+.history-list li { padding: 6px 0; cursor: pointer; transition: color 0.15s; }
+.history-list li:hover { color: #0284c7; text-decoration: underline; }
+.history-list .clear-history { font-size: 11px; color: #ef4444; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
