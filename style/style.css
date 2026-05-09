@@ -2020,3 +2020,22 @@ a:hover {
 @media (max-width: 640px) {
   .min-h-screen { min-height: 100vh; }
 }
+
+@media print {
+  .navbar,
+  .footer,
+  .cart-summary,
+  .product-actions,
+  .checkout-form {
+    display: none !important;
+  }
+
+  .product-detail {
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid var(--gray-200);
+  }
+}
