@@ -2095,3 +2095,5 @@ a:hover {
 .filter-option input[type="checkbox"] { display: none; } 
 .filter-option input[type="checkbox"]:checked + span { font-weight: 700; color: #000; } /* when selected */
 
+/* Divider line */
+.filter-divider { height: 1px; background-color: #0f172a; margin-top: 16px; margin-bottom: 8px; opacity: 0.8; }
