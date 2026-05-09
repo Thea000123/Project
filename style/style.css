@@ -2006,3 +2006,17 @@ a:hover {
 .border-t { border-top: 1px solid var(--gray-200); }
 .border-gray-100 { border-color: var(--gray-100); }
 .border-gray-200 { border-color: var(--gray-200); }
+
+@media (min-width: 640px) {
+  .sm\:inline { display: inline; }
+  .sm\:flex { display: flex; }
+}
+
+@media (min-width: 768px) {
+  .md\:flex { display: flex; }
+  .md\:hidden { display: none; }
+}
+
+@media (max-width: 640px) {
+  .min-h-screen { min-height: 100vh; }
+}
