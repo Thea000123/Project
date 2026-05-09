@@ -1985,3 +1985,24 @@ a:hover {
 .p-5 { padding: 1.25rem; }
 .p-6 { padding: var(--spacing-lg); }
 .p-8 { padding: var(--spacing-xl); }
+.px-4 { padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+.py-4 { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
+.py-8 { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+.py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: var(--spacing-md); }
+.mb-6 { margin-bottom: var(--spacing-lg); }
+.mb-8 { margin-bottom: var(--spacing-xl); }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-4 { margin-top: var(--spacing-md); }
+.mt-6 { margin-top: var(--spacing-lg); }
+.mt-8 { margin-top: 2rem; }
+.pt-4 { padding-top: var(--spacing-md); }
+.pt-6 { padding-top: var(--spacing-lg); }
+.pb-6 { padding-bottom: var(--spacing-lg); }
+.border-t { border-top: 1px solid var(--gray-200); }
+.border-gray-100 { border-color: var(--gray-100); }
+.border-gray-200 { border-color: var(--gray-200); }
