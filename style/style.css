@@ -2088,3 +2088,10 @@ a:hover {
 /* dropdown context */
 .filter-content { display: none; padding-bottom: 8px; }
 .filter-group.active .filter-content { display: block; animation: fadeIn 0.3s ease; }
+
+/* selection display（The design doesn't show checkboxes, so I hide the native checkbox and only display the label text, using bold to indicate selection） */
+.filter-option { display: block; margin-bottom: 14px; font-family: 'Inter', sans-serif; font-size: 13px; color: #1e293b; cursor: pointer; transition: color 0.15s; }
+.filter-option:hover { color: #0284c7; }
+.filter-option input[type="checkbox"] { display: none; } 
+.filter-option input[type="checkbox"]:checked + span { font-weight: 700; color: #000; } /* when selected */
+
