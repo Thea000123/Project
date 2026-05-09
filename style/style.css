@@ -2055,3 +2055,17 @@ a:hover {
   border-color: #d1d5db;
   background: #f9fafb;
 }
+
+/* Save */
+.save-btn {
+  border: none;
+  cursor: pointer;
+}
+
+/* payment background */
+.bg-sky-100 {
+  background-color: #e0f2fe;
+}
+
+/* changed padding */
+.search-sidebar { width: 200px; flex-shrink: 0; } 
