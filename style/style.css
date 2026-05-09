@@ -2103,3 +2103,13 @@ a:hover {
 .history-list li { padding: 6px 0; cursor: pointer; transition: color 0.15s; }
 .history-list li:hover { color: #0284c7; text-decoration: underline; }
 .history-list .clear-history { font-size: 11px; color: #ef4444; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Reset and Apply button */
+.filter-actions { display: flex; gap: 10px; margin-top: 32px; }
+.filter-btn { flex: 1; padding: 10px 0; border-radius: 999px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; }
+.reset-btn { background: rgba(255, 255, 255, 0.5); color: #0f172a; }
+.reset-btn:hover { background: rgba(255, 255, 255, 0.8); }
+.apply-btn { background: rgba(255, 255, 255, 0.5); color: #0f172a; }
+.apply-btn:hover { background: #0f172a; color: #fff; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
