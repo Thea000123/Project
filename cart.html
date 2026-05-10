@@ -170,3 +170,17 @@
       { id: 9, title: "TURTLE JADE CAST", price: 415.0, image: "images/image 31.png" }
     ];
 
+    /**
+     * ===========================================
+     * Page Initialisation
+     * DOMContentLoaded event fires when DOM is fully loaded
+
+     * Executes initialization tasks:
+     * 1. Render cart UI
+     * 2. Subscribe to cart data changes
+     * 3. Set checkout button state
+     * ===========================================
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initial render: cart item list, price subtotal, and quantity badge
+      CartUtils.updateCartUI();
