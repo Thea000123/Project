@@ -184,3 +184,44 @@
     document.addEventListener('DOMContentLoaded', () => {
       // Initial render: cart item list, price subtotal, and quantity badge
       CartUtils.updateCartUI();
+
+       /**
+       * ===========================================
+       * Cart Data Change Subscription
+       * Uses pub-sub pattern: automatically updates UI when cart data changes
+       * cart.subscribe() receives a callback function that is called when cart state changes
+       * ===========================================
+       */
+      cart.subscribe(() => {
+        // Update cart UI (product list, prices, badge)
+        CartUtils.updateCartUI();
+        
+        /**
+         * ===========================================
+         * Dynamic Checkout Button State Control
+         * 
+         * Sets button disabled/enabled state based on cart emptiness
+         * Adjusts button style (opacity, cursor) based on cart emptiness
+         * ===========================================
+         */
+        const checkoutBtn = document.getElementById('checkout-btn');
+        if (checkoutBtn) {
+          const hasItems = cart.getItems().length > 0;
+          
+          // Set button disabled state
+          checkoutBtn.disabled = !hasItems;
+          
+          // Set opacity effect (semi-transparent when disabled)
+          checkoutBtn.style.opacity = hasItems ? '1' : '0.5';
+          
+          // Set cursor style
+          checkoutBtn.style.cursor = hasItems ? 'pointer' : 'not-allowed';
+        }
+      });
+      
+      // Trigger subscription callback once to ensure correct initial button state
+      CartUtils.updateCartUI();
+    });
+  </script>
+</body>
+</html>
