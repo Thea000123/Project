@@ -60,7 +60,17 @@
   --stone-900: #1c1917;
 
   --white: #ffffff;
-  --black: #000000;
+  --off-white: #f7f5f2;
+  --sand: #ede8e1;
+  --stone: #c8c0b4;
+  --ink: #1a1a1a;
+  --ink-light: #3d3d3d;
+  --mist: #d6e8f0;
+  --ocean: #8bbdd4;
+  --ocean-deep: #4a7f9c;
+  --sky: #e8f4f9;
+  --sky-mid: #c2dce9;
+  --blue-label: #2563eb;
 
   --background: var(--white);
   --foreground: var(--gray-900);
@@ -68,6 +78,8 @@
    /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -84,17 +96,24 @@
   --radius-xl: 1rem;
   --radius-2xl: 1.25rem;
   --radius-full: 9999px;
+  --radius-pill: 999px;
+  --radius-card: 16px;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-hover: 0 12px 40px rgba(0,0,0,0.14);
 
   /* Transitions */
   --transition-fast: 150ms;
   --transition-base: 200ms;
   --transition-slow: 300ms;
+
+  /* Layout */
+  --nav-h: 72px;
 }
 
 /*
@@ -227,6 +246,12 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 2rem;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.625rem 1rem;
+  }
 }
 
 .navbar .header-left,
@@ -380,6 +405,16 @@ a:hover {
   0% { transform: scale(0); }
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
+}
+
+.navbar-login-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-login-desktop {
+    display: flex;
+  }
 }
 
 .navbar-mobile-toggle {
@@ -702,7 +737,7 @@ a:hover {
 .ft-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 56px 0 24px;
+  padding: 56px 32px 24px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 0 32px;
@@ -806,12 +841,19 @@ a:hover {
   .ft-inner {
     grid-template-columns: 1fr;
     gap: 32px;
+    padding: 40px 24px 24px;
   }
   .ft-divider {
     display: none;
   }
   .ft-nav {
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .ft-inner {
+    padding: 32px 16px 20px;
   }
 }
 
@@ -963,6 +1005,7 @@ a:hover {
   padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
+  flex-shrink: 0;
 }
 
 .search-close:hover {
@@ -1872,11 +1915,6 @@ a:hover {
   .related-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-
-  .tag-list {
-    flex-wrap: wrap;
-  }
-
 }
 
 .related-item {
@@ -2118,3 +2156,48 @@ a:hover {
 .apply-btn:hover { background: #0f172a; color: #fff; }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ============================================================
+   Page-specific CSS Variables
+   ============================================================ */
+
+/* page1-marine.html theme */
+body.page-marine {
+  --primary-bg: #8c9dc3;
+  --filter-active: #8b9be8;
+  --cart-btn-color: #89c7d6;
+  --text-main: #333333;
+}
+
+/* page2-turtle.html theme */
+body.page-turtle {
+  --primary-bg: #c1e4e0;
+  --filter-active: #8ce8df;
+  --cart-btn-color: #89c7d6;
+  --text-main: #333333;
+}
+
+/* ============================================================
+   Phone（480px and under）
+   ============================================================ */
+@media (max-width: 480px) {
+  .search-modal {
+    padding-top: 3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .search-box {
+    margin: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .search-input-wrapper {
+    padding: 1rem;
+  }
+
+  .search-close {
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+}
