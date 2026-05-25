@@ -156,9 +156,9 @@ const CartUtils = {
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
           </div>
-          <h3 class="empty-state-title">购物车是空的</h3>
-          <p class="empty-state-description">还没有添加任何商品到购物车，快去挑选心仪的商品吧</p>
-          <a href="index.html" class="btn btn-primary">去购物</a>
+          <h3 class="empty-state-title">Your Cart is Empty</h3>
+          <p class="empty-state-description">No products have been added to the shopping cart yet, go and choose your favorite products</p>
+          <a href="index.html" class="btn btn-primary">Go Shopping</a>
         </div>
       `;
       return;

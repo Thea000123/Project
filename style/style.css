@@ -1872,6 +1872,11 @@ a:hover {
   .related-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .tag-list {
+    flex-wrap: wrap;
+  }
+
 }
 
 .related-item {
