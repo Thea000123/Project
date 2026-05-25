@@ -158,7 +158,7 @@ const CartUtils = {
           </div>
           <h3 class="empty-state-title">Your Cart is Empty</h3>
           <p class="empty-state-description">No products have been added to the shopping cart yet, go and choose your favorite products</p>
-          <a href="index.html" class="btn btn-primary">Go Shopping</a>
+          <a href="Medium.html" class="btn btn-primary">Go Shopping</a>
         </div>
       `;
       return;

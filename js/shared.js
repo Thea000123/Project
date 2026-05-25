@@ -18,7 +18,7 @@ const PRODUCTS = [
 const SHARED_HEADER = `
 <header class="navbar">
   <div class="header-left">
-    <a href="main.html" class="navbar-logo" aria-label="FOOT Home">
+    <a href="index.html" class="navbar-logo" aria-label="FOOT Home">
       <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <ellipse cx="10" cy="26" rx="6" ry="5" fill="#c084fc" />
         <ellipse cx="20" cy="20" rx="4.5" ry="6" fill="#4ade80" />
@@ -31,7 +31,7 @@ const SHARED_HEADER = `
   </div>
   <div class="header-center">
     <nav class="navbar-menu" aria-label="Main Navigation">
-      <a href="main.html" class="navbar-link">Home</a>
+      <a href="index.html" class="navbar-link">Home</a>
       <a href="faq.html" class="navbar-link">FAQ</a>
       <a href="pricing.html" class="navbar-link">Pricing</a>
       <a href="recommended.html" class="navbar-link">Recommended</a>
@@ -70,7 +70,7 @@ const SHARED_FOOTER = `
 <footer class="ft">
   <div class="ft-inner">
     <div class="ft-left">
-      <a href="main.html" class="ft-logo">
+      <a href="index.html" class="ft-logo">
         <svg width="22" height="26" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <ellipse cx="10" cy="26" rx="6" ry="5" fill="#c084fc" />
           <ellipse cx="20" cy="20" rx="4.5" ry="6" fill="#4ade80" />
@@ -103,7 +103,7 @@ const SHARED_FOOTER = `
     <div class="ft-divider"></div>
     <div class="ft-nav">
       <ul>
-        <li><a href="main.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="recommended.html">Recommended</a></li>
@@ -127,7 +127,7 @@ const SHARED_SEARCH_MODAL = `
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
       <input type="text" class="search-input" placeholder="Search products..." aria-label="Search products">
-      <a href="index.html" class="search-action-btn" aria-label="Go to Search Page">
+      <a href="search.html" class="search-action-btn" aria-label="Go to Search Page">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
