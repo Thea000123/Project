@@ -4,421 +4,193 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Received — FOOT Artworks</title>
+  <link rel="stylesheet" href="../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/style.css">
-
   <style>
-    /* 
-     * ============================================================
-     * Success Page Wrapper
-     * Centered display, max width 640px
-     * ============================================================
-     */
+    /* ── Success page styles ── */
     .success-wrapper {
       max-width: 640px;
       margin: 0 auto;
       padding: 3rem 1.5rem 5rem;
     }
 
-    /* 
-     * ============================================================
-     * Success Hero Section
-     * Contains success icon, title and subtitle
-     * ============================================================
-     */
-    .success-hero {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    /* 
-     * ============================================================
-     * Success Icon
-     * Green circular background with white checkmark icon
-     * ============================================================
-     */
+    /* Hero */
+    .success-hero { text-align: center; margin-bottom: 2.5rem; }
     .success-check {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green-500), var(--green-600));
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff; display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1.5rem;
       animation: bounceIn .6s ease both;
     }
-
-    /* Bounce-in animation */
     @keyframes bounceIn {
-      0% { transform: scale(0); opacity: 0; }
-      55% { transform: scale(1.15); opacity: 1; }
-      75% { transform: scale(.95); }
+      0%   { transform: scale(0); opacity: 0; }
+      55%  { transform: scale(1.15); opacity: 1; }
+      75%  { transform: scale(.95); }
       100% { transform: scale(1); }
     }
-
-    /* Success page heading */
     .success-heading {
-      font-family: var(--font-serif);
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      letter-spacing: .04em;
-      margin-bottom: .5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.25rem; font-weight: 700;
+      color: #111827; letter-spacing: .04em; margin-bottom: .5rem;
     }
+    .success-sub { font-size: .9375rem; color: #6b7280; }
 
-    /* Success page subtitle */
-    .success-sub {
-      font-size: .9375rem;
-      color: var(--gray-500);
-    }
-
-    /* 
-     * ============================================================
-     * Order Metadata
-     * Contains order number, confirmation email, help information
-     * ============================================================
-     */
+    /* Meta */
     .order-meta {
-      background: var(--sky-50);
-      border: 1px solid var(--sky-100);
-      border-radius: var(--radius-xl);
-      padding: 1.25rem 1.5rem;
+      background: #f0f9ff; border: 1px solid #bae6fd;
+      border-radius: 16px; padding: 1.25rem 1.5rem;
       margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-      font-size: .9375rem;
-      color: var(--gray-700);
+      display: flex; flex-direction: column; gap: .5rem;
+      font-size: .9375rem; color: #374151;
       animation: fadeInUp .5s ease .1s both;
     }
-
-    /* Fade-in-up animation */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
+    .order-meta strong { font-weight: 700; color: #111827; text-decoration: underline; text-underline-offset: 3px; }
+    .order-meta a { font-weight: 600; color: #0369a1; }
+    .order-meta .meta-help { font-size: .8125rem; color: #9ca3af; margin-top: .25rem; }
 
-    /* Bold text in order metadata */
-    .order-meta strong {
-      font-weight: 700;
-      color: var(--gray-900);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* Links in order metadata */
-    .order-meta a {
-      font-weight: 600;
-      color: var(--sky-700);
-    }
-
-     /* Help text */
-    .order-meta .meta-help {
-      font-size: .8125rem;
-      color: var(--gray-400);
-      margin-top: .25rem;
-    }
-
-    /* 
-     * ============================================================
-     * Order Card
-     * Contains order item list and total price
-     * ============================================================
-     */
+    /* Order card */
     .order-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
+      background: #fff; border: 1px solid #e5e7eb;
+      border-radius: 16px; overflow: hidden;
       margin-bottom: 2rem;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
       animation: fadeInUp .5s ease .2s both;
     }
-
-    /* Order card header */
     .order-card-header {
       padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--gray-100);
-      font-size: .75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--sky-600);
+      border-bottom: 1px solid #f3f4f6;
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: #0369a1;
     }
-
-    /* 
-     * ============================================================
-     * Order Line Item
-     * Contains product image, name, specifications and price
-     * ============================================================
-     */
     .order-line {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      display: flex; align-items: center; gap: 1rem;
       padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--gray-100);
+      border-bottom: 1px solid #f3f4f6;
     }
     .order-line:last-of-type { border-bottom: none; }
-
-    /* Order line image */
     .order-line-img {
-      width: 64px;
-      height: 64px;
-      border-radius: var(--radius-lg);
-      background: var(--stone-50);
-      object-fit: contain;
-      padding: .375rem;
-      flex-shrink: 0;
-      border: 1px solid var(--gray-100);
+      width: 64px; height: 64px;
+      border-radius: 10px; background: #f8fafc;
+      object-fit: contain; padding: .375rem;
+      flex-shrink: 0; border: 1px solid #e5e7eb;
     }
-
-    /* Order line information */
-    .order-line-info {
-      flex: 1;
-      font-size: .9375rem;
-      color: var(--gray-700);
-      line-height: 1.5;
-    }
-
-    /* Order line price */
+    .order-line-info { flex: 1; font-size: .9375rem; color: #374151; line-height: 1.5; min-width: 0; }
     .order-line-price {
-      font-family: var(--font-serif);
-      font-size: 1.0625rem;
-      font-weight: 700;
-      color: var(--sky-700);
-      flex-shrink: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.0625rem; font-weight: 700;
+      color: #0369a1; flex-shrink: 0;
     }
-
-    /* 
-     * ============================================================
-     * Order Total Row
-     * Displays order total amount
-     * ============================================================
-     */
     .order-total-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       padding: 1rem 1.5rem;
-      border-top: 2px solid var(--gray-900);
-      background: var(--gray-50);
+      border-top: 2px solid #e5e7eb;
+      font-weight: 700; color: #111827;
     }
+    .order-total-label { font-size: .95rem; }
+    .order-total-value { font-size: 1.1rem; }
 
-    /* Total label */
-    .order-total-label {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--gray-900);
-    }
-
-    /* Total value */
-    .order-total-value {
-      font-family: var(--font-serif);
-      font-size: 1.375rem;
-      font-weight: 700;
-      color: var(--gray-900);
-    }
-
-    /* 
-     * ============================================================
-     * Success Actions
-     * Contains continue shopping and view all products buttons
-     * ============================================================
-     */
-    .success-actions {
-      display: flex;
-      gap: 1rem;
-      animation: fadeInUp .5s ease .3s both;  
-    }
-    /* Fade-in-up animation */
+    /* Logistics steps */
     .logistics-section {
       margin-bottom: 2rem;
-      animation: fadeInUp .5s ease .25s both;
+      animation: fadeInUp .5s ease .3s both;
     }
-
-    .logistics-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--gray-700);
-      margin-bottom: .75rem;
-    }
-
-    .logistics-divider {
-      border: none;
-      border-top: 1px solid var(--gray-200);
-      margin: 0 0 1.25rem 0;
-    }
-
-    .logistics-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .logistics-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
-      position: relative;
-      padding-bottom: 1.5rem;
-    }
-
-    .logistics-step:last-child {
-      padding-bottom: 0;
-    }
-
-    .step-icon-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-shrink: 0;
-      width: 36px;
-    }
-
+    .logistics-title { font-size: .85rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+    .logistics-divider { border: none; border-top: 1px solid #e5e7eb; margin-bottom: 1.25rem; }
+    .logistics-steps { display: flex; flex-direction: column; gap: 0; }
+    .logistics-step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .step-icon-col { display: flex; flex-direction: column; align-items: center; width: 36px; flex-shrink: 0; }
     .step-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--gray-900);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1rem;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #f1f5f9; border: 2px solid #e2e8f0;
+      display: flex; align-items: center; justify-content: center;
+      color: #94a3b8; flex-shrink: 0;
     }
+    .step-icon.step-done { background: #dcfce7; border-color: #22c55e; color: #16a34a; }
+    .step-connector { flex: 1; width: 2px; background: #e2e8f0; min-height: 24px; margin: 4px 0; }
+    .step-content { padding-top: .5rem; padding-bottom: 1.25rem; min-width: 0; }
+    .step-title { font-size: .9375rem; font-weight: 600; color: #111827; margin-bottom: .2rem; }
+    .step-desc { font-size: .875rem; color: #6b7280; line-height: 1.5; }
 
-    .step-icon.step-done {
-      background: #1a1a1a;
+    /* Action buttons */
+    .success-actions {
+      display: flex; gap: .75rem;
+      animation: fadeInUp .5s ease .4s both;
     }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: .875rem 1.5rem; border-radius: 10px; font-size: .9375rem; font-weight: 600; cursor: pointer; border: none; text-decoration: none; transition: background .15s, transform .15s; flex: 1; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: #0f172a; color: #fff; }
+    .btn-primary:hover { background: #1e293b; color: #fff; }
+    .btn-outline { background: #fff; color: #0f172a; border: 1.5px solid #0f172a; }
+    .btn-outline:hover { background: #f8fafc; }
 
-    .step-connector {
-      width: 2px;
-      flex: 1;
-      background: var(--gray-200);
-      min-height: 28px;
-      margin-top: 4px;
-    }
-
-    .logistics-step:last-child .step-connector {
-      display: none;
-    }
-
-    .step-content {
-      flex: 1;
-      padding-top: .25rem;
-    }
-
-    .step-title {
-      font-size: .9375rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: .2rem;
-    }
-
-    .step-desc {
-      font-size: .875rem;
-      color: var(--gray-500);
-      line-height: 1.5;
-    }
-
-    /* Empty order state */
-    .order-empty {
-      text-align: center;
-      padding: 2rem;
-      color: var(--gray-400);
-      font-size: .9375rem;
-    }
-
-    /* 
-     * ============================================================
-     * Responsive Design
-     * Mobile: stack buttons vertically
-     * ============================================================
-     */
-    @media(max-width: 480px) {
+    /* Responsive */
+    @media (max-width: 480px) {
+      .success-wrapper { padding: 1.5rem 1rem 3rem; }
+      .success-check { width: 56px; height: 56px; }
+      .success-heading { font-size: 1.5rem; }
+      .order-meta { padding: 1rem; }
+      .order-card { margin-bottom: 1.5rem; }
+      .order-line { flex-direction: column; align-items: flex-start; gap: 8px; padding: 1rem; }
+      .order-line-img { width: 48px; height: 48px; }
+      .order-total-row { padding: 1rem; }
+      .step-icon-col { width: 28px; }
+      .step-icon { width: 28px; height: 28px; }
+      .step-connector { min-height: 20px; }
       .success-actions { flex-direction: column; }
     }
   </style>
 </head>
-
 <body>
-<!--
-    ============================================================
-    Shared Header
-    ============================================================
-  -->
   <div id="shared-header"></div>
 
   <main>
     <div class="success-wrapper">
-      <!--
-        ============================================================
-        Success Hero Section
-        Contains success icon, title and subtitle
-        ============================================================
-      -->
-      <div class="success-hero">
-        <!-- Success icon (green circle + white checkmark) -->
+      <!-- Hero -->
+      <section class="success-hero" aria-label="Order confirmation">
         <div class="success-check" aria-hidden="true">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </div>
-
-        <!-- Page heading -->
         <h1 class="success-heading">Order Received</h1>
-        
-        <!-- Subtitle -->
         <p class="success-sub">Thank you for purchasing from FOOT Artworks</p>
-      </div>
+      </section>
 
-      <!--
-        ============================================================
-        Order Metadata
-        Displays order number, confirmation email and help information
-        ============================================================
-      -->
-      <div class="order-meta">
-        <p>Your order number is <strong>#0237489874</strong></p>
+      <!-- Meta info -->
+      <div class="order-meta" role="region" aria-label="Order details">
+        <p>Your order number is <strong id="order-number">#0237489874</strong></p>
         <p>Confirmation sent to <a href="mailto:customer@mail.com" id="customer-email">customer@mail.com</a></p>
         <p class="meta-help">Need help? Call 0493-419-827 or email foot@mail.com</p>
       </div>
 
-      <!--
-        ============================================================
-        Order Card
-        Contains order item list
-        ============================================================
-      -->
-      <div class="order-card">
-        <!-- Order card header -->
+      <!-- Order card -->
+      <div class="order-card" role="region" aria-label="Your order items">
         <div class="order-card-header">Your Order</div>
-        
-        <!-- Order line items (dynamically rendered by JS) -->
-        <div id="order-lines">
-          <!-- JS renders order items here -->
-        </div>
-        
-        <!-- Order total row -->
+        <div id="order-lines"></div>
         <div class="order-total-row">
           <span class="order-total-label">Total</span>
           <span class="order-total-value" id="order-total">$0.00</span>
         </div>
       </div>
 
-      <div class="logistics-section">
+      <!-- Logistics -->
+      <section class="logistics-section" aria-label="What happens next">
         <p class="logistics-title">What happens next?</p>
         <hr class="logistics-divider">
         <div class="logistics-steps">
           <div class="logistics-step">
             <div class="step-icon-col">
-              <div class="step-icon step-done"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <div class="step-icon step-done" aria-label="Completed">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
               <div class="step-connector"></div>
             </div>
             <div class="step-content">
@@ -428,7 +200,9 @@
           </div>
           <div class="logistics-step">
             <div class="step-icon-col">
-              <div class="step-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a8.38 8.38 0 0 1 13 0"></path></svg></div>
+              <div class="step-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
+              </div>
               <div class="step-connector"></div>
             </div>
             <div class="step-content">
@@ -438,7 +212,9 @@
           </div>
           <div class="logistics-step">
             <div class="step-icon-col">
-              <div class="step-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
+              <div class="step-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
               <div class="step-connector"></div>
             </div>
             <div class="step-content">
@@ -448,7 +224,9 @@
           </div>
           <div class="logistics-step">
             <div class="step-icon-col">
-              <div class="step-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"></rect><path d="M16 8h4l3 5v3h-7V8z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></div>
+              <div class="step-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
               <div class="step-connector"></div>
             </div>
             <div class="step-content">
@@ -458,7 +236,9 @@
           </div>
           <div class="logistics-step">
             <div class="step-icon-col">
-              <div class="step-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg></div>
+              <div class="step-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              </div>
             </div>
             <div class="step-content">
               <div class="step-title">5. Delivery</div>
@@ -466,119 +246,82 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!--
-        ============================================================
-        Success Actions
-        Allows user to continue shopping or view all products
-        ============================================================
-      -->
-      <div class="success-actions">
-        <!-- Continue Shopping button -->
-        <a href="page1-marine.html" class="btn btn-primary btn-lg" style="flex:1;justify-content:center;">Continue Shopping</a>
-        
-        <!-- View All Products button -->
-        <a href="index.html" class="btn btn-outline btn-lg" style="flex:1;justify-content:center;">Back To Home </a>
-      </div>
+      <!-- Actions -->
+      <nav class="success-actions" aria-label="Continue browsing">
+        <a href="page1-marine.html" class="btn btn-primary">Continue Shopping</a>
+        <a href="main.html" class="btn btn-outline">Back To Home</a>
+      </nav>
     </div>
   </main>
 
-  <!--
-    ============================================================
-    Shared Footer
-    ============================================================
-  -->
   <div id="shared-footer"></div>
 
   <script src="../js/cart.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/shared.js"></script>
-
-  <!--
-    ============================================================
-    Page-specific Inline Script
-    ============================================================
-  -->
   <script>
-    /**
-     * ===========================================
-     * Page Initialization
-     * DOMContentLoaded event fires when DOM is fully loaded
-     * 
-     
-     * Tasks:
-     * 1. Read cart data from localStorage
-     * 2. Render order item list
-     * 3. Calculate and display order total
-     * 4. Clear cart
-     * ===========================================
-     */
     document.addEventListener('DOMContentLoaded', () => {
-      // 
-      // ===========================================
-      // Read cart data from localStorage
-      // ===========================================
-      let cartItems = [];
-      try {
-        const raw = localStorage.getItem('cart-storage');
-        if (raw) cartItems = JSON.parse(raw);
-      } catch(e) {}
+      /* Primary source: sessionStorage written by checkout.html before cart was cleared */
+      let orderData = null;
+      try { orderData = JSON.parse(sessionStorage.getItem('order-data') || 'null'); } catch(e) {}
 
-      // Get order lines container and total element
-      const linesContainer = document.getElementById('order-lines');
-      const totalEl = document.getElementById('order-total');
+      const cartItems = (orderData && Array.isArray(orderData.items) && orderData.items.length)
+        ? orderData.items : [];
+      const total = (orderData && orderData.total) ? orderData.total : 0;
 
-      // If cart is empty, show default demo products
-        if (!cartItems || cartItems.length === 0) {
-        cartItems = [
-          { title: "TURTLE MARBLE", price: 585.0, image: "images/image 18.png", quantity: 1, size: "Small" },
-          { title: "TURTLE ALLOY", price: 585.0, image: "images/image 27.png", quantity: 1, size: "Fixed" }
-        ];
+      /* Populate order number & email */
+      const orderNumEl = document.getElementById('order-number');
+      const emailEl    = document.getElementById('customer-email');
+      if (orderData) {
+        if (orderData.orderNumber && orderNumEl) {
+          orderNumEl.textContent = '#' + orderData.orderNumber;
+        }
+        if (orderData.email && emailEl) {
+          emailEl.textContent = orderData.email;
+          emailEl.href = 'mailto:' + orderData.email;
+        }
+        if (orderData.date) {
+          /* Optionally show order date if element exists */
+          const dateEl = document.getElementById('order-date');
+          if (dateEl) dateEl.textContent = orderData.date;
+        }
       }
 
-      // Calculate order total and render item list
-      let total = 0;
-      
-      // Use map to generate HTML and insert into container
-      linesContainer.innerHTML = cartItems.map(item => {
-        // Calculate line item total
-        const qty = item.quantity || 1;
-        const lineTotal = item.price * qty;
-        
-        // Add to order total
-        total += lineTotal;
-        
-        // Return HTML template for line item
-        return `
-          <div class="order-line">
-            <!-- Product image -->
-            <img class="order-line-img" src="${item.image}" alt="${item.title}">
-            
-            <!-- Product information -->
-            <div class="order-line-info">
-              ${item.title}<br>
-              <!-- Specifications and quantity info -->
-              <span style="font-size:.8125rem;color:var(--gray-400);">
-                ${item.size ? 'Size — ' + item.size : ''} &times;${qty}
-              </span>
-            </div>
-            
-            <!-- Product price -->
-            <div class="order-line-price">$${lineTotal.toFixed(0)}</div>
-          </div>
-        `;
-      }).join('');
+      /* Render order lines */
+      const linesContainer = document.getElementById('order-lines');
+      const totalEl        = document.getElementById('order-total');
 
-      // ===========================================
-      // Display order total
-      // ===========================================
-      totalEl.textContent = '$' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+      if (linesContainer) {
+        if (!cartItems.length) {
+          /* No order data found — user may have arrived directly */
+          linesContainer.innerHTML = `
+            <div class="order-line" style="justify-content:center;color:#9ca3af;font-size:.875rem;padding:1.5rem;">
+              No order details available.
+            </div>`;
+        } else {
+          let computedTotal = 0;
+          linesContainer.innerHTML = cartItems.map(item => {
+            const qty      = item.quantity || 1;
+            const lineTotal = item.price * qty;
+            computedTotal  += lineTotal;
+            return `
+              <div class="order-line">
+                <img class="order-line-img" src="${item.image || '../images/image 18.png'}" alt="${item.title}" loading="lazy">
+                <div class="order-line-info">
+                  ${item.title}<br>
+                  <span style="font-size:.8125rem;color:#9ca3af;">&times;${qty}</span>
+                </div>
+                <div class="order-line-price">$${lineTotal.toFixed(2)}</div>
+              </div>`;
+          }).join('');
+          if (totalEl) totalEl.textContent = '$' + (total || computedTotal).toFixed(2);
+        }
+      }
 
-      // ===========================================
-      // Clear cart after order is placed
-      // ===========================================
-      try { localStorage.removeItem('cart-storage'); } catch(e) {}
+      /* Clear sessionStorage after reading — prevents stale data on refresh */
+      try { sessionStorage.removeItem('order-data'); } catch(e) {}
     });
   </script>
 </body>
