@@ -1,567 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    ================================================
-    Document Head Information
-    charset: UTF-8
-    viewport: responsive layout
-    ================================================
-  -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout — Foot's Artworks</title>
-  <meta name="description" content="Secure Checkout - Complete Your Order">
-  <!--
-    ================================================
-    External Resources Loading
-    1. Google Fonts: Inter (body) + Playfair Display (headings)
-    2. Internal stylesheet styles.css
-    ================================================
-  -->
+  <link rel="stylesheet" href="../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="../style/style.css">
-   <style>
-    /* 
-     * ============================================================
-     * Checkout Page Specific Styles
-     * ============================================================
-     */
+  <style>
+    /* ── Checkout page styles ── */
+    .co-main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
-    /* 
-     * ============================================================
-     * Navbar Layout
-     * Top row: three icons on the right
-     * Bottom row: Logo on left + nav links in center
-     * ============================================================
-     */
-    .co-navbar {
-      border-bottom: 1px solid #e5e7eb;
-      background: #fff;
-    }
-    /* Navbar top area */
-    .co-navbar-top {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 2rem;
-      border-bottom: 1px solid #f3f4f6;
-    }
-    
-    /* Navbar main area */
-    .co-navbar-main {
-      display: flex;
-      align-items: center;
-      padding: 0.75rem 2rem;
-      gap: 2rem;
-    }
-    
-    /* Logo styles */
-    .co-navbar-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #111;
-      letter-spacing: 0.05em;
-      flex-shrink: 0;
-    }
-    
-    /* Navigation links styles */
-    .co-navbar-links {
-      display: flex;
-      gap: 1.75rem;
-      list-style: none;
-    }
-    .co-navbar-links a {
-      text-decoration: none;
-      font-size: 0.875rem;
-      color: #374151;
-      transition: color 0.15s;
-    }
-    .co-navbar-links a:hover { color: #0ea5e9; }
-    
-    /* Icon button styles */
-    .co-icon-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.35rem;
-      color: #374151;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.875rem;
-      text-decoration: none;
-      position: relative;
-    }
-    .co-icon-btn:hover { color: #0ea5e9; }
+    /* Express checkout */
+    .co-express { text-align: center; margin-bottom: 2rem; }
+    .co-express-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #111; }
+    .co-express-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .co-pay-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.5rem; border-radius: 0.5rem; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: filter 0.15s; flex: 1; min-width: 110px; max-width: 200px; }
+    .co-pay-btn.paypal { background: #FFC439; color: #003087; }
+    .co-pay-btn.apple  { background: #000; color: #fff; }
+    .co-pay-btn.google { background: #3c4043; color: #fff; }
+    .co-pay-btn:hover { filter: brightness(0.92); }
 
-    /* 
-     * ============================================================
-     * Main Layout
-     * ============================================================
-     */
-    .co-main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
-     /* 
-     * ============================================================
-     * Express Checkout Section
-     * Provides PayPal/Apple Pay/Google Pay express payment options
-     * ============================================================
-     */
-    .co-express {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .co-express-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #111;
-    }
-    /* Express payment button container */
-    .co-express-btns {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-     /* PayPal button */
-    .co-btn-paypal {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1rem;
-      border-radius: 0.5rem;
-      border: none;
-      background: #FFC439;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #003087;
-      cursor: pointer;
-      transition: filter 0.15s;
-      flex: 1;
-      min-width: 120px;
-      justify-content: center;
-    }
-    .co-btn-paypal:hover { filter: brightness(0.93); }
-    /* Apple Pay button */
-    .co-btn-apple {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 0.5rem;
-      border: none;
-      background: #000;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #fff;
-      cursor: pointer;
-      transition: filter 0.15s;
-      flex: 1;
-      min-width: 120px;
-      justify-content: center;
-    }
-    .co-btn-apple:hover { filter: brightness(1.2); }
-    
-    /* Google Pay button */
-    .co-btn-google {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 0.5rem;
-      border: none;
-      background: #3c4043;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #fff;
-      cursor: pointer;
-      transition: filter 0.15s;
-      flex: 1;
-      min-width: 120px;
-      justify-content: center;
-    }
-    .co-btn-google:hover { filter: brightness(1.15); }
-    /* 
-     * ============================================================
-     * Billing Details Section
-     * ============================================================
-     */
-    .co-section {
-      background: #f0f8ff;
-      border-radius: 0.75rem;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .co-section-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #111;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    /* 
-     * ============================================================
-     * Two-Column Form Grid
-     * ============================================================
-     */
-    .co-form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem 1.5rem;
-    }
-    
-    /* Form group styles */
-    .co-form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    
-    /* Form label styles */
-    .co-label {
-      font-size: 0.78rem;
-      color: #6b7280;
-      font-weight: 500;
-    }
+    /* Form sections */
+    .co-section { background: #f0f8ff; border-radius: 0.75rem; padding: 2rem; margin-bottom: 1.5rem; }
+    .co-section-title { font-size: 1.1rem; font-weight: 700; color: #111; text-align: center; margin-bottom: 1.5rem; }
+    .co-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; }
+    .co-form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .co-label { font-size: 0.78rem; color: #6b7280; font-weight: 500; }
     .co-label .req { color: #ef4444; margin-left: 2px; }
-    
-    /* Form input styles */
-    .co-input {
-      border: none;
-      border-radius: 0.4rem;
-      padding: 0.6rem 0.85rem;
-      font-size: 0.9rem;
-      background: #d4eeff;
-      color: #111;
-      outline: none;
-      transition: box-shadow 0.15s;
-      width: 100%;
-    }
-    .co-input:focus {
-      box-shadow: 0 0 0 2px #38bdf8;
-      background: #e0f2fe;
-    }
-    
-    /* Select box styles */
-    .co-select {
-      border: none;
-      border-radius: 0.4rem;
-      padding: 0.6rem 2rem 0.6rem 0.85rem;
-      font-size: 0.9rem;
-      background: #fff;
-      color: #111;
-      outline: none;
-      border: 1px solid #d1d5db;
-      width: 100%;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-    }
-    .co-select:focus { box-shadow: 0 0 0 2px #38bdf8; }
-    /* 
-     * ============================================================
-     * Input with Import Button
-     * ============================================================
-     */
-    .co-input-with-btn {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .co-import-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.55rem 0.75rem;
-      border-radius: 0.4rem;
-      border: 1px solid #d1d5db;
-      background: #fff;
-      font-size: 0.75rem;
-      color: #6b7280;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.15s;
-      flex-shrink: 0;
-    }
-    .co-import-btn:hover { background: #f3f4f6; }
-    /* 
-     * ============================================================
-     * Save Account Details Button
-     * ============================================================
-     */
-    .co-save-btn {
-      display: block;
-      margin: 1.5rem auto 0;
-      padding: 0.75rem 3rem;
-      border-radius: 2rem;
-      border: none;
-      background: #a5d8f0;
-      color: #111;
-      font-size: 1rem;
-      font-weight: 600;
-      font-family: 'Playfair Display', Georgia, serif;
-      cursor: pointer;
-      transition: background 0.15s;
-      letter-spacing: 0.01em;
-    }
-    .co-save-btn:hover { background: #7ec8e3; }
+    .co-input { border: none; border-radius: 0.4rem; padding: 0.6rem 0.85rem; font-size: 0.9rem; background: #d4eeff; color: #111; outline: none; width: 100%; transition: box-shadow .15s; }
+    .co-input:focus { box-shadow: 0 0 0 2px #38bdf8; }
+    .co-input.error { box-shadow: 0 0 0 2px #ef4444; }
+    .co-select { border: none; border-radius: 0.4rem; padding: 0.6rem 0.85rem; font-size: 0.9rem; background: #d4eeff; color: #111; outline: none; width: 100%; cursor: pointer; }
+    .co-input-with-btn { display: flex; gap: 0.5rem; align-items: center; }
+    .co-input-with-btn .co-input { flex: 1; }
+    .co-import-btn { background: #fff; border: 1px solid #cbd5e1; border-radius: 0.4rem; padding: 0.5rem 0.75rem; font-size: 0.78rem; cursor: pointer; color: #374151; display: flex; align-items: center; gap: 4px; white-space: nowrap; transition: background .15s; flex-shrink: 0; }
+    .co-import-btn:hover { background: #f1f5f9; }
+    .co-save-btn { margin-top: 1.25rem; background: #e0f2fe; border: 1.5px solid #7dd3fc; border-radius: 0.4rem; padding: 0.55rem 1.25rem; font-size: 0.85rem; font-weight: 600; color: #0369a1; cursor: pointer; transition: background .15s; }
+    .co-save-btn:hover { background: #bae6fd; }
+    .co-field-error { font-size: 0.72rem; color: #ef4444; display: none; margin-top: 2px; }
 
-    /* 
-     * ============================================================
-     * Order Summary Section
-     * ============================================================
-     */
-    .co-order-section {
-      padding: 1.5rem 0;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .co-order-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #2563eb;
-      margin-bottom: 1.25rem;
-    }
-    /* 
-     * ============================================================
-     * Two-Column Product Display
-     * ============================================================
-     */
-    .co-order-items {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem 2rem;
-      margin-bottom: 1.25rem;
-    }
-    .co-order-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .co-order-item-name {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #111;
-    }
-    .co-order-item-sub {
-      font-size: 0.78rem;
-      color: #9ca3af;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .co-order-item-price {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #111;
-    }
-    /* 
-     * ============================================================
-     * Delivery + Total Row
-     * ============================================================
-     */
-    .co-order-footer {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e5e7eb;
-    }
-    .co-order-footer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .co-order-footer-label {
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
-    .co-order-footer-value {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #111;
-    }
-    .co-order-total-label {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #111;
-    }
-    .co-order-total-value {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-    }
-    /* 
-     * ============================================================
-     * Card Payment Section
-     * ============================================================
-     */
-    .co-card-section {
-      background: #d4eeff;
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .co-card-section-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 1.25rem;
-    }
-    /* 
-     * ============================================================
-     * Two-column layout: card form left + payment methods right
-     * ============================================================
-     */
-    .co-card-layout {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 1.5rem;
-      align-items: start;
-    }
-    /* 
-     * ============================================================
-     * Left Card Mock Box
-     * ============================================================
-     */
-    .co-card-box {
-      background: #fff;
-      border-radius: 0.6rem;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .co-card-field-label {
-      font-size: 0.75rem;
-      color: #9ca3af;
-      margin-bottom: 0.3rem;
-    }
-    .co-card-input {
-      width: 100%;
-      border: none;
-      background: #e5e7eb;
-      border-radius: 0.35rem;
-      padding: 0.5rem 0.75rem;
-      font-size: 0.88rem;
-      color: #111;
-      outline: none;
-    }
+    /* Order summary */
+    .co-order-section { background: #f0f8ff; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .co-order-title { font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 1rem; }
+    .co-order-item { padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; }
+    .co-order-item:last-child { border-bottom: none; }
+    .co-order-item-name { font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 2px; }
+    .co-order-item-sub { display: flex; justify-content: space-between; font-size: 0.8rem; color: #6b7280; }
+    .co-order-item-price { font-weight: 600; color: #111; }
+    .co-order-footer { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; margin-top: 0.5rem; }
+    .co-order-footer-row { display: flex; justify-content: space-between; font-size: 0.85rem; color: #6b7280; }
+    .co-order-footer-value { font-weight: 600; color: #111; }
+    .co-order-total-label { font-size: 0.9rem; font-weight: 700; color: #111; }
+    .co-order-total-value { font-size: 1rem; font-weight: 700; color: #111; }
+
+    /* Card section */
+    .co-card-section { background: #d4eeff; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .co-card-section-title { font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 1.25rem; }
+    .co-card-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; align-items: start; }
+    .co-card-box { background: #fff; border-radius: 0.6rem; padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; transition: opacity .2s; }
+    .co-card-field-label { font-size: 0.75rem; color: #9ca3af; margin-bottom: 0.3rem; }
+    .co-card-input { width: 100%; border: none; background: #e5e7eb; border-radius: 0.35rem; padding: 0.5rem 0.75rem; font-size: 0.88rem; color: #111; outline: none; transition: box-shadow .15s; }
     .co-card-input:focus { box-shadow: 0 0 0 2px #38bdf8; }
-    .co-card-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-    /* 
-     * ============================================================
-     * Right Payment Method Radio Group
-     * ============================================================
-     */
-    .co-payment-methods {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .co-payment-option {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      cursor: pointer;
-    }
-    .co-payment-option input[type="radio"] {
-      width: 1rem;
-      height: 1rem;
-      accent-color: #374151;
-      flex-shrink: 0;
-    }
-    .co-payment-option span {
-      font-size: 0.88rem;
-      color: #374151;
-    }
-    /* 
-     * ============================================================
-     * Privacy Notice Text
-     * ============================================================
-     */
-    .co-privacy-text {
-      text-align: center;
-      font-size: 0.78rem;
-      color: #6b7280;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .co-postbox-text {
-      text-align: center;
-      font-size: 0.78rem;
-      color: #6b7280;
-      margin-bottom: 1.5rem;
-    }
-    /* 
-     * ============================================================
-     * Place Order Button
-     * ============================================================
-     */
-    .co-place-order-btn {
-      display: block;
-      width: 100%;
-      padding: 1.1rem;
-      border-radius: 0.5rem;
-      border: none;
-      background: #2563eb;
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.15s;
-      margin-bottom: 1.25rem;
-    }
+    .co-card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .co-payment-methods { display: flex; flex-direction: column; gap: 0.75rem; }
+    .co-payment-label { font-size: 0.75rem; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
+    .co-payment-option { display: flex; align-items: center; gap: 0.6rem; cursor: pointer; }
+    .co-payment-option input[type="radio"] { width: 1rem; height: 1rem; accent-color: #374151; flex-shrink: 0; }
+    .co-payment-option span { font-size: 0.88rem; color: #374151; }
+    .co-payment-error { display: none; font-size: 0.72rem; color: #ef4444; margin-top: 4px; }
+    .co-required { color: #ef4444; margin-left: 2px; }
+
+    /* Footer text & submit */
+    .co-privacy-text, .co-postbox-text { text-align: center; font-size: 0.78rem; color: #6b7280; line-height: 1.7; margin-bottom: 1rem; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .co-place-order-btn { display: block; width: 100%; padding: 1.1rem; border-radius: 0.5rem; border: none; background: #2563eb; color: #fff; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; margin-bottom: 1.25rem; }
     .co-place-order-btn:hover { background: #1d4ed8; }
-     /* 
-     * ============================================================
-     * Bottom Notice
-     * ============================================================
-     */
-    .co-notice-text {
-      text-align: center;
-      font-size: 0.75rem;
-      color: #9ca3af;
-      line-height: 1.7;
-      max-width: 720px;
-      margin: 0 auto 2rem;
-    }
-     /* 
-     * ============================================================
-     * Responsive Design
-     * ============================================================
-     */
+    .co-place-order-btn:disabled { background: #93c5fd; cursor: not-allowed; }
+    .co-notice-text { text-align: center; font-size: 0.75rem; color: #9ca3af; line-height: 1.7; max-width: 720px; margin: 0 auto 2rem; }
+
+    /* Responsive */
     @media (max-width: 640px) {
       .co-form-grid { grid-template-columns: 1fr; }
-      .co-order-items { grid-template-columns: 1fr; }
-      .co-order-footer { grid-template-columns: 1fr; }
       .co-card-layout { grid-template-columns: 1fr; }
-      .co-express-btns { flex-direction: column; align-items: center; }
-      .co-navbar-main { padding: 0.75rem 1rem; gap: 1rem; }
-      .co-navbar-top { padding: 0.5rem 1rem; }
+      .co-express-btns { flex-direction: column; align-items: stretch; }
+      .co-pay-btn { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .co-main { padding: 1.25rem 1rem 3rem; }
+      .co-section { padding: 1.25rem 1rem; }
+      .co-card-section { padding: 1.25rem 1rem; }
+      .co-order-section { padding: 1.25rem 1rem; }
     }
   </style>
 </head>
