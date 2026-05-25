@@ -7,410 +7,90 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/style.css">
-
+  <link rel="stylesheet" href="../style.css">
   <style>
-    /* 
-     * ============================================================
-     * Page Layout
-     * ============================================================
-     */
-    .pd-page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem 1.5rem 4rem;
-    }
-
-     /* 
-     * ============================================================
-     * Breadcrumb Navigation
-     * Shows current page location, allows user to return to parent
-     * ============================================================
-     */
-    .pd-breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 1.75rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: #1e293b;
-    }
-    .pd-breadcrumb a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: #1e293b;
-      text-decoration: none;
-      transition: color .15s;
-    }
+    /* product-3 page-specific styles — original product-3.css */
+    .pd-page { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 4rem; }
+    .pd-breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 1.75rem; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #1e293b; }
+    .pd-breadcrumb a { display: flex; align-items: center; gap: 6px; color: #1e293b; text-decoration: none; transition: color .15s; }
     .pd-breadcrumb a:hover { color: #0369a1; }
     .pd-breadcrumb span { color: #94a3b8; margin: 0 2px; }
-
-    /* 
-     * ============================================================
-     * Main Layout: Two Columns
-     * Left: Image Gallery / Right: Product Information
-     * ============================================================
-     */
-    .pd-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-    @media (max-width: 760px) {
-      .pd-layout { grid-template-columns: 1fr; gap: 32px; }
-    }
-
-    /* 
-     * ============================================================
-     * Gallery: Left Thumbnails + Right Main Image
-     * ============================================================
-     */
-    .pd-gallery {
-      display: flex;
-      gap: 14px;
-    }
-
-    /* 
-     * ============================================================
-     * Left Thumbnail Strip
-     * ============================================================
-     */
-    .pd-thumbs {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .pd-thumb {
-      width: 72px;
-      height: 72px;
-      border-radius: 14px;
-      border: 2px solid transparent;
-      background: #f1f5f9;
-      overflow: hidden;
-      cursor: pointer;
-      padding: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color .18s, box-shadow .18s;
-    }
-    .pd-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .pd-thumb.active {
-      border-color: #7dd3fc;
-      box-shadow: 0 0 0 3px rgba(125,211,252,.25);
-    }
-    .pd-thumb:hover:not(.active) {
-      border-color: #cbd5e1;
-    }
-
-    /* 
-     * ============================================================
-     * Main Image Container
-     * ============================================================
-     */
-    .pd-main-wrap {
-      flex: 1;
-      position: relative;
-      background: #f8fafc;
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 1 / 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #pd-main-img {
-      width: 85%;
-      height: 85%;
-      object-fit: contain;
-      transition: opacity .25s ease;
-      filter: drop-shadow(0 12px 20px rgba(0,0,0,.15));
-    }
+    .pd-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .pd-gallery { display: flex; gap: 14px; }
+    .pd-thumbs { display: flex; flex-direction: column; gap: 10px; }
+    .pd-thumb { width: 72px; height: 72px; border-radius: 14px; border: 2px solid transparent; background: #f1f5f9; overflow: hidden; cursor: pointer; padding: 6px; display: flex; align-items: center; justify-content: center; transition: border-color .18s, box-shadow .18s; }
+    .pd-thumb img { width: 100%; height: 100%; object-fit: contain; }
+    .pd-thumb.active { border-color: #7dd3fc; box-shadow: 0 0 0 3px rgba(125,211,252,.25); }
+    .pd-thumb:hover:not(.active) { border-color: #cbd5e1; }
+    .pd-main-wrap { flex: 1; position: relative; background: #f8fafc; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
+    #pd-main-img { width: 85%; height: 85%; object-fit: contain; transition: opacity .25s ease; filter: drop-shadow(0 12px 20px rgba(0,0,0,.15)); }
     #pd-main-img.fade { opacity: 0; }
-
-    /* 
-     * ============================================================
-     * Gallery Navigation Buttons
-     * ============================================================
-     */
-    .pd-nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,.85);
-      border: none;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #334155;
-      box-shadow: 0 2px 8px rgba(0,0,0,.12);
-      transition: background .15s, transform .15s;
-      z-index: 2;
-    }
+    .pd-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.85); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #334155; box-shadow: 0 2px 8px rgba(0,0,0,.12); transition: background .15s, transform .15s; z-index: 2; }
     .pd-nav-btn:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
     .pd-nav-prev { left: 10px; }
     .pd-nav-next { right: 10px; }
-
-    /* 
-     * ============================================================
-     * Product Information Panel
-     * ============================================================
-     */
     .pd-info { display: flex; flex-direction: column; gap: 0; }
-
-    /* Product title */
-    .pd-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: .5rem;
-    }
-
-    /* Product price */
-    .pd-price {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 1.25rem;
-    }
-
-    /* Divider */
+    .pd-title { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: #0f172a; margin-bottom: .5rem; }
+    .pd-price { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin-bottom: 1.25rem; }
     .pd-divider { border: none; border-top: 1px solid #e2e8f0; margin-bottom: 1.25rem; }
-
-    /* 
-     * ============================================================
-     * Accordion Component
-     * Collapsible information panels
-     * ============================================================
-     */
     .pd-accordion { margin-bottom: 1.5rem; }
     .pd-acc-item { border-bottom: 1px solid #e2e8f0; }
-    .pd-acc-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: .875rem 0;
-      font-family: 'Inter', sans-serif;
-      font-size: .9375rem;
-      font-weight: 600;
-      color: #1e293b;
-      cursor: pointer;
-      text-align: left;
-    }
+    .pd-acc-btn { width: 100%; background: none; border: none; display: flex; justify-content: space-between; align-items: center; padding: .875rem 0; font-family: 'Inter', sans-serif; font-size: .9375rem; font-weight: 600; color: #1e293b; cursor: pointer; text-align: left; }
     .pd-acc-btn svg { transition: transform .2s; flex-shrink: 0; }
     .pd-acc-item.open .pd-acc-btn svg { transform: rotate(180deg); }
-    .pd-acc-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .3s ease, padding .3s ease;
-    }
+    .pd-acc-body { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; }
     .pd-acc-item.open .pd-acc-body { max-height: 200px; }
-    .pd-acc-text {
-      font-family: 'Inter', sans-serif;
-      font-size: .875rem;
-      color: #475569;
-      line-height: 1.7;
-      padding-bottom: 1rem;
-    }
-
-    /* 
-     * ============================================================
-     * Quantity Selector
-     * ============================================================
-     */
-    .pd-qty-label {
-      font-family: 'Inter', sans-serif;
-      font-size: .8125rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: #64748b;
-      margin-bottom: .5rem;
-    }
-    .pd-qty-row {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      border: 1.5px solid #e2e8f0;
-      border-radius: 10px;
-      width: fit-content;
-      overflow: hidden;
-      margin-bottom: 1.25rem;
-    }
-    .pd-qty-btn {
-      background: none;
-      border: none;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #334155;
-      transition: background .15s;
-    }
+    .pd-acc-text { font-family: 'Inter', sans-serif; font-size: .875rem; color: #475569; line-height: 1.7; padding-bottom: 1rem; }
+    .pd-qty-label { font-family: 'Inter', sans-serif; font-size: .8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: #64748b; margin-bottom: .5rem; }
+    .pd-qty-row { display: flex; align-items: center; border: 1.5px solid #e2e8f0; border-radius: 10px; width: fit-content; overflow: hidden; margin-bottom: 1.25rem; }
+    .pd-qty-btn { background: none; border: none; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #334155; transition: background .15s; }
     .pd-qty-btn:hover { background: #f1f5f9; }
-    .pd-qty-input {
-      width: 44px;
-      height: 40px;
-      border: none;
-      border-left: 1.5px solid #e2e8f0;
-      border-right: 1.5px solid #e2e8f0;
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: #0f172a;
-      outline: none;
-      background: #fff;
-    }
-
-    /* 
-     * ============================================================
-     * Action Buttons
-     * Add to Cart / Buy Now
-     * ============================================================
-     */
+    .pd-qty-input { width: 44px; height: 40px; border: none; border-left: 1.5px solid #e2e8f0; border-right: 1.5px solid #e2e8f0; text-align: center; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; color: #0f172a; outline: none; background: #fff; -moz-appearance: textfield; }
+    .pd-qty-input::-webkit-outer-spin-button, .pd-qty-input::-webkit-inner-spin-button { -webkit-appearance: none; }
     .pd-actions { display: flex; gap: 12px; margin-bottom: 1rem; }
-
-    /* Add to Cart button */
-    .pd-btn-cart {
-      flex: 1;
-      background: #0f172a;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 13px 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: .875rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: background .18s, transform .15s;
-    }
+    .pd-btn-cart { flex: 1; background: #0f172a; color: #fff; border: none; border-radius: 10px; padding: 13px 20px; font-family: 'Inter', sans-serif; font-size: .875rem; font-weight: 700; letter-spacing: .04em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .18s, transform .15s; }
     .pd-btn-cart:hover { background: #1e293b; transform: translateY(-1px); }
     .pd-btn-cart:active { transform: translateY(0); }
-
-    /* Buy Now button */
-    .pd-btn-buy {
-      flex: 1;
-      background: #fff;
-      color: #0f172a;
-      border: 1.5px solid #0f172a;
-      border-radius: 10px;
-      padding: 13px 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: .875rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      cursor: pointer;
-      transition: background .18s, transform .15s;
-    }
+    .pd-btn-buy { flex: 1; background: #fff; color: #0f172a; border: 1.5px solid #0f172a; border-radius: 10px; padding: 13px 20px; font-family: 'Inter', sans-serif; font-size: .875rem; font-weight: 700; letter-spacing: .04em; cursor: pointer; transition: background .18s, transform .15s; }
     .pd-btn-buy:hover { background: #f8fafc; transform: translateY(-1px); }
-
-    /* Shipping info */
-    .pd-shipping {
-      font-family: 'Inter', sans-serif;
-      font-size: .8125rem;
-      color: #64748b;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* 
-     * ============================================================
-     * Related Products Recommendation
-     * ============================================================
-     */
+    .pd-shipping { font-family: 'Inter', sans-serif; font-size: .8125rem; color: #64748b; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .pd-related { margin-top: 4rem; }
-    .pd-related-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-    .pd-related-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 760px) { .pd-related-grid { grid-template-columns: repeat(2,1fr); } }
-    
-    /* Related product card */
-    .pd-rel-card {
-      background: #f8fafc;
-      border-radius: 16px;
-      padding: 16px 14px 14px;
-      position: relative;
-      cursor: pointer;
-      transition: transform .2s, box-shadow .2s;
-    }
+    .pd-related-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: .06em; }
+    .pd-related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .pd-rel-card { background: #f8fafc; border-radius: 16px; padding: 16px 14px 14px; position: relative; cursor: pointer; transition: transform .2s, box-shadow .2s; }
     .pd-rel-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
     .pd-rel-img { height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
     .pd-rel-img img { max-width: 80%; max-height: 80%; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,.12)); }
     .pd-rel-name { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #0f172a; margin-bottom: 4px; line-height: 1.3; padding-right: 36px; }
     .pd-rel-price { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: #0f172a; }
-    .pd-rel-cart-btn {
-      position: absolute; right: 10px; bottom: 12px;
-      width: 32px; height: 32px; border-radius: 50%;
-      background: #7dd3fc; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: #0c4a6e; transition: background .15s;
-    }
+    .pd-rel-cart-btn { position: absolute; right: 10px; bottom: 12px; width: 32px; height: 32px; border-radius: 50%; background: #7dd3fc; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #0c4a6e; transition: background .15s; }
     .pd-rel-cart-btn:hover { background: #38bdf8; }
+
+    @media (max-width: 768px) {
+      .pd-layout { grid-template-columns: 1fr; gap: 32px; }
+      .pd-related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .pd-page { padding: 1rem 1rem 3rem; }
+      .pd-gallery { flex-direction: column; gap: 12px; }
+      .pd-main-wrap { order: -1; }
+      .pd-thumbs { flex-direction: row; justify-content: center; gap: 8px; }
+      .pd-thumb { width: 64px; aspect-ratio: 1; }
+      .pd-related-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .pd-actions { flex-direction: column; }
+      .pd-btn-cart, .pd-btn-buy { width: 100%; }
+    }
   </style>
 </head>
 <body>
 
-  <!--
-    ============================================================
-    Shared Header
-    Navigation bar dynamically injected by shared.js
-    ============================================================
-  -->
   <div id="shared-header"></div>
 
-  <!--
-    ============================================================
-    Main Content Area
-    ============================================================
-  -->
   <main>
     <div class="pd-page">
 
-      <!--
-        ============================================================
-        Breadcrumb Navigation
-        ============================================================
-      -->
       <div class="pd-breadcrumb">
-        <a href="search.html">
-          <!-- Left arrow icon -->
+        <a href="index.html">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
@@ -419,21 +99,10 @@
         </a>
       </div>
 
-      <!--
-        ============================================================
-        Main Layout
-        Two columns: left gallery + right info
-        ============================================================
-      -->
       <div class="pd-layout">
-         <!--
-          ============================================================
-          Left: Image Gallery
-          Contains thumbnails and main image
-          ============================================================
-        -->
+
+        <!-- Gallery -->
         <div class="pd-gallery">
-            <!-- Thumbnail strip -->
           <div class="pd-thumbs">
             <button class="pd-thumb active" data-index="0">
               <img src="../images/image 32.png" alt="View 1">
@@ -446,42 +115,24 @@
             </button>
           </div>
 
-          <!-- Main image area -->
           <div class="pd-main-wrap">
-            <!-- Previous image button -->
             <button class="pd-nav-btn pd-nav-prev" id="gallery-prev" aria-label="Previous image">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
-            
-            <!-- Product main image -->
             <img id="pd-main-img" src="../images/image 32.png" alt="TURTLE COLOURED">
-            
-            <!-- Next image button -->
             <button class="pd-nav-btn pd-nav-next" id="gallery-next" aria-label="Next image">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
           </div>
         </div>
 
-        <!--
-          ============================================================
-          Right: Product Information
-          Contains title, price, description, quantity selector, action buttons
-          ============================================================
-        -->
+        <!-- Info -->
         <div class="pd-info">
           <h1 class="pd-title">TURTLE COLOURED</h1>
           <p class="pd-price">$415.00</p>
           <hr class="pd-divider">
 
-          <!--
-            ============================================================
-            Accordion Component
-            Collapsible product detail information
-            ============================================================
-          -->
           <div class="pd-accordion">
-            <!-- Description accordion (expanded by default) -->
             <div class="pd-acc-item open">
               <button class="pd-acc-btn">
                 Description
@@ -492,7 +143,6 @@
               </div>
             </div>
 
-            <!-- Size accordion -->
             <div class="pd-acc-item">
               <button class="pd-acc-btn">
                 Size
@@ -503,7 +153,6 @@
               </div>
             </div>
 
-            <!-- Weight accordion -->
             <div class="pd-acc-item">
               <button class="pd-acc-btn">
                 Weight
@@ -515,50 +164,28 @@
             </div>
           </div>
 
-          <!--
-            ============================================================
-            Quantity Selector
-            Allows user to select purchase quantity
-            ============================================================
-          -->
           <p class="pd-qty-label">Quantity</p>
           <div class="pd-qty-row">
-            <!-- Minus button -->
             <button class="pd-qty-btn" id="qty-minus" aria-label="Decrease quantity">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
-            
-            <!-- Quantity input -->
-            <input type="number" id="qty-input" class="pd-qty-input" value="1" min="1" max="99">
-            
-            <!-- Plus button -->
+            <input type="number" id="qty-input" class="pd-qty-input" value="1" min="1" max="99" aria-label="Quantity">
             <button class="pd-qty-btn" id="qty-plus" aria-label="Increase quantity">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
           </div>
 
-          <!--
-            ============================================================
-            Action Buttons
-            Add to Cart / Purchase Now
-            ============================================================
-          -->
           <div class="pd-actions">
-            <!-- Add to Cart button -->
             <button class="pd-btn-cart" id="btn-add-cart">
-              <!-- Shopping cart icon -->
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
               </svg>
               ADD TO CART
             </button>
-            
-            <!-- Purchase Now button -->
             <button class="pd-btn-buy" id="btn-buy">PURCHASE</button>
           </div>
 
-          <!-- Shipping information -->
           <p class="pd-shipping">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             Free shipping across Australia · Secure packaging · Satisfaction guaranteed
@@ -566,202 +193,120 @@
         </div>
       </div>
 
-      <!--
-        ============================================================
-        Related Products Recommendation
-        ============================================================
-      -->
+      <!-- Related -->
       <div class="pd-related">
         <h2 class="pd-related-title">You May Also Like</h2>
-        <!-- Related products grid (dynamically rendered by JS)/ Related product grid (dynamically rendered by JS) -->
         <div class="pd-related-grid" id="related-grid"></div>
       </div>
 
     </div>
   </main>
 
-  <!--
-    ============================================================
-    Shared Footer
-    Dynamically injected by shared.js
-    ============================================================
-  -->
   <div id="shared-footer"></div>
 
-  <!--
-    ============================================================
-    Script Loading
-    Load order: cart utilities → common utilities → shared components
-    ============================================================
-  -->
   <script src="../js/cart.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/shared.js"></script>
-
-  <!--
-    ============================================================
-    Page-specific Inline Script
-    ============================================================
-  -->
   <script>
-    /**
-     * ===========================================
-     * Current Product Data
-     * Defines the product information for current page
-     * ===========================================
-     */
-    const CURRENT_PRODUCT = {
-      id: 7, title: "TURTLE COLOURED", price: 415.0, image: "images/image 29.png"
-    };
+    (function () {
+      const CURRENT_PRODUCT = {
+        id: 7, title: "TURTLE COLOURED", price: 415.0, image: "../images/image 29.png"
+      };
 
-    /**
-     * ===========================================
-     * Gallery Images Data
-     * Contains multiple angle images of the product
-     * ===========================================
-     */
-    const GALLERY_IMAGES = [
-      'images/image 32.png',
-      'images/image 33.png',
-      'images/image 35.png'
-    ];
-    let currentImgIdx = 0;
+      const GALLERY_IMAGES = [
+        '../images/image 32.png',
+        '../images/image 33.png',
+        '../images/image 35.png'
+      ];
+      let currentImgIdx = 0;
 
-    /**
-     * ===========================================
-     * switchGalleryImage — Switch Gallery Image
-     * 
-     * Features:
-     * 1. Update main image display
-     * 2. Update thumbnail active state
-     * 3. Support circular switching
-     * 
-     * @param {number} idx - Target image index
-     * @param {boolean} animate - Enable fade animation
-     * ===========================================
-     */
-    function switchGalleryImage(idx, animate = true) {
-      const img = document.getElementById('pd-main-img');
-      const thumbs = document.querySelectorAll('.pd-thumb');
-      
-      // Calculate circular index (go to first when reaching last, vice versa)
-      currentImgIdx = (idx + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
-
-      if (animate) {
-        // Add fade out effect
-        img.classList.add('fade');
-        setTimeout(() => {
-          // Change image source
+      function switchGalleryImage(idx, animate) {
+        animate = (animate === undefined) ? true : animate;
+        const img    = document.getElementById('pd-main-img');
+        const thumbs = document.querySelectorAll('.pd-thumb');
+        currentImgIdx = (idx + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+        if (animate) {
+          img.classList.add('fade');
+          setTimeout(() => { img.src = GALLERY_IMAGES[currentImgIdx]; img.classList.remove('fade'); }, 200);
+        } else {
           img.src = GALLERY_IMAGES[currentImgIdx];
-          // Remove fade out effect
-          img.classList.remove('fade');
-        }, 200);
-      } else {
-        // Change image directly (no animation)
-        img.src = GALLERY_IMAGES[currentImgIdx];
+        }
+        thumbs.forEach((t, i) => t.classList.toggle('active', i === currentImgIdx));
       }
 
-      // Update thumbnail active state
-      thumbs.forEach((t, i) => t.classList.toggle('active', i === currentImgIdx));
-    }
+      document.querySelectorAll('.pd-thumb').forEach((btn, i) => {
+        btn.addEventListener('click', () => switchGalleryImage(i));
+      });
+      document.getElementById('gallery-prev').addEventListener('click', () => switchGalleryImage(currentImgIdx - 1));
+      document.getElementById('gallery-next').addEventListener('click', () => switchGalleryImage(currentImgIdx + 1));
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft')  switchGalleryImage(currentImgIdx - 1);
+        if (e.key === 'ArrowRight') switchGalleryImage(currentImgIdx + 1);
+      });
 
-    // Thumbnail Click Event Binding
-    document.querySelectorAll('.pd-thumb').forEach((btn, i) => {
-      btn.addEventListener('click', () => switchGalleryImage(i));
-    });
+      const qtyInput = document.getElementById('qty-input');
+      document.getElementById('qty-minus').addEventListener('click', () => {
+        const v = parseInt(qtyInput.value) || 1;
+        if (v > 1) qtyInput.value = v - 1;
+      });
+      document.getElementById('qty-plus').addEventListener('click', () => {
+        qtyInput.value = (parseInt(qtyInput.value) || 1) + 1;
+      });
+      qtyInput.addEventListener('change', () => {
+        let v = parseInt(qtyInput.value);
+        if (isNaN(v) || v < 1) v = 1;
+        if (v > 99) v = 99;
+        qtyInput.value = v;
+      });
 
-    // Gallery Navigation Button Event Binding
-    document.getElementById('gallery-prev').addEventListener('click', () => switchGalleryImage(currentImgIdx - 1));
-    document.getElementById('gallery-next').addEventListener('click', () => switchGalleryImage(currentImgIdx + 1));
-
-    // Keyboard Navigation Support
-    // Support left/right arrow keys to switch images
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') switchGalleryImage(currentImgIdx - 1);
-      if (e.key === 'ArrowRight') switchGalleryImage(currentImgIdx + 1);
-    });
-
-    // Quantity Selector Event Binding
-    const qtyInput = document.getElementById('qty-input');
-
-    // Minus button click
-    document.getElementById('qty-minus').addEventListener('click', () => {
-      const v = parseInt(qtyInput.value) || 1;
-      if (v > 1) qtyInput.value = v - 1;
-    });
-
-    // Plus button click
-    document.getElementById('qty-plus').addEventListener('click', () => {
-      qtyInput.value = (parseInt(qtyInput.value) || 1) + 1;
-    });
-
-    // Add to Cart Functionality
-    document.getElementById('btn-add-cart').addEventListener('click', () => {
-      const qty = parseInt(qtyInput.value) || 1;
-      // Add product to cart based on selected quantity
-      for (let i = 0; i < qty; i++) {
-        CartUtils.addToCart(CURRENT_PRODUCT);
-      }
-      // Show success notification
-      if (typeof Toast !== 'undefined') {
-        Toast.show(`Added ${qty} × ${CURRENT_PRODUCT.title} to cart`, 'success', {
+      document.getElementById('btn-add-cart').addEventListener('click', () => {
+        const qty = parseInt(qtyInput.value) || 1;
+        for (let i = 0; i < qty; i++) CartUtils.addToCart(CURRENT_PRODUCT);
+        Toast.show('Added ' + qty + ' × ' + CURRENT_PRODUCT.title + ' to cart', 'success', {
           action: { label: 'View Cart', href: 'cart.html' }
         });
-      }
-    });
-
-    // Purchase Now Functionality
-    // Navigate to checkout page
-    // ===========================================
-    document.getElementById('btn-buy').addEventListener('click', () => {
-      const qty = parseInt(qtyInput.value) || 1;
-      // Clear existing cart and add current product
-      try {
-        localStorage.removeItem('cart-storage');
-        const item = { ...CURRENT_PRODUCT, quantity: qty };
-        localStorage.setItem('cart-storage', JSON.stringify([item]));
-      } catch(e) {}
-      // Navigate to checkout page
-      window.location.href = 'checkout.html';
-    });
-
-    // Accordion Interaction
-    // Click header to expand/collapse content
-     document.querySelectorAll('.pd-acc-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isOpen = item.classList.contains('open');
-        // Close all other accordions
-        document.querySelectorAll('.pd-acc-item').forEach(i => i.classList.remove('open'));
-        // Toggle current accordion state
-        if (!isOpen) item.classList.add('open');
       });
-    });
 
-    // Related Products Data
-    const RELATED = [
-      { id:1, title:"TURTLE MINI COLOURED", price:215.0, image:"images/image 17.png" },
-      { id:2, title:"TURTLE MARBLE", price:585.0, image:"images/image 18.png" },
-      { id:4, title:"TURTLE RELIEF", price:215.0, image:"images/image 20.png" },
-      { id:5, title:"TURTLE ALLOY", price:585.0, image:"images/image 27.png" },
-    ];
+      document.getElementById('btn-buy').addEventListener('click', () => {
+        const qty = parseInt(qtyInput.value) || 1;
+        for (let i = 0; i < qty; i++) CartUtils.addToCart(CURRENT_PRODUCT);
+        Toast.show('Redirecting to checkout…', 'success');
+        setTimeout(() => { window.location.href = 'checkout.html'; }, 700);
+      });
 
-     // Render Related Products Grid
-    document.getElementById('related-grid').innerHTML = RELATED.map(p => `
-      <article class="pd-rel-card" onclick="window.location.href='product-3.html'" role="button" tabindex="0">
-        <div class="pd-rel-img"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
-        <div class="pd-rel-name">${p.title}</div>
-        <div class="pd-rel-price">$${p.price.toFixed(2)}</div>
-        <button class="pd-rel-cart-btn"
-          onclick="event.stopPropagation();CartUtils&&CartUtils.addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')})"
-          aria-label="Add to cart">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-          </svg>
-        </button>
-      </article>
-    `).join('');
+      document.querySelectorAll('.pd-acc-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.pd-acc-item').forEach(i => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+
+      const RELATED = [
+        { id: 1, title: "TURTLE MINI COLOURED", price: 215.0, image: "../images/image 17.png" },
+        { id: 2, title: "TURTLE MARBLE",        price: 585.0, image: "../images/image 18.png" },
+        { id: 4, title: "TURTLE RELIEF",        price: 215.0, image: "../images/image 20.png" },
+        { id: 5, title: "TURTLE ALLOY",         price: 585.0, image: "../images/image 27.png" }
+      ];
+
+      document.getElementById('related-grid').innerHTML = RELATED.map(p => `
+        <article class="pd-rel-card" onclick="window.location.href='product-3.html'" role="button" tabindex="0"
+          onkeydown="if(event.key==='Enter')window.location.href='product-3.html'">
+          <div class="pd-rel-img"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
+          <div class="pd-rel-name">${p.title}</div>
+          <div class="pd-rel-price">$${p.price.toFixed(2)}</div>
+          <button class="pd-rel-cart-btn"
+            onclick="event.stopPropagation();CartUtils&&CartUtils.addToCart(${JSON.stringify(p).replace(/"/g,'&quot;')});Toast&&Toast.show('${p.title} added','success')"
+            aria-label="Add ${p.title} to cart">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </button>
+        </article>
+      `).join('');
+    })();
   </script>
 </body>
 </html>
