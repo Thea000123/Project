@@ -1,134 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medium - FOOT Gallery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css">
-    <style>
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        main { padding: 40px 0 80px 0; }
-        
-        .page-header { display: flex; align-items: center; justify-content: center; position: relative; margin-top: 30px; margin-bottom: 40px; }
-        .back-btn { position: absolute; left: 0; font-size: 24px; cursor: pointer; }
-        .page-title { font-family: 'Times New Roman', Times, serif; font-size: 28px; font-weight: normal; }
-
-        .toggle-wrapper { display: flex; gap: 20px; margin-bottom: 40px; }
-        .toggle-btn { 
-            flex: 1; 
-            padding: 20px; 
-            text-align: center; 
-            background-color: #f0f0f0; 
-            border-radius: 8px; 
-            font-family: 'Times New Roman', Times, serif; 
-            font-size: 20px; 
-            transition: background 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-        .toggle-btn.active { background-color: #c0e6fa; }
-        .toggle-btn:hover:not(.active) { background-color: #e4e4e4; }
-
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .card {
-            border: 1px solid #dcdcdc; 
-            border-radius: 12px; 
-            padding: 20px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center;
-            height: 260px;
-            gap: 10px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            position: relative;
-        }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .card img { max-width: 100%; height: 140px; object-fit: contain; transition: transform 0.3s; }
-        .card:hover img { transform: scale(1.05); }
-        .card-title { font-family: 'Times New Roman', Times, serif; font-size: 17px; margin-top: 10px; text-align: center; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium — FOOT Gallery</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .page-header {
+      display: flex; align-items: center; justify-content: center;
+      position: relative; margin-top: 30px; margin-bottom: 40px;
+    }
+    .back-btn { position: absolute; left: 0; font-size: 24px; cursor: pointer; color: #1a1a1a; text-decoration: none; transition: color .15s; line-height: 1; }
+    .back-btn:hover { color: #0369a1; }
+    .page-title { font-family: 'Times New Roman',Times,serif; font-size: 28px; font-weight: normal; }
+    .toggle-wrapper { display: flex; gap: 20px; margin-bottom: 40px; }
+    .toggle-btn { flex: 1; padding: 20px; text-align: center; background-color: #f0f0f0; border-radius: 8px; font-family: 'Times New Roman',Times,serif; font-size: 20px; transition: background .3s; text-decoration: none; color: inherit; display: block; }
+    .toggle-btn.active { background-color: #c0e6fa; }
+    .toggle-btn:hover:not(.active) { background-color: #e4e4e4; }
+    .medium-main { padding: 40px 0 80px; }
+    .medium-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .medium-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .med-card {
+      border: 1px solid #dcdcdc; border-radius: 12px; padding: 20px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 260px; gap: 10px; transition: transform .2s, box-shadow .2s;
+      cursor: default; background: #fff; overflow: hidden; opacity: .7;
+    }
+    .med-card img { max-width: 100%; height: 140px; object-fit: contain; transition: transform .3s; }
+    .card-title { font-family: 'Times New Roman',Times,serif; font-size: 17px; margin-top: 10px; text-align: center; color: #1a1a1a; }
+    @media (max-width: 768px) { .medium-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+    @media (max-width: 480px) {
+      .medium-container { padding: 0 14px; }
+      .toggle-wrapper { gap: 12px; }
+      .toggle-btn { padding: 14px 12px; font-size: 16px; }
+      .med-card { min-height: 200px; }
+      .med-card img { height: 100px; }
+    }
+  </style>
 </head>
-
 <body>
-    <div id="shared-header"></div>
+  <div id="shared-header"></div>
 
-    <!-- Main -->
-    <main class="container">
-        <!-- Title changed -->
-        <div class="page-header">
-            <a href="index.html" class="back-btn">←</a>
-            <h1 class="page-title">Medium</h1>
-        </div>
+  <main class="medium-main">
+    <div class="medium-container">
+      <header class="page-header">
+        <a href="main.html" class="back-btn" aria-label="Back to home">←</a>
+        <h1 class="page-title">Medium</h1>
+      </header>
 
-        <div class="toggle-wrapper">
-            <!-- Medium，the right buttom is active -->
-            <a href="Categories.html" class="toggle-btn">Categories</a>
-            <a href="Medium.html" class="toggle-btn active">Medium</a>
-        </div>
+      <nav class="toggle-wrapper" aria-label="Browse mode">
+        <a href="Categories.html" class="toggle-btn">Categories</a>
+        <a href="Medium.html" class="toggle-btn active" aria-current="page">Medium</a>
+      </nav>
 
-        <div class="grid">
-            <!-- Card 1 -->
-            <div class="card" data-title="Cast Marble" data-price="585" data-image="images/image 17.png">
-                <img src="../images/image 17.png" alt="Cast Marble">
-                <div class="card-title">Cast Marble</div>
-            </div>
-            <!-- Card 2 -->
-            <div class="card" data-title="Cold Cast Sculptures" data-price="415" data-image="images/image 18.png">
-                <img src="../images/image 18.png" alt="Cold Cast Sculptures">
-                <div class="card-title">Cold Cast Sculptures</div>
-            </div>
-            <!-- Card 3 -->
-            <div class="card" data-title="Hot Cast Sculptures" data-price="445" data-image="images/image 19.png">
-                <img src="../images/image 19.png" alt="Hot Cast Sculptures">
-                <div class="card-title">Hot Cast Sculptures</div>
-            </div>
-            <!-- Card 4 -->
-            <div class="card" data-title="Coloured / Painted Cast" data-price="215" data-image="images/image 20.png">
-                <img src="../images/image 20.png" alt="Coloured / Painted Cast">
-                <div class="card-title">Coloured / Painted Cast</div>
-            </div>
-            <!-- Card 5 -->
-            <div class="card" data-title="Wildlife Sculptures" data-price="585" data-image="images/image 27.png">
-                <img src="../images/image 27.png" alt="Wildlife Sculptures">
-                <div class="card-title">Wildlife Sculptures</div>
-            </div>
-            <!-- Card 6 -->
-            <div class="card" data-title="Small Pieces" data-price="215" data-image="images/image 28.png">
-                <img src="../images/image 28.png" alt="Small Pieces">
-                <div class="card-title">Small Pieces</div>
-            </div>
-            <!-- Card 7 -->
-            <div class="card" data-title="Cast Bronze" data-price="445" data-image="images/image 30.png">
-                <img src="../images/image 30.png" alt="Cast Bronze">
-                <div class="card-title">Cast Bronze</div>
-            </div>
-            <!-- Card 8 -->
-            <div class="card" data-title="Cast Silver" data-price="585" data-image="images/image 31.png">
-                <img src="../images/image 31.png" alt="Cast Silver">
-                <div class="card-title">Cast Silver</div>
-            </div>
-        </div>
-    </main>
+      <section class="medium-grid" aria-label="Browse by medium">
+        <article class="med-card">
+          <img src="../images/image 17.png" alt="Cast Marble" loading="lazy">
+          <div class="card-title">Cast Marble</div>
+        </article>
+        <article class="med-card">
+          <img src="../images/image 18.png" alt="Cold Cast Sculptures" loading="lazy">
+          <div class="card-title">Cold Cast Sculptures</div>
+        </article>
+        <article class="med-card">
+          <img src="../images/image 19.png" alt="Hot Cast Sculptures" loading="lazy">
+          <div class="card-title">Hot Cast Sculptures</div>
+        </article>
+        <article class="med-card">
+          <img src="../images/image 20.png" alt="Coloured / Painted Cast" loading="lazy">
+          <div class="card-title">Coloured / Painted Cast</div>
+        </article>
+        <article class="med-card">
+          <img src="../images/image 27.png" alt="Wildlife Sculptures" loading="lazy">
+          <div class="card-title">Wildlife Sculptures</div>
+        </article>
+        <article class="med-card">
+          <img src="../images/image 28.png" alt="Small Pieces" loading="lazy">
+          <div class="card-title">Small Pieces</div>
+        </article>
+        <article class="med-card">
+          <img src="../images/image 30.png" alt="Cast Bronze" loading="lazy">
+          <div class="card-title">Cast Bronze</div>
+        </article>
+        <article class="med-card">
+          <img src="../images/image 31.png" alt="Cast Silver" loading="lazy">
+          <div class="card-title">Cast Silver</div>
+        </article>
+      </section>
+    </div>
+  </main>
 
-    <div id="shared-footer"></div>
-    <script src="../js/cart.js"></script>
-    <script src="../js/utils.js"></script>
-    <script src="../js/shared.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.card').forEach((card) => {
-                card.addEventListener('click', () => {
-                    window.location.href = 'product-3.html';
-                });
-            });
-        });
-    </script>
+  <div id="shared-footer"></div>
 
+  <script src="../js/cart.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/shared.js"></script>
 </body>
 </html>
