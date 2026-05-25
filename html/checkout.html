@@ -109,75 +109,42 @@
     ============================================================
   -->
   <main class="co-main">
-    <!--
-      ============================================================
-      Form Start
-      Contains express checkout, billing info, order summary, payment method
-      ============================================================
-    -->
-    <form id="checkout-form">
-        <!-- ==================================================
-           Express Checkout
-           Provides PayPal/Apple Pay/Google Pay express payment buttons
-           ==================================================
-      -->
-      <div class="co-express">
-        <h2 class="co-express-title">Express checkout</h2>
-        <div class="co-express-btns">
-          <!-- PayPal express button -->
-          <button type="button" class="co-btn-paypal">
-            <!-- PayPal Logo SVG -->
-            <svg height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="16" font-family="Arial" font-weight="bold" font-size="13" fill="#003087">P</text>
-              <text x="8" y="16" font-family="Arial" font-weight="bold" font-size="13" fill="#009cde">P</text>
-            </svg>
-            <svg viewBox="0 0 80 20" width="60" height="20">
-              <text x="0" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="#003087">Pay</text>
-              <text x="26" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="#009cde">Pal</text>
-            </svg>
-          </button>
-          <!-- Apple Pay express button -->
-          <button type="button" class="co-btn-apple">
-            <!-- Apple logo (SVG path) -->
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-            Pay
-          </button>
-
-          <!-- Google Pay express button -->
-          <button type="button" class="co-btn-google">
-            <!-- G letter SVG -->
-            <svg width="16" height="16" viewBox="0 0 24 24">
-              <path d="M12 10.772v2.652h3.636c-.144.945-.546 1.744-1.163 2.271v1.886h1.88c1.1-1.014 1.734-2.507 1.734-4.28 0-.417-.038-.82-.107-1.208L12 10.772z" fill="#4285F4"/>
-              <path d="M12 18.545c1.822 0 3.353-.605 4.47-1.637l-1.88-1.459c-.604.406-1.378.646-2.59.646-1.992 0-3.682-1.345-4.285-3.153H5.78v1.505A6.74 6.74 0 0 0 12 18.545z" fill="#34A853"/>
-              <path d="M7.715 12.942a4.068 4.068 0 0 1 0-2.584V8.853H5.78A6.74 6.74 0 0 0 5.064 12a6.74 6.74 0 0 0 .716 3.147l1.935-1.505-.001-.7z" fill="#FBBC05"/>
-              <path d="M12 8.205c1.122 0 2.13.386 2.922 1.143l2.19-2.19C15.35 5.92 13.82 5.25 12 5.25A6.74 6.74 0 0 0 5.78 8.853l1.935 1.505C8.318 8.55 10.008 8.205 12 8.205z" fill="#EA4335"/>
-            </svg>
-            Pay
-          </button>
-        </div>
+    <!-- Express checkout -->
+    <section class="co-express" aria-label="Express checkout">
+      <h2 class="co-express-title">Express checkout</h2>
+      <div class="co-express-btns">
+        <button type="button" class="co-pay-btn paypal" aria-label="Pay with PayPal">
+          <svg viewBox="0 0 80 20" width="56" height="18"><text x="0" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="#003087">Pay</text><text x="26" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="#009cde">Pal</text></svg>
+        </button>
+        <button type="button" class="co-pay-btn apple" aria-label="Pay with Apple Pay">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          Pay
+        </button>
+        <button type="button" class="co-pay-btn google" aria-label="Pay with Google Pay">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 10.772v2.652h3.636c-.144.945-.546 1.744-1.163 2.271v1.886h1.88c1.1-1.014 1.734-2.507 1.734-4.28 0-.417-.038-.82-.107-1.208L12 10.772z" fill="#4285F4"/><path d="M12 18.545c1.822 0 3.353-.605 4.47-1.637l-1.88-1.459c-.604.406-1.378.646-2.59.646-1.992 0-3.682-1.345-4.285-3.153H5.78v1.505A6.74 6.74 0 0 0 12 18.545z" fill="#34A853"/><path d="M7.715 12.942a4.068 4.068 0 0 1 0-2.584V8.853H5.78A6.74 6.74 0 0 0 5.064 12a6.74 6.74 0 0 0 .716 3.147l1.935-1.505-.001-.7z" fill="#FBBC05"/><path d="M12 8.205c1.122 0 2.13.386 2.922 1.143l2.19-2.19C15.35 5.92 13.82 5.25 12 5.25A6.74 6.74 0 0 0 5.78 8.853l1.935 1.505C8.318 8.55 10.008 8.205 12 8.205z" fill="#EA4335"/></svg>
+          Pay
+        </button>
       </div>
-      <!-- ==================================================
-           Billing Details
-           Two-column grid: left column (name fields) + right column (address/contact)
-           ==================================================
-      -->
-      <div class="co-section">
+    </section>
+
+    <form id="checkout-form" novalidate>
+      <!-- Billing details -->
+      <section class="co-section" aria-label="Billing details">
         <h2 class="co-section-title">Billing details</h2>
-
         <div class="co-form-grid">
-          <!-- Left col row 1: First name -->
           <div class="co-form-group">
-            <label class="co-label">First name<span class="req">*</span></label>
-            <input type="text" id="firstName" name="firstName" class="co-input"
-                   placeholder="" required data-validate="required">
+            <label class="co-label" for="firstName">First name<span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" class="co-input" required autocomplete="given-name">
+            <span class="co-field-error" id="err-firstName">Please enter your first name</span>
           </div>
-
-          <!-- Right col row 1: Country dropdown -->
           <div class="co-form-group">
-            <label class="co-label">Country</label>
-            <select id="country" name="country" class="co-select" data-validate="required">
+            <label class="co-label" for="lastName">Last name<span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" class="co-input" required autocomplete="family-name">
+            <span class="co-field-error" id="err-lastName">Please enter your last name</span>
+          </div>
+          <div class="co-form-group">
+            <label class="co-label" for="country">Country</label>
+            <select id="country" name="country" class="co-select" autocomplete="country">
               <option value="AU" selected>Australia</option>
               <option value="NZ">New Zealand</option>
               <option value="US">United States</option>
@@ -186,257 +153,172 @@
               <option value="SG">Singapore</option>
             </select>
           </div>
-
-          <!-- Right col row 2: Detailed address + Import button -->
           <div class="co-form-group">
-            <label class="co-label">Detailed address<span class="req">*</span></label>
+            <label class="co-label" for="address">Detailed address<span class="req">*</span></label>
             <div class="co-input-with-btn">
-              <input type="text" id="address" name="address" class="co-input"
-                     placeholder="" required data-validate="required">
-              <!-- Import button: import address from account -->
-              <button type="button" class="co-import-btn" aria-label="导入地址">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
+              <input type="text" id="address" name="address" class="co-input" required autocomplete="street-address">
+              <button type="button" class="co-import-btn" id="import-addr-btn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                 Import
               </button>
             </div>
+            <span class="co-field-error" id="err-address">Please enter your address</span>
           </div>
-
-          <!-- Left col row 3: Last name -->
           <div class="co-form-group">
-            <label class="co-label">Last name<span class="req">*</span></label>
-            <input type="text" id="lastName" name="lastName" class="co-input"
-                   placeholder="" required data-validate="required">
+            <label class="co-label" for="phone">Contact Detail<span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" class="co-input" required autocomplete="tel">
+            <span class="co-field-error" id="err-phone">Please enter a valid phone number</span>
           </div>
-
-          <!-- Right col row 3: Contact detail -->
-          <div class="co-form-group">
-            <label class="co-label">Contact Detail<span class="req">*</span></label>
-            <input type="tel" id="phone" name="phone" class="co-input"
-                   placeholder="" required data-validate="required|phone">
-          </div>
-
-          <!-- Right col row 4: Email (right col only) -->
-          <!-- Left col row 4 empty -->
           <div></div>
           <div class="co-form-group">
-            <label class="co-label">Email<span class="req">*</span></label>
-            <input type="email" id="email" name="email" class="co-input"
-                   placeholder="" required data-validate="required|email">
+            <label class="co-label" for="email">Email<span class="req">*</span></label>
+            <input type="email" id="email" name="email" class="co-input" required autocomplete="email">
+            <span class="co-field-error" id="err-email">Please enter a valid email address</span>
           </div>
         </div>
+        <button type="button" class="co-save-btn" id="save-account-btn">Save Account Details</button>
+      </section>
 
-        <!-- Save Account Details button -->
-        <button type="button" class="co-save-btn">Save Account Details</button>
-      </div>
-      <!-- ==================================================
-           Order Summary
-           Two-column product list + delivery fee + total
-           ==================================================
-      -->
-      <div class="co-order-section">
+      <!-- Order summary -->
+      <section class="co-order-section" aria-label="Order summary">
         <h2 class="co-order-title">Order</h2>
-
-        <!-- Two-col product display (populated by JS) -->
-        <div class="co-order-items" id="checkout-items">
-          <!-- JS JS inserts demo items here -->
-        </div>
-
-        <!-- Delivery fee + Total two-column row -->
+        <div id="checkout-items"></div>
         <div class="co-order-footer">
-          <!-- Left: Delivery fee -->
           <div class="co-order-footer-row">
             <span class="co-order-footer-label">Delivery fee</span>
             <span class="co-order-footer-value">$0</span>
           </div>
-          <!-- Right: Total -->
           <div class="co-order-footer-row">
             <span class="co-order-total-label">Total</span>
             <span class="co-order-total-value" id="checkout-total">$0</span>
           </div>
         </div>
-      </div>
-      <!-- ==================================================
-           Card Payment Information
-           Left: card number form inside a white card box
-           Right: payment method radio buttons
-           ==================================================
-      -->
-      <div class="co-card-section">
-        <h3 class="co-card-section-title">Card</h3>
+      </section>
 
+      <!-- Card & Payment -->
+      <section class="co-card-section" aria-label="Payment">
+        <h3 class="co-card-section-title">Card</h3>
         <div class="co-card-layout">
-          <!-- Left: card info inputs -->
-          <div class="co-card-box">
-            <!-- Card Number -->
+          <div class="co-card-box" id="card-fields">
             <div>
               <div class="co-card-field-label">Card Number</div>
-              <input type="text" id="cardNumber" name="cardNumber" class="co-card-input"
-                     placeholder="1234 5678 9012 3456" maxlength="19" data-validate="required|cardNumber" autocomplete="cc-number">
+              <input type="text" id="cardNumber" name="cardNumber" class="co-card-input" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number">
             </div>
-
-            <!-- Expiration Date + Security Code two-col -->
             <div class="co-card-row">
               <div>
                 <div class="co-card-field-label">Expiration Date</div>
-                <!-- placeholder MM/YY format -->
-                <input type="text" id="expiry" name="expiry" class="co-card-input"
-                       placeholder="MM / YY" maxlength="7" data-validate="required|expiry" autocomplete="cc-exp">
+                <input type="text" id="expiry" name="expiry" class="co-card-input" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp">
               </div>
               <div>
                 <div class="co-card-field-label">Security Code</div>
-                <input type="text" id="cvv" name="cvv" class="co-card-input"
-                       placeholder="123" maxlength="4" data-validate="required|cvv" autocomplete="cc-csc">
+                <input type="text" id="cvv" name="cvv" class="co-card-input" placeholder="123" maxlength="4" autocomplete="cc-csc">
               </div>
             </div>
           </div>
-
-          <!-- Right: payment method radio options -->
-          <div class="co-payment-methods">
-            <div class="co-payment-label" style="font-size:0.75rem;color:#6b7280;font-weight:500;margin-bottom:4px;">Payment method<span style="color:#ef4444;margin-left:2px;">*</span></div>
-            <!-- Direct bank transfer -->
-            <label class="co-payment-option">
-              <input type="radio" name="paymentMethod" value="bank_transfer">
-              <span>Direct bank transfer</span>
-            </label>
-            <!-- PayPal -->
-            <label class="co-payment-option">
-              <input type="radio" name="paymentMethod" value="paypal">
-              <span>PayPal</span>
-            </label>
-            <!-- Afterpay -->
-            <label class="co-payment-option">
-              <input type="radio" name="paymentMethod" value="afterpay">
-              <span>Afterpay</span>
-            </label>
-            <!-- Credit Card -->
-            <label class="co-payment-option">
-              <input type="radio" name="paymentMethod" value="credit_card" id="radio-credit-card">
-              <span>Credit / Debit card</span>
-            </label>
-            <!-- Hidden field to carry validation -->
-            <input type="hidden" id="paymentMethodHidden" name="paymentMethodHidden" data-validate="required">
-            <span id="payment-error" style="display:none;font-size:0.72rem;color:#ef4444;margin-top:4px;">Please select a payment method</span>
-          </div>
+          <fieldset class="co-payment-methods" style="border:none;padding:0;margin:0;">
+            <legend class="co-payment-label">Payment method<span class="co-required">*</span></legend>
+            <label class="co-payment-option"><input type="radio" name="paymentMethod" value="bank_transfer"><span>Direct bank transfer</span></label>
+            <label class="co-payment-option"><input type="radio" name="paymentMethod" value="paypal"><span>PayPal</span></label>
+            <label class="co-payment-option"><input type="radio" name="paymentMethod" value="afterpay"><span>Afterpay</span></label>
+            <label class="co-payment-option"><input type="radio" name="paymentMethod" value="credit_card"><span>Credit / Debit card</span></label>
+            <span id="payment-error" class="co-payment-error" role="alert">Please select a payment method</span>
+          </fieldset>
         </div>
-      </div>
+      </section>
 
-      <!-- Privacy notice text -->
-      <p class="co-privacy-text">
-        Your personal data will be used only to process your order, and to support your experience throughout this website, and for absolutely no other reason, unless you request to hear about new products.
-      </p>
-      <p class="co-postbox-text">
-        Note that if you have a post box please include that as well as residential address.
-      </p>
+      <p class="co-privacy-text">Your personal data will be used only to process your order, and to support your experience throughout this website, and for absolutely no other reason, unless you request to hear about new products.</p>
+      <p class="co-postbox-text">Note that if you have a post box please include that as well as residential address.</p>
 
-      <!-- PLACE ORDER submit button -->
       <button type="submit" class="co-place-order-btn">PLACE ORDER</button>
 
-      <!-- Bottom notice -->
-      <p class="co-notice-text">
-        Note that if you do not get the next page titled ORDER RECEIVED, then you have not successfully completed this checkout even if you have clicked Place Order, complete all needed inputs above. Thank you for your order. If you need a tracking number please send an email.
-      </p>
-
+      <p class="co-notice-text">Note that if you do not get the next page titled ORDER RECEIVED, then you have not successfully completed this checkout even if you have clicked Place Order — complete all needed inputs above. Thank you for your order. If you need a tracking number please send an email.</p>
     </form>
   </main>
-   <!--
-    ============================================================
-    Footer
-    Dynamically injected by shared.js
-    ============================================================
-  -->
+
   <div id="shared-footer"></div>
-  <!--
-    ============================================================
-   Script Loading Order:
-    1. cart.js      — Cart data management and UI utilities
-    2. utils.js     — Site-wide utilities (Toast, theme, search)
-    3. shared.js    — Shared components injector
-    4. validation.js      — Cart page-specific logic
-    ============================================================
-  -->
+
   <script src="../js/cart.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/shared.js"></script>
   <script src="../js/validation.js"></script>
   <script>
-    /* ── Render order summary from cart ── */
-    function updateCheckoutSummary() {
-      const items = cart.getItems();
-      const container = document.getElementById('checkout-items');
-      const totalEl   = document.getElementById('checkout-total');
-
-      const displayItems = items.length > 0 ? items : [
-        { title: 'TURTLE Coloured Cast Marble',       subtitle: 'Size - Small', quantity: 1, price: 585 },
-        { title: 'FISH CORAL TROUT Red Cast Marble',  subtitle: 'Size - Fixed', quantity: 1, price: 825 }
-      ];
-      const subtotal = items.length > 0 ? cart.getTotalPrice() : 1410;
-
-      if (container) {
-        container.innerHTML = displayItems.map(item => `
-          <div class="co-order-item">
-            <div class="co-order-item-name">${item.title}</div>
-            <div class="co-order-item-sub">
-              <span>${item.subtitle || ''} &times;${item.quantity || 1}</span>
-              <span class="co-order-item-price">$${(item.price * (item.quantity || 1)).toLocaleString('en-AU', { minimumFractionDigits: 0 })}</span>
-            </div>
-          </div>
-        `).join('');
-      }
-      if (totalEl) {
-        totalEl.textContent = '$' + subtotal.toLocaleString('en-AU', { minimumFractionDigits: 0 });
-      }
-    }
-
+    /* ── Checkout page logic ── */
     document.addEventListener('DOMContentLoaded', () => {
-      CartUtils.updateCartBadge();
-      updateCheckoutSummary();
-      /* ── Sync payment radio → hidden field so validation works ── */
+
+      /* Populate order summary */
+      function updateSummary() {
+        const items = cart.getItems();
+        const container = document.getElementById('checkout-items');
+        const totalEl   = document.getElementById('checkout-total');
+        const display   = items.length > 0 ? items : [
+          { title: 'TURTLE Coloured Cast Marble', quantity: 1, price: 585 },
+          { title: 'FISH CORAL TROUT Red Cast Marble', quantity: 1, price: 825 }
+        ];
+        const subtotal = items.length > 0 ? cart.getTotalPrice() : 1410;
+
+        if (container) {
+          container.innerHTML = display.map(item => `
+            <div class="co-order-item">
+              <div class="co-order-item-name">${item.title}</div>
+              <div class="co-order-item-sub">
+                <span>&times;${item.quantity || 1}</span>
+                <span class="co-order-item-price">$${((item.price) * (item.quantity || 1)).toLocaleString('en-AU', {minimumFractionDigits:2})}</span>
+              </div>
+            </div>`).join('');
+        }
+        if (totalEl) totalEl.textContent = '$' + subtotal.toLocaleString('en-AU', {minimumFractionDigits:2});
+      }
+      updateSummary();
+
+      /* Payment method toggles card opacity */
       document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
         radio.addEventListener('change', () => {
-          const hidden = document.getElementById('paymentMethodHidden');
-          if (hidden) hidden.value = radio.value;
-          // Hide card fields when non-card method selected
-          const cardSection = document.querySelector('.co-card-box');
-          if (cardSection) {
+          const cardBox = document.getElementById('card-fields');
+          if (cardBox) {
             const showCard = ['credit_card', 'bank_transfer'].includes(radio.value);
-            cardSection.style.opacity = showCard ? '1' : '0.4';
-            cardSection.style.pointerEvents = showCard ? '' : 'none';
+            cardBox.style.opacity = showCard ? '1' : '0.4';
+            cardBox.style.pointerEvents = showCard ? '' : 'none';
           }
           const errEl = document.getElementById('payment-error');
           if (errEl) errEl.style.display = 'none';
         });
       });
-      /* ── Custom payment method check before submit ── */
-      function isPaymentSelected() {
-        return !!document.querySelector('input[name="paymentMethod"]:checked');
-      }
-      /* ── Card number formatting ── */
+
+      /* Card number formatting */
       const cardInput = document.getElementById('cardNumber');
-      if (cardInput) cardInput.addEventListener('input', e => Validation.formatCardNumber(e.target));
-      /* ── Expiry formatting ── */
-      const expiryInput = document.getElementById('expiry');
-      if (expiryInput) expiryInput.addEventListener('input', e => Validation.formatExpiry(e.target));
-      /* ── Save Account Details button ── */
-      const saveBtn = document.querySelector('.co-save-btn');
-      if (saveBtn) {
-        saveBtn.addEventListener('click', () => {
-          const saved = {
-            firstName: document.getElementById('firstName')?.value || '',
-            lastName:  document.getElementById('lastName')?.value  || '',
-            address:   document.getElementById('address')?.value   || '',
-            phone:     document.getElementById('phone')?.value     || '',
-            email:     document.getElementById('email')?.value     || '',
-            country:   document.getElementById('country')?.value   || ''
-          };
-          try { localStorage.setItem('saved-account', JSON.stringify(saved)); } catch(e) {}
-          Toast.show('Account details saved!', 'success');
+      if (cardInput) {
+        cardInput.addEventListener('input', () => {
+          let v = cardInput.value.replace(/\D/g, '').slice(0, 16);
+          cardInput.value = v.replace(/(.{4})/g, '$1 ').trim();
         });
       }
-      
-      /* ── Auto-fill saved account details on load ── */
+
+      /* Expiry formatting */
+      const expiryInput = document.getElementById('expiry');
+      if (expiryInput) {
+        expiryInput.addEventListener('input', () => {
+          let v = expiryInput.value.replace(/\D/g, '').slice(0, 4);
+          if (v.length >= 2) v = v.slice(0, 2) + ' / ' + v.slice(2);
+          expiryInput.value = v;
+        });
+      }
+
+      /* Save account */
+      document.getElementById('save-account-btn')?.addEventListener('click', () => {
+        const data = { firstName: document.getElementById('firstName')?.value || '', lastName: document.getElementById('lastName')?.value || '', address: document.getElementById('address')?.value || '', phone: document.getElementById('phone')?.value || '', email: document.getElementById('email')?.value || '', country: document.getElementById('country')?.value || '' };
+        try { localStorage.setItem('saved-account', JSON.stringify(data)); } catch(e) {}
+        Toast.show('Account details saved!', 'success');
+      });
+
+      /* Import address */
+      document.getElementById('import-addr-btn')?.addEventListener('click', () => {
+        try {
+          const saved = JSON.parse(localStorage.getItem('saved-account') || 'null');
+          if (saved?.address) document.getElementById('address').value = saved.address;
+        } catch(e) {}
+      });
+
+      /* Restore saved account */
       try {
         const saved = JSON.parse(localStorage.getItem('saved-account') || 'null');
         if (saved) {
@@ -444,42 +326,75 @@
             const el = document.getElementById(id);
             if (el && saved[id]) el.value = saved[id];
           });
-          const country = document.getElementById('country');
-          if (country && saved.country) country.value = saved.country;
+          const cEl = document.getElementById('country');
+          if (cEl && saved.country) cEl.value = saved.country;
         }
       } catch(e) {}
-       /* ── Form submission ── */
-      Validation.initForm('checkout-form', {
-        onSubmit: () => {
-          // Extra check: payment method must be selected
-          if (!isPaymentSelected()) {
-            const errEl = document.getElementById('payment-error');
-            if (errEl) errEl.style.display = 'block';
-            Toast.show('Please select a payment method', 'error');
-            return;
+
+      /* Form validation & submission */
+      document.getElementById('checkout-form').addEventListener('submit', e => {
+        e.preventDefault();
+        let valid = true;
+
+        /* Required text fields */
+        ['firstName','lastName','address','phone','email'].forEach(id => {
+          const el = document.getElementById(id);
+          const err = document.getElementById('err-' + id);
+          if (!el || !el.value.trim()) {
+            if (el) el.classList.add('error');
+            if (err) err.style.display = 'block';
+            valid = false;
+          } else {
+            if (el) el.classList.remove('error');
+            if (err) err.style.display = 'none';
           }
-          // Collect form data and save to sessionStorage for success page
-          const orderData = {
-            orderNumber: 'ORD-' + Date.now().toString().slice(-8),
-            email:       document.getElementById('email')?.value     || '',
-            firstName:   document.getElementById('firstName')?.value || '',
-            lastName:    document.getElementById('lastName')?.value  || '',
-            address:     document.getElementById('address')?.value   || '',
-            phone:       document.getElementById('phone')?.value     || '',
-            country:     document.getElementById('country')?.value   || '',
-            paymentMethod: document.querySelector('input[name="paymentMethod"]:checked')?.value || '',
-            items:       cart.getItems(),
-            total:       cart.getTotalPrice(),
-            date:        new Date().toLocaleDateString('en-AU')
-          };
-          try { sessionStorage.setItem('order-data', JSON.stringify(orderData)); } catch(e) {}
-          // Submit
-          const btn = document.querySelector('.co-place-order-btn');
-          if (btn) { btn.disabled = true; btn.textContent = 'Processing...'; }
-          Toast.show('Order submitted! Redirecting...', 'success');
-          cart.clearCart();
-          setTimeout(() => { window.location.href = 'success.html'; }, 1500);
+        });
+
+        /* Email format */
+        const emailEl = document.getElementById('email');
+        if (emailEl && emailEl.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+          emailEl.classList.add('error');
+          const err = document.getElementById('err-email');
+          if (err) err.style.display = 'block';
+          valid = false;
         }
+
+        /* Payment method */
+        const pmChecked = document.querySelector('input[name="paymentMethod"]:checked');
+        if (!pmChecked) {
+          const errEl = document.getElementById('payment-error');
+          if (errEl) errEl.style.display = 'block';
+          Toast.show('Please select a payment method', 'error');
+          valid = false;
+        }
+
+        if (!valid) { Toast.show('Please fill in all required fields', 'error'); return; }
+
+        /* Submit */
+        const orderData = {
+          orderNumber: 'ORD-' + Date.now().toString().slice(-8),
+          email: emailEl?.value || '',
+          items: cart.getItems(),
+          total: cart.getTotalPrice(),
+          date: new Date().toLocaleDateString('en-AU')
+        };
+        try { sessionStorage.setItem('order-data', JSON.stringify(orderData)); } catch(e) {}
+
+        const btn = document.querySelector('.co-place-order-btn');
+        if (btn) { btn.disabled = true; btn.textContent = 'Processing...'; }
+        Toast.show('Order submitted! Redirecting…', 'success');
+        cart.clearCart();
+        setTimeout(() => { window.location.href = 'success.html'; }, 1500);
+      });
+
+      /* Remove error class on input */
+      document.querySelectorAll('.co-input').forEach(el => {
+        el.addEventListener('input', () => {
+          el.classList.remove('error');
+          const errId = 'err-' + el.id;
+          const errEl = document.getElementById(errId);
+          if (errEl) errEl.style.display = 'none';
+        });
       });
     });
   </script>
