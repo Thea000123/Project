@@ -1,83 +1,89 @@
 /*
- * shared.js - Shared Components Injector
- * 
+ * shared.js
+ * Injects header, footer, search modal.
+ * Relies on ../style.css for all shared styles.
+ * DO NOT re-bind search-btn here — Search.init() in utils.js handles it.
  */
 
 const PRODUCTS = [
-  { id: 1, title: "TURTLE MINI COLOURED", price: 215.0, image: "../images/image 17.png" },
-  { id: 2, title: "TURTLE MARBLE", price: 585.0, image: "../images/image 18.png" },
-  { id: 3, title: "TURTLE 14 CARAT", price: 3850.0, image: "../images/image 19.png" },
-  { id: 4, title: "TURTLE RELIEF", price: 215.0, image: "../images/image 20.png" },
-  { id: 5, title: "TURTLE ALLOY", price: 585.0, image: "../images/image 27.png" },
-  { id: 6, title: "TURTLE MINI AQUA", price: 215.0, image: "../images/image 28.png" },
-  { id: 7, title: "TURTLE COLOURED", price: 415.0, image: "../images/image 29.png" },
-  { id: 8, title: "TURTLE GOLD BRONZE", price: 445.0, image: "../images/image 30.png" },
-  { id: 9, title: "TURTLE JADE CAST", price: 415.0, image: "../images/image 31.png" }
+  { id: 3, title: "TURTLE MINI COLOURED", price: 215.0,  image: "../images/image 17.png" },
+  { id: 3, title: "TURTLE MARBLE",        price: 585.0,  image: "../images/image 18.png" },
+  { id: 3, title: "TURTLE 14 CARAT",      price: 3850.0, image: "../images/image 19.png" },
+  { id: 3, title: "TURTLE RELIEF",        price: 215.0,  image: "../images/image 20.png" },
+  { id: 3, title: "TURTLE ALLOY",         price: 585.0,  image: "../images/image 27.png" },
+  { id: 3, title: "TURTLE MINI AQUA",     price: 215.0,  image: "../images/image 28.png" },
+  { id: 3, title: "TURTLE COLOURED",      price: 415.0,  image: "../images/image 29.png" },
+  { id: 3, title: "TURTLE GOLD BRONZE",   price: 445.0,  image: "../images/image 30.png" },
+  { id: 3, title: "TURTLE JADE CAST",     price: 415.0,  image: "../images/image 31.png" },
+  { id: 3, title: "FISH CORAL TROUT",     price: 825.0,  image: "../images/image 17.png" },
+  { id: 3, title: "WHALE HUMPBACK MINI",  price: 320.0,  image: "../images/image 18.png" },
+  { id: 3, title: "MANTA RAY MINI",       price: 210.0,  image: "../images/image 19.png" }
 ];
 
 const SHARED_HEADER = `
 <header class="navbar">
   <div class="header-left">
-    <a href="index.html" class="navbar-logo" aria-label="FOOT Home">
-      <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <ellipse cx="10" cy="26" rx="6" ry="5" fill="#c084fc" />
-        <ellipse cx="20" cy="20" rx="4.5" ry="6" fill="#4ade80" />
-        <circle cx="6" cy="17" r="3" fill="#fb923c" />
-        <circle cx="14" cy="13" r="2.5" fill="#60a5fa" />
-        <circle cx="22" cy="12" r="2" fill="#f472b6" />
-      </svg>
+    <a href="main.html" class="navbar-logo" aria-label="FOOT Home">
+      <img src="../images/IMG_0625.png" alt="FOOT Logo" width="28" height="32">
       <span class="navbar-brand">FOOT</span>
     </a>
   </div>
   <div class="header-center">
     <nav class="navbar-menu" aria-label="Main Navigation">
-      <a href="index.html" class="navbar-link">Home</a>
-      <a href="faq.html" class="navbar-link">FAQ</a>
-      <a href="pricing.html" class="navbar-link">Pricing</a>
+      <a href="main.html"        class="navbar-link">Home</a>
+      <a href="faq.html"         class="navbar-link">FAQ</a>
+      <a href="pricing.html"     class="navbar-link">Pricing</a>
       <a href="recommended.html" class="navbar-link">Recommended</a>
-      <a href="links.html" class="navbar-link">Links</a>
-      <a href="license.html" class="navbar-link">License</a>
-      <a href="contact.html" class="navbar-link">Contact</a>
+      <a href="links.html"       class="navbar-link">Links</a>
+      <a href="license.html"     class="navbar-link">License</a>
+      <a href="contact.html"     class="navbar-link">Contact</a>
     </nav>
   </div>
   <div class="header-right">
-    <button id="search-btn" class="navbar-btn" aria-label="Search">
+    <button id="search-btn" class="navbar-btn" aria-label="Search" type="button">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
       </svg>
     </button>
-    <a href="cart.html" class="navbar-btn" aria-label="Cart" style="position:relative;">
+    <a href="cart.html" class="navbar-btn" aria-label="Shopping Cart" style="position:relative;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
       </svg>
       <span class="cart-badge" style="display:none;"></span>
     </a>
-    <a href="login.html" class="navbar-btn" aria-label="Login">
+    <a href="login.html" class="navbar-btn navbar-login-desktop" aria-label="Login">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-        <circle cx="12" cy="7" r="4"></circle>
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
       </svg>
-      <span style="margin-left:0.375rem;font-size:0.875rem;">Login</span>
+      <span style="margin-left:.375rem;font-size:.875rem;">Login</span>
     </a>
+    <button class="navbar-mobile-toggle" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" type="button">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6"  x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
   </div>
 </header>
-`;
+<div class="navbar-mobile-menu" id="mobile-menu">
+  <a href="main.html"         class="navbar-link">Home</a>
+  <a href="faq.html"          class="navbar-link">FAQ</a>
+  <a href="pricing.html"      class="navbar-link">Pricing</a>
+  <a href="recommended.html"  class="navbar-link">Recommended</a>
+  <a href="links.html"        class="navbar-link">Links</a>
+  <a href="license.html"      class="navbar-link">License</a>
+  <a href="contact.html"      class="navbar-link">Contact</a>
+  <a href="login.html"        class="navbar-link">Login</a>
+</div>`;
 
 const SHARED_FOOTER = `
 <footer class="ft">
   <div class="ft-inner">
     <div class="ft-left">
-      <a href="index.html" class="ft-logo">
-        <svg width="22" height="26" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <ellipse cx="10" cy="26" rx="6" ry="5" fill="#c084fc" />
-          <ellipse cx="20" cy="20" rx="4.5" ry="6" fill="#4ade80" />
-          <circle cx="6" cy="17" r="3" fill="#fb923c" />
-          <circle cx="14" cy="13" r="2.5" fill="#60a5fa" />
-          <circle cx="22" cy="12" r="2" fill="#f472b6" />
-        </svg>
+      <a href="main.html" class="ft-logo">
+        <img src="../images/IMG_0625.png" alt="FOOT Logo" width="22" height="26" aria-hidden="true">
         <span class="ft-logo-text">FOOT</span>
       </a>
       <p class="ft-desc">Comprising a wide range of Australian made sculpture and jewellery which is not only remarkably beautiful and unique, but durable, priced for any budget and designed to accommodate all tastes in art.</p>
@@ -103,7 +109,7 @@ const SHARED_FOOTER = `
     <div class="ft-divider"></div>
     <div class="ft-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="main.html">Home</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="recommended.html">Recommended</a></li>
@@ -115,61 +121,90 @@ const SHARED_FOOTER = `
       </ul>
     </div>
   </div>
-</footer>
-`;
+</footer>`;
 
+/* Search modal HTML — uses .active class matching style.css */
 const SHARED_SEARCH_MODAL = `
-<div id="search-modal" class="search-modal">
+<div id="search-modal" class="search-modal" role="dialog" aria-label="Search products" aria-modal="true">
   <div class="search-box">
     <div class="search-input-wrapper">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
       </svg>
-      <input type="text" class="search-input" placeholder="Search products..." aria-label="Search products">
-      <a href="search.html" class="search-action-btn" aria-label="Go to Search Page">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      <input type="text" class="search-input" placeholder="Search artworks…" aria-label="Search products" autocomplete="off">
+      <a href="index.html" class="search-action-btn" onclick="Search.close()" aria-label="Go to full search page">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       </a>
-      <button class="search-close" onclick="Search.close()">Cancel</button>
+      <button class="search-close" type="button" onclick="Search.close()">Cancel</button>
     </div>
     <div id="search-results" class="search-results">
       <div class="search-prompt"><p>Type to search products</p></div>
     </div>
   </div>
-</div>
-`;
+</div>`;
 
-// Inject shared components on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  // Inject header if placeholder exists
-  const headerPlaceholder = document.getElementById('shared-header');
-  if (headerPlaceholder) {
-    headerPlaceholder.outerHTML = SHARED_HEADER;
+
+  /* 1. Inject style.css once */
+  if (!document.querySelector('link[data-shared-css]')) {
+    const isInHtml = window.location.pathname.toLowerCase().includes('/html/');
+    const cssPath  = isInHtml ? '../style.css' : 'style.css';
+    const link = document.createElement('link');
+    link.rel  = 'stylesheet';
+    link.href = cssPath;
+    link.setAttribute('data-shared-css', '1');
+    document.head.insertBefore(link, document.head.firstChild);
   }
-  // Inject footer if placeholder exists  
-  const footerPlaceholder = document.getElementById('shared-footer');
-  if (footerPlaceholder) {
-    footerPlaceholder.outerHTML = SHARED_FOOTER;
-  }
-  // Inject search modal if not already present
+
+  /* 2. Inject header */
+  const headerEl = document.getElementById('shared-header');
+  if (headerEl) headerEl.outerHTML = SHARED_HEADER;
+
+  /* 3. Inject footer */
+  const footerEl = document.getElementById('shared-footer');
+  if (footerEl) footerEl.outerHTML = SHARED_FOOTER;
+
+  /* 4. Inject search modal at end of body */
   if (!document.getElementById('search-modal')) {
     document.body.insertAdjacentHTML('beforeend', SHARED_SEARCH_MODAL);
   }
-  // Initialize Toast first
-  if (typeof Toast !== 'undefined' && Toast.init) {
-    Toast.init();
+
+  /* 5. Mobile hamburger */
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu    = document.getElementById('mobile-menu');
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = mobileMenu.classList.toggle('active');
+      mobileMenuBtn.setAttribute('aria-expanded', open);
+      mobileMenu.setAttribute('aria-hidden', !open);
+    });
+    mobileMenu.querySelectorAll('.navbar-link').forEach(l => l.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.addEventListener('click', e => {
+      if (mobileMenu.classList.contains('active')
+          && !mobileMenu.contains(e.target)
+          && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
-  // Init Search (header already in DOM at this point)
-  if (typeof Search !== 'undefined' && Search.init) {
+
+  /* 6. Init Search (Search.init binds #search-btn itself via bindEvents) */
+  if (typeof Search !== 'undefined') {
     Search.init(PRODUCTS);
   }
-  // Update cart badge
-  if (typeof CartUtils !== 'undefined') {
-    CartUtils.updateCartBadge();
-  }
+
+  /* 7. Init Toast container */
+  if (typeof Toast !== 'undefined' && Toast.init) Toast.init();
+
+  /* 8. Update cart badge */
+  if (typeof CartUtils !== 'undefined') CartUtils.updateCartBadge();
 });
 
 window.PRODUCTS = PRODUCTS;
