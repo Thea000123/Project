@@ -119,3 +119,34 @@
         </button>
         <p class="login-switch">Don't have an account? <span class="login-switch-link" id="switch-to-register">Register</span></p>
       </section>
+
+      <!-- Register form -->
+      <section class="login-form-section" id="tab-register" role="tabpanel" aria-labelledby="tab-btn-register">
+        <form id="register-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="reg-name">Full name</label>
+            <input type="text" id="reg-name" class="form-input" placeholder="Jane Smith" autocomplete="name">
+            <span class="form-error" id="err-reg-name">Please enter your name</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Email address</label>
+            <input type="email" id="reg-email" class="form-input" placeholder="you@example.com" autocomplete="email">
+            <span class="form-error" id="err-reg-email">Please enter a valid email address</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-password">Password</label>
+            <input type="password" id="reg-password" class="form-input" placeholder="At least 8 characters" autocomplete="new-password">
+            <span class="form-hint">Minimum 8 characters</span>
+            <span class="form-error" id="err-reg-password">Password must be at least 8 characters</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-confirm">Confirm password</label>
+            <input type="password" id="reg-confirm" class="form-input" placeholder="Repeat password" autocomplete="new-password">
+            <span class="form-error" id="err-reg-confirm">Passwords do not match</span>
+          </div>
+          <button type="submit" class="login-btn" id="register-submit-btn">Create Account</button>
+        </form>
+        <p class="login-switch">Already have an account? <span class="login-switch-link" id="switch-to-login">Sign in</span></p>
+      </section>
+    </div>
+  </main>
