@@ -1,0 +1,137 @@
+    /* ── Success page styles ── */
+    .success-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* Hero */
+    .success-hero { text-align: center; margin-bottom: 2.5rem; }
+    .success-check {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      animation: bounceIn .6s ease both;
+    }
+    @keyframes bounceIn {
+      0%   { transform: scale(0); opacity: 0; }
+      55%  { transform: scale(1.15); opacity: 1; }
+      75%  { transform: scale(.95); }
+      100% { transform: scale(1); }
+    }
+    .success-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.25rem; font-weight: 700;
+      color: #111827; letter-spacing: .04em; margin-bottom: .5rem;
+    }
+    .success-sub { font-size: .9375rem; color: #6b7280; }
+
+    /* Meta */
+    .order-meta {
+      background: #f0f9ff; border: 1px solid #bae6fd;
+      border-radius: 16px; padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex; flex-direction: column; gap: .5rem;
+      font-size: .9375rem; color: #374151;
+      animation: fadeInUp .5s ease .1s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .order-meta strong { font-weight: 700; color: #111827; text-decoration: underline; text-underline-offset: 3px; }
+    .order-meta a { font-weight: 600; color: #0369a1; }
+    .order-meta .meta-help { font-size: .8125rem; color: #9ca3af; margin-top: .25rem; }
+
+    /* Order card */
+    .order-card {
+      background: #fff; border: 1px solid #e5e7eb;
+      border-radius: 16px; overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+      animation: fadeInUp .5s ease .2s both;
+    }
+    .order-card-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: #0369a1;
+    }
+    .order-line {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .order-line:last-of-type { border-bottom: none; }
+    .order-line-img {
+      width: 64px; height: 64px;
+      border-radius: 10px; background: #f8fafc;
+      object-fit: contain; padding: .375rem;
+      flex-shrink: 0; border: 1px solid #e5e7eb;
+    }
+    .order-line-info { flex: 1; font-size: .9375rem; color: #374151; line-height: 1.5; min-width: 0; }
+    .order-line-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.0625rem; font-weight: 700;
+      color: #0369a1; flex-shrink: 0;
+    }
+    .order-total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem;
+      border-top: 2px solid #e5e7eb;
+      font-weight: 700; color: #111827;
+    }
+    .order-total-label { font-size: .95rem; }
+    .order-total-value { font-size: 1.1rem; }
+
+    /* Logistics steps */
+    .logistics-section {
+      margin-bottom: 2rem;
+      animation: fadeInUp .5s ease .3s both;
+    }
+    .logistics-title { font-size: .85rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+    .logistics-divider { border: none; border-top: 1px solid #e5e7eb; margin-bottom: 1.25rem; }
+    .logistics-steps { display: flex; flex-direction: column; gap: 0; }
+    .logistics-step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .step-icon-col { display: flex; flex-direction: column; align-items: center; width: 36px; flex-shrink: 0; }
+    .step-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #f1f5f9; border: 2px solid #e2e8f0;
+      display: flex; align-items: center; justify-content: center;
+      color: #94a3b8; flex-shrink: 0;
+    }
+    .step-icon.step-done { background: #dcfce7; border-color: #22c55e; color: #16a34a; }
+    .step-connector { flex: 1; width: 2px; background: #e2e8f0; min-height: 24px; margin: 4px 0; }
+    .step-content { padding-top: .5rem; padding-bottom: 1.25rem; min-width: 0; }
+    .step-title { font-size: .9375rem; font-weight: 600; color: #111827; margin-bottom: .2rem; }
+    .step-desc { font-size: .875rem; color: #6b7280; line-height: 1.5; }
+
+    /* Action buttons */
+    .success-actions {
+      display: flex; gap: .75rem;
+      animation: fadeInUp .5s ease .4s both;
+    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: .875rem 1.5rem; border-radius: 10px; font-size: .9375rem; font-weight: 600; cursor: pointer; border: none; text-decoration: none; transition: background .15s, transform .15s; flex: 1; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: #0f172a; color: #fff; }
+    .btn-primary:hover { background: #1e293b; color: #fff; }
+    .btn-outline { background: #fff; color: #0f172a; border: 1.5px solid #0f172a; }
+    .btn-outline:hover { background: #f8fafc; }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .success-wrapper { padding: 1.5rem 1rem 3rem; }
+      .success-check { width: 56px; height: 56px; }
+      .success-heading { font-size: 1.5rem; }
+      .order-meta { padding: 1rem; }
+      .order-card { margin-bottom: 1.5rem; }
+      .order-line { flex-direction: column; align-items: flex-start; gap: 8px; padding: 1rem; }
+      .order-line-img { width: 48px; height: 48px; }
+      .order-total-row { padding: 1rem; }
+      .step-icon-col { width: 28px; }
+      .step-icon { width: 28px; height: 28px; }
+      .step-connector { min-height: 20px; }
+      .success-actions { flex-direction: column; }
+    }
