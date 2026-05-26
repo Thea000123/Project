@@ -156,9 +156,9 @@ const CartUtils = {
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
           </div>
-          <h3 class="empty-state-title">Your Cart is Empty</h3>
-          <p class="empty-state-description">No products have been added to the shopping cart yet, go and choose your favorite products</p>
-          <a href="Medium.html" class="btn btn-primary">Go Shopping</a>
+          <h3 class="empty-state-title">购物车是空的</h3>
+          <p class="empty-state-description">还没有添加任何商品到购物车，快去挑选心仪的商品吧</p>
+          <a href="search.html" class="btn btn-primary">去购物</a>
         </div>
       `;
       return;
@@ -166,11 +166,11 @@ const CartUtils = {
 
     container.innerHTML = items.map((item, index) => `
       <div class="cart-item" data-id="${item.id}" style="animation-delay: ${index * 0.05}s">
-        <a href="product-${item.id}.html" class="cart-item-image">
+        <a href="${item.id === 101 ? 'product-detail-2.html' : 'product-detail-1.html'}" class="cart-item-image">
           <img src="${item.image}" alt="${item.title}" loading="lazy">
         </a>
         <div class="cart-item-info">
-          <a href="product-${item.id}.html" class="cart-item-title">${item.title}</a>
+          <a href="${item.id === 101 ? 'product-detail-2.html' : 'product-detail-1.html'}" class="cart-item-title">${item.title}</a>
           ${item.subtitle ? `<p class="cart-item-subtitle">${item.subtitle}</p>` : ''}
           <p class="cart-item-price">${CartUtils.formatPrice(item.price)}</p>
         </div>
