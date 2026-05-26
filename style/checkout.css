@@ -1,0 +1,83 @@
+    /* ── Checkout page styles ── */
+    .co-main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    /* Express checkout */
+    .co-express { text-align: center; margin-bottom: 2rem; }
+    .co-express-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #111; }
+    .co-express-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .co-pay-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.5rem; border-radius: 0.5rem; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: filter 0.15s; flex: 1; min-width: 110px; max-width: 200px; }
+    .co-pay-btn.paypal { background: #FFC439; color: #003087; }
+    .co-pay-btn.apple  { background: #000; color: #fff; }
+    .co-pay-btn.google { background: #3c4043; color: #fff; }
+    .co-pay-btn:hover { filter: brightness(0.92); }
+
+    /* Form sections */
+    .co-section { background: #f0f8ff; border-radius: 0.75rem; padding: 2rem; margin-bottom: 1.5rem; }
+    .co-section-title { font-size: 1.1rem; font-weight: 700; color: #111; text-align: center; margin-bottom: 1.5rem; }
+    .co-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; }
+    .co-form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .co-label { font-size: 0.78rem; color: #6b7280; font-weight: 500; }
+    .co-label .req { color: #ef4444; margin-left: 2px; }
+    .co-input { border: none; border-radius: 0.4rem; padding: 0.6rem 0.85rem; font-size: 0.9rem; background: #d4eeff; color: #111; outline: none; width: 100%; transition: box-shadow .15s; }
+    .co-input:focus { box-shadow: 0 0 0 2px #38bdf8; }
+    .co-input.error { box-shadow: 0 0 0 2px #ef4444; }
+    .co-select { border: none; border-radius: 0.4rem; padding: 0.6rem 0.85rem; font-size: 0.9rem; background: #d4eeff; color: #111; outline: none; width: 100%; cursor: pointer; }
+    .co-input-with-btn { display: flex; gap: 0.5rem; align-items: center; }
+    .co-input-with-btn .co-input { flex: 1; }
+    .co-import-btn { background: #fff; border: 1px solid #cbd5e1; border-radius: 0.4rem; padding: 0.5rem 0.75rem; font-size: 0.78rem; cursor: pointer; color: #374151; display: flex; align-items: center; gap: 4px; white-space: nowrap; transition: background .15s; flex-shrink: 0; }
+    .co-import-btn:hover { background: #f1f5f9; }
+    .co-save-btn { margin-top: 1.25rem; background: #e0f2fe; border: 1.5px solid #7dd3fc; border-radius: 0.4rem; padding: 0.55rem 1.25rem; font-size: 0.85rem; font-weight: 600; color: #0369a1; cursor: pointer; transition: background .15s; }
+    .co-save-btn:hover { background: #bae6fd; }
+    .co-field-error { font-size: 0.72rem; color: #ef4444; display: none; margin-top: 2px; }
+
+    /* Order summary */
+    .co-order-section { background: #f0f8ff; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .co-order-title { font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 1rem; }
+    .co-order-item { padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; }
+    .co-order-item:last-child { border-bottom: none; }
+    .co-order-item-name { font-size: 0.9rem; font-weight: 600; color: #111; margin-bottom: 2px; }
+    .co-order-item-sub { display: flex; justify-content: space-between; font-size: 0.8rem; color: #6b7280; }
+    .co-order-item-price { font-weight: 600; color: #111; }
+    .co-order-footer { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; margin-top: 0.5rem; }
+    .co-order-footer-row { display: flex; justify-content: space-between; font-size: 0.85rem; color: #6b7280; }
+    .co-order-footer-value { font-weight: 600; color: #111; }
+    .co-order-total-label { font-size: 0.9rem; font-weight: 700; color: #111; }
+    .co-order-total-value { font-size: 1rem; font-weight: 700; color: #111; }
+
+    /* Card section */
+    .co-card-section { background: #d4eeff; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .co-card-section-title { font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 1.25rem; }
+    .co-card-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; align-items: start; }
+    .co-card-box { background: #fff; border-radius: 0.6rem; padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; transition: opacity .2s; }
+    .co-card-field-label { font-size: 0.75rem; color: #9ca3af; margin-bottom: 0.3rem; }
+    .co-card-input { width: 100%; border: none; background: #e5e7eb; border-radius: 0.35rem; padding: 0.5rem 0.75rem; font-size: 0.88rem; color: #111; outline: none; transition: box-shadow .15s; }
+    .co-card-input:focus { box-shadow: 0 0 0 2px #38bdf8; }
+    .co-card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .co-payment-methods { display: flex; flex-direction: column; gap: 0.75rem; }
+    .co-payment-label { font-size: 0.75rem; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
+    .co-payment-option { display: flex; align-items: center; gap: 0.6rem; cursor: pointer; }
+    .co-payment-option input[type="radio"] { width: 1rem; height: 1rem; accent-color: #374151; flex-shrink: 0; }
+    .co-payment-option span { font-size: 0.88rem; color: #374151; }
+    .co-payment-error { display: none; font-size: 0.72rem; color: #ef4444; margin-top: 4px; }
+    .co-required { color: #ef4444; margin-left: 2px; }
+
+    /* Footer text & submit */
+    .co-privacy-text, .co-postbox-text { text-align: center; font-size: 0.78rem; color: #6b7280; line-height: 1.7; margin-bottom: 1rem; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .co-place-order-btn { display: block; width: 100%; padding: 1.1rem; border-radius: 0.5rem; border: none; background: #2563eb; color: #fff; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; margin-bottom: 1.25rem; }
+    .co-place-order-btn:hover { background: #1d4ed8; }
+    .co-place-order-btn:disabled { background: #93c5fd; cursor: not-allowed; }
+    .co-notice-text { text-align: center; font-size: 0.75rem; color: #9ca3af; line-height: 1.7; max-width: 720px; margin: 0 auto 2rem; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .co-form-grid { grid-template-columns: 1fr; }
+      .co-card-layout { grid-template-columns: 1fr; }
+      .co-express-btns { flex-direction: column; align-items: stretch; }
+      .co-pay-btn { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .co-main { padding: 1.25rem 1rem 3rem; }
+      .co-section { padding: 1.25rem 1rem; }
+      .co-card-section { padding: 1.25rem 1rem; }
+      .co-order-section { padding: 1.25rem 1rem; }
+    }
