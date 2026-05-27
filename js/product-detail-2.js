@@ -4,9 +4,9 @@
       };
 
       const GALLERY_IMAGES = [
-        '../images/image 17.png',
-        '../images/image 40.png',
-        '../images/image 41.png'
+        '../images/image 32 (4).png',
+        '../images/image 32 (5).png',
+        '../images/image 32 (6).png'
       ];
       let currentImgIdx = 0;
 
@@ -74,10 +74,10 @@
       });
 
       const RELATED = [
-        { id: 7, title: "TURTLE COLOURED",      price: 415.0, image: "../images/image 29.png" },
-        { id: 1, title: "TURTLE MINI COLOURED", price: 215.0, image: "../images/image 17.png" },
-        { id: 4, title: "TURTLE RELIEF",        price: 215.0, image: "../images/image 20.png" },
-        { id: 5, title: "TURTLE ALLOY",         price: 585.0, image: "../images/image 27.png" }
+        { id: 7, title: "FISH MANGROVE",      price: 1450.0, image: "../images/image 35 (2).png" },
+        { id: 1, title: "FISH GUPPY RELIEF", price: 395.0, image: "../images/image 36.png" },
+        { id: 4, title: "FISH BUTTERFLY RELIEF",        price: 195.0, image: "../images/image 37 (1).png" },
+        { id: 5, title: "FISH MANGROVE JACK",         price: 1450.0, image: "../images/image 38 (2).png" }
       ];
 
       document.getElementById('related-grid').innerHTML = RELATED.map(p => `

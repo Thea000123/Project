@@ -1,12 +1,12 @@
     (function () {
       let CURRENT_PRODUCT = {
-        id: 7, title: "TURTLE COLOURED", price: 415.0, image: "../images/image 29.png"
+        id: 7, title: "TURTLE Coloured Cast Marble", price: 415.0, image: "../images/image 29.png"
       };
 
       const GALLERY_IMAGES = [
         '../images/image 32.png',
-        '../images/image 33.png',
-        '../images/image 35.png'
+        '../images/image 32 (1).png',
+        '../images/image 32 (3).png'
       ];
       let currentImgIdx = 0;
 
@@ -95,10 +95,10 @@
       });
 
       const RELATED = [
-        { id: 1, title: "TURTLE MINI COLOURED", price: 215.0, image: "../images/image 17.png" },
-        { id: 2, title: "TURTLE MARBLE",        price: 585.0, image: "../images/image 18.png" },
-        { id: 4, title: "TURTLE RELIEF",        price: 215.0, image: "../images/image 20.png" },
-        { id: 5, title: "TURTLE ALLOY",         price: 585.0, image: "../images/image 27.png" }
+        { id: 1, title: "TURTLE GOLD BRONZE", price: 445.0, image: "../images/image 35.png" },
+        { id: 2, title: "TURTLE RED MARBLE",        price: 585.0, image: "../images/Rectangle 21 (6).png" },
+        { id: 4, title: "TURTLE WHITE MARBLE",        price: 215.0, image: "../images/image 37.png" },
+        { id: 5, title: "TURTLE SLEEPY MARBLE",         price: 585.0, image: "../images/image 38.png" }
       ];
 
       document.getElementById('related-grid').innerHTML = RELATED.map(p => `

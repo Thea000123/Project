@@ -24,7 +24,7 @@ const SHARED_HEADER = `
 <header class="navbar">
   <div class="header-left">
     <a href="index.html" class="navbar-logo" aria-label="FOOT Home">
-      <img src="../images/IMG_0625.png" alt="FOOT Logo" width="28" height="32">
+      <img src="../images/Logo.png" alt="FOOT Logo" width="28" height="32">
       <span class="navbar-brand">FOOT</span>
     </a>
   </div>
@@ -83,7 +83,7 @@ const SHARED_FOOTER = `
   <div class="ft-inner">
     <div class="ft-left">
       <a href="index.html" class="ft-logo">
-        <img src="../images/IMG_0625.png" alt="FOOT Logo" width="22" height="26" aria-hidden="true">
+        <img src="../images/Logo.png" alt="FOOT Logo" width="22" height="26" aria-hidden="true">
         <span class="ft-logo-text">FOOT</span>
       </a>
       <p class="ft-desc">Comprising a wide range of Australian made sculpture and jewellery which is not only remarkably beautiful and unique, but durable, priced for any budget and designed to accommodate all tastes in art.</p>
