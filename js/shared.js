@@ -15,7 +15,7 @@ const PRODUCTS = [
   { id: 3, title: "TURTLE COLOURED",      price: 415.0,  image: "../images/image 29.png" },
   { id: 3, title: "TURTLE GOLD BRONZE",   price: 445.0,  image: "../images/image 30.png" },
   { id: 3, title: "TURTLE JADE CAST",     price: 415.0,  image: "../images/image 31.png" },
-  { id: 3, title: "FISH CORAL TROUT",     price: 825.0,  image: "../images/image 17.png" },
+  { id: 3, title: "FISH CORAL TROUT",     price: 825.0,  image: "../images/image 17.png", detailUrl: "product-detail-2.html" },
   { id: 3, title: "WHALE HUMPBACK MINI",  price: 320.0,  image: "../images/image 18.png" },
   { id: 3, title: "MANTA RAY MINI",       price: 210.0,  image: "../images/image 19.png" }
 ];
@@ -23,14 +23,14 @@ const PRODUCTS = [
 const SHARED_HEADER = `
 <header class="navbar">
   <div class="header-left">
-    <a href="main.html" class="navbar-logo" aria-label="FOOT Home">
+    <a href="index.html" class="navbar-logo" aria-label="FOOT Home">
       <img src="../images/IMG_0625.png" alt="FOOT Logo" width="28" height="32">
       <span class="navbar-brand">FOOT</span>
     </a>
   </div>
   <div class="header-center">
     <nav class="navbar-menu" aria-label="Main Navigation">
-      <a href="main.html"        class="navbar-link">Home</a>
+      <a href="index.html"        class="navbar-link">Home</a>
       <a href="faq.html"         class="navbar-link">FAQ</a>
       <a href="pricing.html"     class="navbar-link">Pricing</a>
       <a href="recommended.html" class="navbar-link">Recommended</a>
@@ -68,7 +68,7 @@ const SHARED_HEADER = `
   </div>
 </header>
 <div class="navbar-mobile-menu" id="mobile-menu">
-  <a href="main.html"         class="navbar-link">Home</a>
+  <a href="index.html"         class="navbar-link">Home</a>
   <a href="faq.html"          class="navbar-link">FAQ</a>
   <a href="pricing.html"      class="navbar-link">Pricing</a>
   <a href="recommended.html"  class="navbar-link">Recommended</a>
@@ -82,7 +82,7 @@ const SHARED_FOOTER = `
 <footer class="ft">
   <div class="ft-inner">
     <div class="ft-left">
-      <a href="main.html" class="ft-logo">
+      <a href="index.html" class="ft-logo">
         <img src="../images/IMG_0625.png" alt="FOOT Logo" width="22" height="26" aria-hidden="true">
         <span class="ft-logo-text">FOOT</span>
       </a>
@@ -109,7 +109,7 @@ const SHARED_FOOTER = `
     <div class="ft-divider"></div>
     <div class="ft-nav">
       <ul>
-        <li><a href="main.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="recommended.html">Recommended</a></li>
@@ -132,7 +132,7 @@ const SHARED_SEARCH_MODAL = `
         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
       </svg>
       <input type="text" class="search-input" placeholder="Search artworks…" aria-label="Search products" autocomplete="off">
-      <a href="index.html" class="search-action-btn" onclick="Search.close()" aria-label="Go to full search page">
+      <a href="search.html" class="search-action-btn" onclick="Search.close()" aria-label="Go to full search page">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>

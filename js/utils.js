@@ -214,7 +214,7 @@ const Search = {
       return;
     }
     container.innerHTML = results.map(product => `
-      <a href="product-3.html" class="search-result-item" onclick="Search.close()">
+      <a href="${product.detailUrl || 'product-detail-1.html'}" class="search-result-item" onclick="Search.close()">
         <div class="search-result-image">
           <img src="${product.image}" alt="${product.title}" loading="lazy">
         </div>
