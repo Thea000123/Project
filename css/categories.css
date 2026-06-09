@@ -1,4 +1,4 @@
-    /* ── Page header & toggle (shared with Medium.html) ── */
+    /* ── Page header & toggle (shared with medium.html) ── */
     .page-header {
       display: flex; align-items: center; justify-content: center;
       position: relative; margin-top: 30px; margin-bottom: 40px;

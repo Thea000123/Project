@@ -1,22 +1,20 @@
 
     (function () {
       const TURTLE_PRODUCTS = [
-        { id: 201, title: 'TURTLE MINI COLOURED', price: 215,  image: '../images/image 17.png' },
-        { id: 202, title: 'TURTLE MARBLE',         price: 585,  image: '../images/image 18.png' },
-        { id: 203, title: 'TURTLE 14 CARAT',       price: 3850, image: '../images/image 19.png' },
-        { id: 204, title: 'TURTLE MINI AQUA',      price: 215,  image: '../images/image 20.png' },
-        { id: 205, title: 'TURTLE RELIEF',         price: 215,  image: '../images/image 27.png' },
-        { id: 206, title: 'TURTLE ALLOY',          price: 585,  image: '../images/image 28.png' },
-        { id: 207, title: 'TURTLE COLOURED',       price: 415,  image: '../images/image 29.png' },
-        { id: 208, title: 'TURTLE JADE CAST',      price: 415,  image: '../images/image 30.png' },
-        { id: 209, title: 'TURTLE MINI PAINTED',   price: 215,  image: '../images/image 17.png' },
+        { id: 201, title: 'TURTLE MINI COLOURED', price: 215,  image: '../images/image 32.png' },
+        { id: 202, title: 'TURTLE MARBLE',         price: 585,  image: '../images/image 28.png' },
+        { id: 203, title: 'TURTLE 14 CARAT',       price: 3850, image: '../images/image 29.png' },
+        { id: 204, title: 'TURTLE MINI AQUA',      price: 215,  image: '../images/image 30.png' },
+        { id: 205, title: 'TURTLE RELIEF',         price: 215,  image: '../images/image 31.png' },
+        { id: 206, title: 'TURTLE ALLOY',          price: 585,  image: '../images/image 27.png' },
+        { id: 207, title: 'TURTLE COLOURED',       price: 415,  image: '../images/image 33.png' },
+        { id: 208, title: 'TURTLE JADE CAST',      price: 415,  image: '../images/image 41 (1).png' },
+        { id: 209, title: 'TURTLE MINI PAINTED',   price: 215,  image: '../images/image (1).png' },
         { id: 210, title: 'TURTLE NATURAL',        price: 585,  image: '../images/image 18.png' },
-        { id: 211, title: 'TURTLE CARAT GOLD',     price: 3850, image: '../images/image 19.png' },
-        { id: 212, title: 'TURTLE AQUA BLUE',      price: 215,  image: '../images/image 20.png' },
-        { id: 213, title: 'TURTLE WALL RELIEF',    price: 215,  image: '../images/image 27.png' },
-        { id: 214, title: 'TURTLE BRONZE ALLOY',   price: 585,  image: '../images/image 28.png' },
-        { id: 215, title: 'TURTLE PAINTED CAST',   price: 415,  image: '../images/image 29.png' },
-        { id: 216, title: 'TURTLE JADE GREEN',     price: 415,  image: '../images/image 30.png' },
+        { id: 211, title: 'TURTLE CARAT GOLD',     price: 3850, image: '../images/image 35.png' },
+        { id: 212, title: 'TURTLE AQUA BLUE',      price: 215,  image: '../images/image 37.png' },
+        { id: 213, title: 'TURTLE WALL RELIEF',    price: 215,  image: '../images/Rectangle 21 (6).png' },
+
       ];
       const PER_PAGE = 8;
       let currentPage = 1;

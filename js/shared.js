@@ -6,18 +6,18 @@
  */
 
 const PRODUCTS = [
-  { id: 3, title: "TURTLE MINI COLOURED", price: 215.0,  image: "../images/image 17.png" },
+  { id: 3, title: "TURTLE MINI COLOURED", price: 215.0,  image: "../images/image 32.png" },
   { id: 3, title: "TURTLE MARBLE",        price: 585.0,  image: "../images/image 18.png" },
   { id: 3, title: "TURTLE 14 CARAT",      price: 3850.0, image: "../images/image 19.png" },
-  { id: 3, title: "TURTLE RELIEF",        price: 215.0,  image: "../images/image 20.png" },
-  { id: 3, title: "TURTLE ALLOY",         price: 585.0,  image: "../images/image 27.png" },
-  { id: 3, title: "TURTLE MINI AQUA",     price: 215.0,  image: "../images/image 28.png" },
-  { id: 3, title: "TURTLE COLOURED",      price: 415.0,  image: "../images/image 29.png" },
-  { id: 3, title: "TURTLE GOLD BRONZE",   price: 445.0,  image: "../images/image 30.png" },
-  { id: 3, title: "TURTLE JADE CAST",     price: 415.0,  image: "../images/image 31.png" },
-  { id: 3, title: "FISH CORAL TROUT",     price: 825.0,  image: "../images/image 17.png", detailUrl: "product-detail-2.html" },
-  { id: 3, title: "WHALE HUMPBACK MINI",  price: 320.0,  image: "../images/image 18.png" },
-  { id: 3, title: "MANTA RAY MINI",       price: 210.0,  image: "../images/image 19.png" }
+  { id: 3, title: "TURTLE RELIEF",        price: 215.0,  image: "../images/image 27.png" },
+  { id: 3, title: "TURTLE ALLOY",         price: 585.0,  image: "../images/image 28.png" },
+  { id: 3, title: "TURTLE MINI AQUA",     price: 215.0,  image: "../images/image 30.png" },
+  { id: 3, title: "TURTLE COLOURED",      price: 415.0,  image: "../images/image 33.png" },
+  { id: 3, title: "TURTLE GOLD BRONZE",   price: 445.0,  image: "../images/image 35.png" },
+  { id: 3, title: "TURTLE JADE CAST",     price: 415.0,  image: "../images/image 41 (1).png" },
+  { id: 3, title: "FISH CORAL TROUT",     price: 825.0,  image: "../images/image 32 (11).png", detailUrl: "product-detail-2.html" },
+  { id: 3, title: "WHALE HUMPBACK MINI",  price: 320.0,  image: "../images/image 20.png" },
+  { id: 3, title: "MANTA RAY MINI",       price: 210.0,  image: "../images/image 41.png" }
 ];
 
 const SHARED_HEADER = `

@@ -1,6 +1,6 @@
     (function () {
       const CURRENT_PRODUCT = {
-        id: 101, title: "FISH CORAL TROUT", price: 825.0, image: "../images/image 17.png"
+        id: 101, title: "FISH CORAL TROUT", price: 825.0, image: "../images/image 32 (4).png"
       };
 
       const GALLERY_IMAGES = [
